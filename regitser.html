@@ -1,0 +1,311 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Join Us - FixNex</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Poppins:wght@600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#c6c4dc",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#006fee",
+                        "inverse-on-surface": "#f4f0f1",
+                        "surface-container-low": "#f7f2f4",
+                        "surface-container-high": "#ebe7e9",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#1a1a2c",
+                        "tertiary-container": "#381200",
+                        "primary-fixed-dim": "#c6c4dc",
+                        "tertiary": "#0c0200",
+                        "surface-variant": "#e5e1e3",
+                        "on-secondary-fixed": "#001a42",
+                        "primary-container": "#1c1c2e",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "on-primary-container": "#85839a",
+                        "background": "#fcf8fa",
+                        "secondary-fixed": "#d8e2ff",
+                        "outline-variant": "#c8c5cd",
+                        "tertiary-fixed-dim": "#ffb693",
+                        "on-primary-fixed-variant": "#454559",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#fefcff",
+                        "primary": "#030312",
+                        "inverse-surface": "#313032",
+                        "surface-container": "#f1edef",
+                        "on-background": "#1c1b1d",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#e05d00",
+                        "secondary": "#0058be",
+                        "surface": "#fcf8fa",
+                        "surface-bright": "#fcf8fa",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed": "#351000",
+                        "tertiary-fixed": "#ffdbcc",
+                        "on-secondary-fixed-variant": "#004395",
+                        "secondary-fixed-dim": "#aec6ff",
+                        "on-surface-variant": "#47464c",
+                        "primary-fixed": "#e2e0f9",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#7a3000",
+                        "surface-dim": "#ddd9db",
+                        "on-surface": "#1c1b1d",
+                        "surface-container-highest": "#e5e1e3",
+                        "outline": "#78767d",
+                        "surface-tint": "#5d5c71"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "unit": "8px",
+                        "margin-desktop": "40px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter"],
+                        "headline-sm": ["Poppins"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Poppins"],
+                        "display-lg-mobile": ["Poppins"],
+                        "headline-md": ["Poppins"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-md": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .circuit-pattern {
+            background-image: radial-gradient(circle at 100% 150%, var(--tw-colors-outline-variant) 24%, transparent 24%), 
+                              radial-gradient(circle at 0% -50%, var(--tw-colors-outline-variant) 24%, transparent 24%);
+            background-size: 40px 40px;
+            opacity: 0.05;
+        }
+        .fade-in-up {
+            animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+    </style>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230058be'/><text x='50' y='67' font-family='sans-serif' font-size='55' font-weight='bold' fill='white' text-anchor='middle'>FN</text></svg>">
+</head>
+<body class="bg-background min-h-screen flex items-center justify-center relative overflow-x-hidden font-body-md text-body-md text-on-background dark:bg-primary dark:text-on-primary py-12">
+<!-- Ambient Background / Circuit Pattern -->
+<div class="absolute inset-0 circuit-pattern pointer-events-none z-0"></div>
+<!-- Abstract Tech Elements -->
+<div class="absolute -top-32 -left-32 w-96 h-96 bg-secondary/10 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="absolute -bottom-32 -right-32 w-96 h-96 bg-tertiary-container/10 rounded-full blur-[100px] pointer-events-none"></div>
+<main class="w-full max-w-md px-margin-mobile relative z-10">
+<!-- Glassmorphism Registration Card -->
+<div class="bg-surface/80 dark:bg-primary-container/80 backdrop-blur-[20px] rounded-xl p-8 shadow-sm border border-outline-variant/30 fade-in-up relative z-10">
+<header class="flex items-center justify-between mb-8 relative z-20">
+    <div class="font-headline-sm text-headline-sm text-primary dark:text-on-primary">FixNex</div>
+    <div class="flex gap-2">
+        <button class="p-2 rounded-full hover:bg-surface-container-low transition-colors text-on-surface-variant dark:text-on-primary-container" aria-label="Toggle RTL"><span class="material-symbols-outlined">format_textdirection_l_to_r</span></button>
+        <button id="theme-toggle" class="p-2 rounded-full hover:bg-surface-container-low transition-colors text-on-surface-variant dark:text-on-primary-container" aria-label="Toggle Theme"><span class="material-symbols-outlined">dark_mode</span></button>
+    </div>
+</header>
+<!-- Header Section -->
+<div class="text-center mb-8 fade-in-up delay-100">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-2 dark:text-on-primary">Join Us</h1>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-on-primary-container">Create your premium account.</p>
+</div>
+<!-- Registration Form -->
+<form class="space-y-6 fade-in-up delay-200">
+<div class="grid grid-cols-2 gap-4">
+<!-- First Name -->
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-on-surface-variant dark:text-on-primary-container" for="firstName">First Name</label>
+<div class="relative group">
+<input class="w-full bg-surface-container-lowest dark:bg-primary/50 border-2 border-outline-variant rounded-DEFAULT py-3 px-4 focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary/50 transition-all font-body-md text-body-md text-on-surface dark:text-on-primary" id="firstName" placeholder="First" required="" type="text">
+</div>
+</div>
+<!-- Last Name -->
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-on-surface-variant dark:text-on-primary-container" for="lastName">Last Name</label>
+<div class="relative group">
+<input class="w-full bg-surface-container-lowest dark:bg-primary/50 border-2 border-outline-variant rounded-DEFAULT py-3 px-4 focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary/50 transition-all font-body-md text-body-md text-on-surface dark:text-on-primary" id="lastName" placeholder="Last" required="" type="text">
+</div>
+</div>
+</div>
+<!-- Email Input -->
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-on-surface-variant dark:text-on-primary-container" for="email">Email Address</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-secondary transition-colors" style="font-variation-settings: 'FILL' 0;">mail</span>
+<input class="w-full bg-surface-container-lowest dark:bg-primary/50 border-2 border-outline-variant rounded-DEFAULT py-3 pl-12 pr-4 focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary/50 transition-all font-body-md text-body-md text-on-surface dark:text-on-primary" id="email" placeholder="name@company.com" required="" type="email">
+</div>
+</div>
+<!-- Password Input -->
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-on-surface-variant dark:text-on-primary-container" for="password">Password</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-secondary transition-colors" style="font-variation-settings: 'FILL' 0;">lock</span>
+<input class="w-full bg-surface-container-lowest dark:bg-primary/50 border-2 border-outline-variant rounded-DEFAULT py-3 pl-12 pr-4 focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary/50 transition-all font-body-md text-body-md text-on-surface dark:text-on-primary" id="password" placeholder="••••••••" required="" type="password">
+</div>
+</div>
+<!-- Confirm Password Input -->
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-on-surface-variant dark:text-on-primary-container" for="confirmPassword">Confirm Password</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-secondary transition-colors" style="font-variation-settings: 'FILL' 0;">lock</span>
+<input class="w-full bg-surface-container-lowest dark:bg-primary/50 border-2 border-outline-variant rounded-DEFAULT py-3 pl-12 pr-4 focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary/50 transition-all font-body-md text-body-md text-on-surface dark:text-on-primary" id="confirmPassword" placeholder="••••••••" required="" type="password">
+</div>
+</div>
+<!-- Terms -->
+<div class="flex items-center">
+<input class="w-4 h-4 rounded border-outline-variant text-secondary focus:ring-secondary/50 focus:ring-2 bg-surface-container-lowest dark:bg-primary/50" id="terms" type="checkbox">
+<label class="ml-2 block font-body-md text-body-md text-on-surface-variant dark:text-on-primary-container" for="terms">
+                        I agree to the <a class="text-secondary hover:underline transition-all" href="#">Terms of Service</a> &amp; <a class="text-secondary hover:underline transition-all" href="#">Privacy Policy</a>.
+                    </label>
+</div>
+<!-- Action Button -->
+<button class="w-full bg-secondary text-on-secondary font-label-md text-label-md rounded-DEFAULT py-3 px-6 hover:bg-secondary/90 transition-all focus:ring-2 focus:ring-secondary/50 focus:outline-none flex justify-center items-center gap-2" type="submit">
+<span class="">Create Account</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</button>
+</form>
+<!-- Footer Links -->
+<div class="mt-8 text-center fade-in-up delay-300">
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-on-primary-container">
+                    Already have an account? 
+                    <a class="text-secondary font-label-md text-label-md hover:underline transition-all" href="login.html">Log in</a>
+</p>
+</div>
+</div>
+</main>
+
+
+
+<script>
+    (function() {
+        // Shared Theme Manager
+        const themeToggle = document.getElementById('theme-toggle') || document.getElementById('themeToggle');
+        const html = document.documentElement;
+        
+        // Init theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            html.classList.add('dark');
+            html.classList.remove('light');
+        } else if (savedTheme === 'light') {
+            html.classList.add('light');
+            html.classList.remove('dark');
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            html.classList.add('dark');
+        }
+
+        function updateIcon() {
+            if (!themeToggle) return;
+            const spans = themeToggle.querySelectorAll('span');
+            if (html.classList.contains('dark')) {
+                if (spans.length === 1) spans[0].textContent = 'light_mode';
+                else if (spans.length === 2) { spans[0].classList.add('hidden'); spans[1].classList.remove('hidden'); }
+            } else {
+                if (spans.length === 1) spans[0].textContent = 'dark_mode';
+                else if (spans.length === 2) { spans[0].classList.remove('hidden'); spans[1].classList.add('hidden'); }
+            }
+        }
+        
+        updateIcon();
+
+        if (themeToggle) {
+            // Remove existing listeners if this is re-executed (though shouldn't happen)
+            const newToggle = themeToggle.cloneNode(true);
+            if (themeToggle.parentNode) {
+                themeToggle.parentNode.replaceChild(newToggle, themeToggle);
+            }
+            newToggle.addEventListener('click', () => {
+                if (html.classList.contains('dark')) {
+                    html.classList.remove('dark');
+                    html.classList.add('light');
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    html.classList.remove('light');
+                    html.classList.add('dark');
+                    localStorage.setItem('theme', 'dark');
+                }
+                
+                // Keep the icon logic up to date
+                const spans = newToggle.querySelectorAll('span');
+                if (html.classList.contains('dark')) {
+                    if (spans.length === 1) spans[0].textContent = 'light_mode';
+                    else if (spans.length === 2) { spans[0].classList.add('hidden'); spans[1].classList.remove('hidden'); }
+                } else {
+                    if (spans.length === 1) spans[0].textContent = 'dark_mode';
+                    else if (spans.length === 2) { spans[0].classList.remove('hidden'); spans[1].classList.add('hidden'); }
+                }
+            });
+        }
+    })();
+</script>
+
+
+<script>
+    // Global Scroll Animation Observer (Updated)
+    document.addEventListener('DOMContentLoaded', () => {
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Standard visibility classes
+                    entry.target.classList.add('visible', 'is-visible', 'active');
+                    
+                    // Remove hidden states
+                    entry.target.classList.remove('opacity-0', 'hidden-anim');
+                    
+                    // Add animation class if it's a scroll-anim
+                    if (entry.target.classList.contains('scroll-anim')) {
+                        entry.target.classList.add('animate-fade-in-up');
+                    }
+                    
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Select all elements that require scroll animation
+        const animatedElements = document.querySelectorAll('.fade-in-up, .slide-up, .zoom-in, .animate-fade-in-up, .pop-icon, .scroll-anim, .reveal, .hidden-anim');
+        animatedElements.forEach(el => observer.observe(el));
+    });
+</script>
+
+</body></html>

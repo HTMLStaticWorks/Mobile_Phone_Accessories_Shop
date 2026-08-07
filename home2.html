@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FixNex - Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Poppins:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#c6c4dc",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#006fee",
+                        "inverse-on-surface": "#f4f0f1",
+                        "surface-container-low": "#f7f2f4",
+                        "surface-container-high": "#ebe7e9",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#1a1a2c",
+                        "tertiary-container": "#381200",
+                        "primary-fixed-dim": "#c6c4dc",
+                        "tertiary": "#0c0200",
+                        "surface-variant": "#e5e1e3",
+                        "on-secondary-fixed": "#001a42",
+                        "primary-container": "#1c1c2e",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "on-primary-container": "#85839a",
+                        "background": "#fcf8fa",
+                        "secondary-fixed": "#d8e2ff",
+                        "outline-variant": "#c8c5cd",
+                        "tertiary-fixed-dim": "#ffb693",
+                        "on-primary-fixed-variant": "#454559",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#fefcff",
+                        "primary": "#030312",
+                        "inverse-surface": "#313032",
+                        "surface-container": "#f1edef",
+                        "on-background": "#1c1b1d",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#e05d00",
+                        "secondary": "#0058be",
+                        "surface": "#fcf8fa",
+                        "surface-bright": "#fcf8fa",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed": "#351000",
+                        "tertiary-fixed": "#ffdbcc",
+                        "on-secondary-fixed-variant": "#004395",
+                        "secondary-fixed-dim": "#aec6ff",
+                        "on-surface-variant": "#47464c",
+                        "primary-fixed": "#e2e0f9",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#7a3000",
+                        "surface-dim": "#ddd9db",
+                        "on-surface": "#1c1b1d",
+                        "surface-container-highest": "#e5e1e3",
+                        "outline": "#78767d",
+                        "surface-tint": "#5d5c71",
+                        "mc-dark": "#1C1C2E",
+                        "mc-blue": "#0078FF",
+                        "mc-orange": "#FF6B00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "unit": "8px",
+                        "margin-desktop": "40px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter"],
+                        "headline-sm": ["Poppins"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Poppins"],
+                        "display-lg-mobile": ["Poppins"],
+                        "headline-md": ["Poppins"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-md": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+        }
+        .dark .glass-panel {
+            background: rgba(3, 3, 18, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .circuit-bg {
+            background-image: radial-gradient(circle at 10px 10px, rgba(3, 3, 18, 0.05) 2px, transparent 0);
+            background-size: 40px 40px;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #0078FF, #FF6B00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(0, 120, 255, 0.1) 0%, rgba(255, 107, 0, 0.1) 100%);
+        }
+
+        /* Animations */
+        @keyframes pulse-live {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 107, 0, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(255, 107, 0, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 107, 0, 0); }
+        }
+        .live-pulse {
+            animation: pulse-live 2s infinite;
+        }
+        
+        .spring-hover:hover {
+            transform: translateY(-8px) scale(1.02);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .stagger-1 { transition-delay: 100ms; }
+        .stagger-2 { transition-delay: 200ms; }
+        .stagger-3 { transition-delay: 300ms; }
+
+        @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
+        }
+        .shimmer-effect {
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%);
+            background-size: 1000px 100%;
+            animation: shimmer 2s infinite linear;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .marquee-container {
+            display: flex;
+            width: 200%;
+            animation: marquee 20s linear infinite;
+        }
+        .marquee-container:hover {
+            animation-play-state: paused;
+        }
+        
+        .tech-card {
+            transition: all 0.3s ease;
+        }
+        .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px -10px rgba(0, 120, 255, 0.3);
+            border-color: #0078FF;
+        }
+    </style>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230058be'/><text x='50' y='67' font-family='sans-serif' font-size='55' font-weight='bold' fill='white' text-anchor='middle'>FN</text></svg>">
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased circuit-bg relative overflow-x-hidden min-h-screen flex flex-col dark:bg-primary dark:text-on-primary">
+<!-- TopNavBar -->
+</head>
+<body class="bg-background dark:bg-primary text-on-background dark:text-on-primary font-body-md text-body-md min-h-screen flex flex-col relative transition-colors duration-300">
+<!-- Global Circuit Pattern Overlay -->
+<div class="fixed inset-0 pointer-events-none bg-circuit z-0"></div>
+<!-- TopNavBar (Semantic Shell) -->
+<header class="bg-surface/80 dark:bg-primary/80 backdrop-blur-md font-label-md text-label-md border-b border-outline-variant/20 shadow-sm fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16">
+<!-- Brand Logo -->
+<div class="font-headline-sm text-headline-sm font-bold text-primary dark:text-on-primary-fixed">
+            FixNex
+        </div>
+<!-- Desktop Navigation Links -->
+<nav class="hidden md:flex gap-2 lg:gap-3 items-center">
+            <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all px-2 py-1 rounded dark:text-on-primary-container" href="index.html">Home</a>
+            <a class="font-label-md text-label-md text-secondary border-b-2 border-secondary pb-1 px-2 transition-all" href="home2.html">Home2</a>
+            <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all px-2 py-1 rounded dark:text-on-primary-container" href="services.html">Services</a>
+            <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all px-2 py-1 rounded dark:text-on-primary-container" href="product.html">Product</a>
+            <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all px-2 py-1 rounded dark:text-on-primary-container" href="gallery.html">Gallery</a>
+            <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all px-2 py-1 rounded dark:text-on-primary-container" href="blog.html">Blog</a>
+            <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all px-2 py-1 rounded dark:text-on-primary-container" href="contact.html">Contact</a>
+        </nav>
+<!-- Actions -->
+<div class="flex items-center space-x-unit md:space-x-4">
+<button aria-label="shopping_cart" class="text-secondary dark:text-secondary-fixed hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all p-2 rounded-full scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+<button aria-label="dark_mode" class="text-secondary dark:text-secondary-fixed hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all p-2 rounded-full scale-95 active:scale-90 transition-transform" id="themeToggle">>
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+<div class="hidden md:flex items-center space-x-2 ml-4">
+<button class="px-4 py-2 text-primary dark:text-on-primary font-label-md text-label-md border-2 border-primary dark:border-outline-variant hover:bg-surface-container-high dark:hover:bg-primary-container transition-colors rounded" onclick="window.location.href='login.html'">
+                    Login
+                </button>
+<button class="px-4 py-2 bg-secondary text-on-secondary font-label-md text-label-md hover:bg-secondary-fixed-dim transition-colors rounded" onclick="window.location.href='regitser.html'">
+                    Sign Up
+                </button>
+</div>
+<!-- Mobile Menu Toggle -->
+<button aria-label="menu" class="md:hidden text-primary dark:text-on-primary p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="flex-grow pt-16">
+<!-- Hero Section -->
+<section class="relative min-h-[819px] flex items-center justify-center px-margin-mobile md:px-margin-desktop overflow-hidden hero-gradient">
+<div class="max-w-container-max mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-gutter items-center z-10">
+<div class="space-y-6">
+<span class="inline-block px-3 py-1 bg-mc-blue text-on-secondary font-label-md text-label-md rounded uppercase tracking-wider">Premium Tech</span>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary leading-tight dark:text-on-primary">
+                        Next-Gen Devices &amp; <br/><span class="gradient-text">Expert Repairs</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg dark:text-on-primary-container">
+                        Discover the latest high-end smartphones, precision-engineered accessories, and professional repair services. Elevate your tech experience today.
+                    </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="px-8 py-4 bg-mc-blue text-on-secondary font-label-md text-label-md rounded hover:opacity-90 transition-opacity shadow-lg">Shop Now</button>
+<button class="px-8 py-4 border-2 border-primary text-primary font-label-md text-label-md rounded hover:bg-primary/5 transition-colors dark:text-on-primary">Book Repair</button>
+</div>
+</div>
+<div class="relative h-[400px] md:h-[600px] w-full rounded-2xl overflow-hidden glass-panel flex items-center justify-center p-4">
+<div class="absolute inset-0 bg-gradient-to-tr from-mc-blue/10 to-mc-orange/10 z-0"></div>
+<img class="relative z-10 object-contain w-full h-full transform hover:scale-105 transition-transform duration-700" data-alt="A highly detailed, ultra-modern close-up of a sleek, premium smartphone suspended in mid-air against a pristine white studio background. The device features crisp geometric lines, a high-gloss glass back reflecting soft studio lighting, and intricate camera lenses. The aesthetic is high-end corporate tech, emphasizing precision engineering, depth, and a clean, light-mode palette with subtle metallic accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrh8B8GEscZRlaUnqo5N33w2vjYL6E59GQxNg3bzwY_SbP-saIEZzGkGnwlpmFlOHQ8gHdFMc6U1plOBkvXdY9m2cTMydXbJSwMQuIB7JIbPnK0v1KhJ9ieI5FKB-xK16AyyLfcW28MHCZaUYCH8r9Tmc3xmweZ27V6-qZPjgtKRrfVqNyhloOVkw3mzVv114nyQgCBJZuXIqgYqu7a1Z6r-HMmM8gr7A9YVge0IRd0SkiHeCwG7Xr"/>
+</div>
+</div>
+<!-- Decorative background elements -->
+<div class="absolute top-1/4 right-0 w-[500px] h-[500px] bg-mc-blue/5 rounded-full blur-[100px] -z-10"></div>
+<div class="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-mc-orange/5 rounded-full blur-[80px] -z-10"></div>
+</section>
+<!-- 1. Daily Drop Countdown -->
+<section class="py-20 px-margin-mobile md:px-margin-desktop bg-mc-dark text-white reveal">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row items-center justify-between bg-gradient-to-r from-mc-dark to-primary-container p-8 rounded-2xl border border-mc-blue/30 shadow-2xl relative overflow-hidden">
+<div class="z-10 mb-8 md:mb-0">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-3 h-3 rounded-full bg-mc-orange live-pulse"></div>
+<span class="font-label-md text-label-md text-mc-orange uppercase tracking-widest">Live Deal</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-3xl font-bold mb-2">Pro Audio Bundle Drop</h2>
+<p class="font-body-md text-body-md text-gray-400">Save 40% on our premium wireless earbuds and charging case.</p>
+</div>
+<div class="z-10 flex gap-4">
+<div class="flex flex-col items-center">
+<div class="w-16 h-20 bg-white/10 backdrop-blur-md rounded-lg flex items-center justify-center text-3xl font-bold font-headline-sm text-headline-sm border border-white/20">04</div>
+<span class="text-xs mt-2 text-gray-400">HOURS</span>
+</div>
+<div class="text-3xl font-bold self-center">:</div>
+<div class="flex flex-col items-center">
+<div class="w-16 h-20 bg-white/10 backdrop-blur-md rounded-lg flex items-center justify-center text-3xl font-bold font-headline-sm text-headline-sm border border-white/20">59</div>
+<span class="text-xs mt-2 text-gray-400">MINS</span>
+</div>
+<div class="text-3xl font-bold self-center">:</div>
+<div class="flex flex-col items-center">
+<div class="w-16 h-20 bg-white/10 backdrop-blur-md rounded-lg flex items-center justify-center text-3xl font-bold font-headline-sm text-headline-sm border border-white/20">32</div>
+<span class="text-xs mt-2 text-gray-400">SECS</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. Interactive Bundle Builder -->
+<section class="py-20 px-margin-mobile md:px-margin-desktop reveal">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-12">
+<h2 class="font-display-lg-mobile text-display-lg-mobile md:font-headline-md text-mc-dark mb-4">Build Your Bundle</h2>
+<p class="text-on-surface-variant font-body-lg text-body-lg dark:text-on-primary-container">Mix and match to unlock exclusive discounts.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-surface border border-outline-variant/30 rounded-xl p-6 text-center spring-hover cursor-pointer shadow-sm hover:shadow-xl hover:border-mc-blue/50 transition-all">
+<div class="w-32 h-32 mx-auto bg-gray-100 rounded-full mb-6 flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-mc-blue">smartphone</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-2 text-mc-dark">Select Device</h3>
+<p class="text-sm text-on-surface-variant dark:text-on-primary-container">Choose your primary tech</p>
+</div>
+<div class="bg-surface border border-outline-variant/30 rounded-xl p-6 text-center spring-hover cursor-pointer shadow-sm hover:shadow-xl hover:border-mc-blue/50 transition-all">
+<div class="w-32 h-32 mx-auto bg-gray-100 rounded-full mb-6 flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-mc-blue">headphones</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-2 text-mc-dark">Add Accessories</h3>
+<p class="text-sm text-on-surface-variant dark:text-on-primary-container">Cases, audio, and more</p>
+</div>
+<div class="bg-surface border border-outline-variant/30 rounded-xl p-6 text-center spring-hover cursor-pointer shadow-sm hover:shadow-xl hover:border-mc-orange/50 transition-all relative overflow-hidden">
+<div class="absolute inset-0 bg-mc-orange/5 z-0"></div>
+<div class="relative z-10">
+<div class="w-32 h-32 mx-auto bg-mc-orange/10 rounded-full mb-6 flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-mc-orange">percent</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-2 text-mc-dark">Unlock Savings</h3>
+<p class="text-sm text-on-surface-variant dark:text-on-primary-container">Save up to 20% on bundles</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Tech Ecosystem Bundle Builder -->
+<section class="py-20 px-margin-mobile md:px-margin-desktop bg-mc-dark text-white relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-b from-transparent to-primary/50 z-0"></div>
+<div class="max-w-container-max mx-auto relative z-10">
+<div class="text-center mb-12 reveal">
+<h2 class="font-display-lg-mobile text-display-lg-mobile md:font-headline-md mb-4">Build Your Perfect Setup</h2>
+<p class="text-gray-400 font-body-lg text-body-lg max-w-2xl mx-auto">Select your core device, pair it with premium audio, and add protection to create your ultimate tech ecosystem.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+<!-- Device Card -->
+<div class="tech-card bg-primary-container border border-white/10 rounded-2xl p-6 flex flex-col reveal stagger-1">
+<div class="flex justify-between items-start mb-6">
+<div class="w-12 h-12 rounded-full bg-mc-blue/20 flex items-center justify-center text-mc-blue">
+<span class="material-symbols-outlined">smartphone</span>
+</div>
+<span class="px-3 py-1 bg-white/5 rounded-full text-xs font-semibold text-gray-300">Step 1</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-2">Core Device</h3>
+<p class="text-gray-400 font-body-md text-body-md mb-6 flex-grow">Choose from our latest lineup of flagship smartphones.</p>
+<div class="flex items-center justify-between border-t border-white/10 pt-4">
+<span class="font-headline-sm text-headline-sm text-mc-blue">From $799</span>
+<button class="px-4 py-2 bg-white/10 hover:bg-mc-blue text-white rounded transition-colors text-sm font-semibold">Select</button>
+</div>
+</div>
+<!-- Audio Card -->
+<div class="tech-card bg-primary-container border border-white/10 rounded-2xl p-6 flex flex-col reveal stagger-2">
+<div class="flex justify-between items-start mb-6">
+<div class="w-12 h-12 rounded-full bg-mc-orange/20 flex items-center justify-center text-mc-orange">
+<span class="material-symbols-outlined">headphones</span>
+</div>
+<span class="px-3 py-1 bg-white/5 rounded-full text-xs font-semibold text-gray-300">Step 2</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-2">Pro Audio</h3>
+<p class="text-gray-400 font-body-md text-body-md mb-6 flex-grow">Immersive sound with active noise cancellation.</p>
+<div class="flex items-center justify-between border-t border-white/10 pt-4">
+<span class="font-headline-sm text-headline-sm text-mc-orange">From $199</span>
+<button class="px-4 py-2 bg-white/10 hover:bg-mc-orange text-white rounded transition-colors text-sm font-semibold">Select</button>
+</div>
+</div>
+<!-- Protection Card -->
+<div class="tech-card bg-primary-container border border-white/10 rounded-2xl p-6 flex flex-col reveal stagger-3">
+<div class="flex justify-between items-start mb-6">
+<div class="w-12 h-12 rounded-full bg-gray-500/20 flex items-center justify-center text-gray-300">
+<span class="material-symbols-outlined">security</span>
+</div>
+<span class="px-3 py-1 bg-white/5 rounded-full text-xs font-semibold text-gray-300">Step 3</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-2">Protection</h3>
+<p class="text-gray-400 font-body-md text-body-md mb-6 flex-grow">Military-grade cases and screen protectors.</p>
+<div class="flex items-center justify-between border-t border-white/10 pt-4">
+<span class="font-headline-sm text-headline-sm text-gray-300">From $49</span>
+<button class="px-4 py-2 bg-white/10 hover:bg-gray-600 text-white rounded transition-colors text-sm font-semibold">Select</button>
+</div>
+</div>
+</div>
+<!-- Bundle Total Sticky Bar -->
+<div class="bg-primary border border-mc-blue/30 rounded-xl p-6 flex flex-col md:flex-row items-center justify-between shadow-2xl reveal relative overflow-hidden">
+<div class="absolute inset-0 bg-mc-blue/5 z-0"></div>
+<div class="relative z-10 flex flex-col md:flex-row items-center gap-6 w-full">
+<div class="flex-grow flex items-center gap-4">
+<div class="hidden md:flex -space-x-4">
+<div class="w-12 h-12 rounded-full bg-mc-dark border-2 border-primary flex items-center justify-center text-mc-blue"><span class="material-symbols-outlined text-sm">smartphone</span></div>
+<div class="w-12 h-12 rounded-full bg-mc-dark border-2 border-primary flex items-center justify-center text-mc-orange"><span class="material-symbols-outlined text-sm">headphones</span></div>
+<div class="w-12 h-12 rounded-full bg-mc-dark border-2 border-primary flex items-center justify-center text-gray-400"><span class="material-symbols-outlined text-sm">security</span></div>
+</div>
+<div>
+<p class="text-sm text-gray-400">Bundle Status</p>
+<p class="font-headline-sm text-headline-sm">3 Items Selected</p>
+</div>
+</div>
+<div class="text-center md:text-right">
+<p class="text-sm text-mc-orange mb-1">Bundle Savings: -$150.00</p>
+<p class="font-display-lg-mobile text-display-lg-mobile text-3xl text-white mb-4 md:mb-0">$897.00</p>
+</div>
+<button class="w-full md:w-auto px-8 py-4 bg-mc-blue hover:bg-blue-600 text-white rounded-lg font-semibold transition-colors shadow-lg shadow-mc-blue/20">Checkout Bundle</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Community Reviews & Social Proof -->
+<section class="py-24 relative overflow-hidden bg-mc-dark text-white">
+<div class="absolute inset-0 z-0 opacity-20">
+<img alt="Community lifestyle collage" class="w-full h-full object-cover filter blur-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4FMUKOBgISowPSZBnB1HjHCrz7b3nDhGZvzdnNldDAftcXk9o6TctgVx_YDiS_uKgqbUblOjPhjJMJjBVv-RDuOp9MV8vuL6a5zgP0a0f1azdYYADo-VrF4_1K9-96a4CK4FmCAkg7o2445rvghEWr6OgXlUXTOloF_qHDaLQZZ6_aLslOjji65L-xPO2dAHsEQNzu0xyY3kcz29yujrsGZxSojP88sFetv4QnELGsClPxB2xpYe2"/>
+<div class="absolute inset-0 bg-mc-dark/80 backdrop-blur-md"></div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+<div class="text-center mb-16 reveal">
+<h2 class="font-display-lg-mobile text-display-lg-mobile md:font-headline-md mb-4 text-white">Spotted in the Wild</h2>
+<p class="text-gray-300 font-body-lg text-body-lg">Join thousands of tech enthusiasts upgrading their setup.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Review 1 -->
+<div class="bg-primary-container/80 backdrop-blur-lg border border-white/10 p-6 rounded-2xl reveal stagger-1 hover:border-mc-blue/50 transition-colors">
+<div class="flex items-center gap-2 mb-4 text-mc-orange">
+<span class="material-symbols-outlined text-xl">star</span>
+<span class="material-symbols-outlined text-xl">star</span>
+<span class="material-symbols-outlined text-xl">star</span>
+<span class="material-symbols-outlined text-xl">star</span>
+<span class="material-symbols-outlined text-xl">star</span>
+</div>
+<p class="font-body-md text-body-md text-gray-300 mb-6 italic">"The audio bundle completely transformed my commute. Insane battery life and the noise cancellation is top tier. Plus, the fast shipping was a bonus!"</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-mc-blue/20 flex items-center justify-center text-mc-blue font-bold">AJ</div>
+<div>
+<p class="font-semibold text-sm">Alex J.</p>
+<div class="flex items-center gap-1 text-xs text-mc-blue">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+<span>Verified Buyer</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Review 2 -->
+<div class="bg-primary-container/80 backdrop-blur-lg border border-white/10 p-6 rounded-2xl reveal stagger-2 hover:border-mc-blue/50 transition-colors">
+<div class="flex items-center gap-2 mb-4 text-mc-orange">
+<span class="material-symbols-outlined text-xl">star</span>
+<span class="material-symbols-outlined text-xl">star</span>
+<span class="material-symbols-outlined text-xl">star</span>
+<span class="material-symbols-outlined text-xl">star</span>
+<span class="material-symbols-outlined text-xl">star</span>
+</div>
+<p class="font-body-md text-body-md text-gray-300 mb-6 italic">"Built my entire ecosystem here. The Pro Max combined with the wireless charging stand looks incredible on my desk. Seamless experience from start to finish."</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-mc-orange/20 flex items-center justify-center text-mc-orange font-bold">SM</div>
+<div>
+<p class="font-semibold text-sm">Sarah M.</p>
+<div class="flex items-center gap-1 text-xs text-mc-blue">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+<span>Verified Buyer</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Review 3 -->
+<div class="bg-primary-container/80 backdrop-blur-lg border border-white/10 p-6 rounded-2xl reveal stagger-3 hover:border-mc-blue/50 transition-colors">
+<div class="flex items-center gap-2 mb-4 text-mc-orange">
+<span class="material-symbols-outlined text-xl">star</span>
+<span class="material-symbols-outlined text-xl">star</span>
+<span class="material-symbols-outlined text-xl">star</span>
+<span class="material-symbols-outlined text-xl">star</span>
+<span class="material-symbols-outlined text-xl">star_half</span>
+</div>
+<p class="font-body-md text-body-md text-gray-300 mb-6 italic">"Got my screen repaired and picked up a new case in the same visit. The tech team knows their stuff. Highly recommend the VIP membership."</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-gray-500/20 flex items-center justify-center text-gray-300 font-bold">DK</div>
+<div>
+<p class="font-semibold text-sm">David K.</p>
+<div class="flex items-center gap-1 text-xs text-mc-blue">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+<span>Verified Buyer</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Tech Spec Comparison -->
+<section class="py-20 px-margin-mobile md:px-margin-desktop bg-surface-container-low dark:bg-primary-container reveal">
+<div class="max-w-container-max mx-auto">
+<h2 class="font-display-lg-mobile text-display-lg-mobile md:font-headline-md text-mc-dark mb-12 text-center">Compare the Best</h2>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr>
+<th class="p-4 border-b-2 border-outline-variant/20 font-headline-sm text-headline-sm text-mc-dark">Feature</th>
+<th class="p-4 border-b-2 border-mc-blue font-headline-sm text-headline-sm text-mc-blue">Pro Max Ultra</th>
+<th class="p-4 border-b-2 border-outline-variant/20 font-headline-sm text-headline-sm text-mc-dark">Standard Edition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="hover:bg-white transition-colors group">
+<td class="p-4 border-b border-outline-variant/10 font-label-md text-label-md text-on-surface-variant dark:text-on-primary-container">Processor</td>
+<td class="p-4 border-b border-outline-variant/10 font-body-md text-body-md font-bold text-mc-dark group-hover:text-mc-blue transition-colors">Quantum Core X9</td>
+<td class="p-4 border-b border-outline-variant/10 font-body-md text-body-md text-on-surface-variant dark:text-on-primary-container">Nova Chip 4</td>
+</tr>
+<tr class="hover:bg-white transition-colors group">
+<td class="p-4 border-b border-outline-variant/10 font-label-md text-label-md text-on-surface-variant dark:text-on-primary-container">Camera System</td>
+<td class="p-4 border-b border-outline-variant/10 font-body-md text-body-md font-bold text-mc-dark group-hover:text-mc-blue transition-colors">Quad 108MP + LiDAR</td>
+<td class="p-4 border-b border-outline-variant/10 font-body-md text-body-md text-on-surface-variant dark:text-on-primary-container">Dual 48MP</td>
+</tr>
+<tr class="hover:bg-white transition-colors group">
+<td class="p-4 border-b border-outline-variant/10 font-label-md text-label-md text-on-surface-variant dark:text-on-primary-container">Battery Life</td>
+<td class="p-4 border-b border-outline-variant/10 font-body-md text-body-md font-bold text-mc-dark group-hover:text-mc-blue transition-colors">Up to 48 Hours</td>
+<td class="p-4 border-b border-outline-variant/10 font-body-md text-body-md text-on-surface-variant dark:text-on-primary-container">Up to 24 Hours</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- 4. Member-Only Perks -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop relative overflow-hidden reveal">
+<div class="absolute inset-0 bg-mc-blue/5 -z-10"></div>
+<div class="max-w-container-max mx-auto text-center">
+<h2 class="font-display-lg-mobile text-display-lg-mobile md:font-headline-md text-mc-dark mb-4">Tech Club Exclusives</h2>
+<p class="text-on-surface-variant font-body-lg text-body-lg mb-12 max-w-2xl mx-auto dark:text-on-primary-container">Join the elite. Get VIP access to drops, free premium shipping, and extended warranties.</p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="glass-panel p-8 rounded-2xl relative overflow-hidden group">
+<div class="absolute inset-0 shimmer-effect opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<span class="material-symbols-outlined text-5xl text-mc-orange mb-4 block">local_shipping</span>
+<h3 class="font-headline-sm text-headline-sm text-mc-dark mb-2">Priority Shipping</h3>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-on-primary-container">Free next-day delivery on all orders over $50.</p>
+</div>
+<div class="glass-panel p-8 rounded-2xl relative overflow-hidden group border-mc-blue/30 shadow-lg">
+<div class="absolute inset-0 shimmer-effect opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<span class="material-symbols-outlined text-5xl text-mc-blue mb-4 block">star</span>
+<h3 class="font-headline-sm text-headline-sm text-mc-dark mb-2">Early Access</h3>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-on-primary-container">Shop new drops 24 hours before the general public.</p>
+</div>
+<div class="glass-panel p-8 rounded-2xl relative overflow-hidden group">
+<div class="absolute inset-0 shimmer-effect opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<span class="material-symbols-outlined text-5xl text-mc-orange mb-4 block">security</span>
+<h3 class="font-headline-sm text-headline-sm text-mc-dark mb-2">Extended Care</h3>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-on-primary-container">Complimentary 2-year warranty on devices.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. Customer Gallery (Original, kept intact as per instructions) -->
+<section class="py-20 bg-mc-dark overflow-hidden reveal">
+<div class="text-center mb-10 px-margin-mobile">
+<h2 class="font-display-lg-mobile text-display-lg-mobile md:font-headline-md text-white mb-2">Customer Gallery</h2>
+<p class="text-gray-400 font-body-md text-body-md">Tag @TechShop to be featured</p>
+</div>
+<div class="relative w-full overflow-hidden h-64">
+<div class="marquee-container gap-4 px-4 absolute left-0 top-0 h-full">
+<!-- Repeated placeholder boxes for gallery -->
+<div class="w-64 h-full bg-white/10 rounded-xl border border-white/5 flex-shrink-0 flex items-center justify-center group overflow-hidden relative">
+<div class="absolute inset-0 bg-mc-blue/20 opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl">favorite</span>
+</div>
+<img alt="Gallery image 1" class="w-full h-full object-cover opacity-70 group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDt9Nx_YIufPndFNsh2NWpj0APn7yOfV7gP9hpRObKBhD-S-GbIsqNOoFl3t6QwGwyXT9FAPXtkthZH4zWaKmBdLDj011AR-_Nvy9photalGbc4dZSKqbQncyum0RbcTIiQt-bUhRsCpEC5ATPUl5zVCEw-To3G2R5yvwGrtnJMd-pGI2HmRux8OmKiA9h8wOYD5R_NNbLw3x1jwySJFp6zjjVs0D0myaqiaLJas8v5BREb5rAAp1U2"/>
+</div>
+<div class="w-64 h-full bg-white/10 rounded-xl border border-white/5 flex-shrink-0 flex items-center justify-center group overflow-hidden relative">
+<div class="absolute inset-0 bg-mc-orange/20 opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl">favorite</span>
+</div>
+<img alt="Gallery image 2" class="w-full h-full object-cover opacity-70 group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaveq1t7JB-gDoccY_fdDERBikhF-r4o9hsFHCuwZ3-qJDFRwSb4BM7LF4SBP1fb0Sriu5qX-hVm_gZG7kmBH_NQ3EozF9-yZBzweL2lD4zP3jiDIECVQWnF2h8jwjhHxAAuvsP3gJITGHAcFlN678Ih6gpot5NJAAscAcW3jfi6geKrCL2ZUvbGPiu982Zd9VeAFnyslL7DthPmLFWpW9vFNq5iYBGTMop2gdDTuoCOud8l8pc4Rk"/>
+</div>
+<div class="w-64 h-full bg-white/10 rounded-xl border border-white/5 flex-shrink-0 flex items-center justify-center group overflow-hidden relative">
+<div class="absolute inset-0 bg-mc-blue/20 opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl">favorite</span>
+</div>
+<img alt="Gallery image 3" class="w-full h-full object-cover opacity-70 group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABGhVHeHCdozED8MbULYy3XlzEv0byGOFepEEjOqYWuz624UDY-mGKb4h0MVvGFoNbO9eFMmts3o9Z_gLvUixvYtdXxA7wqiqz6lbX5IcVkjWgFqZnjIYJapPO13jFBgbPOkiiC77iaHNGUPZtwUmx5Mjrjj-xzCOmhJLkZ-Bt3d39ssXpnGuQiAV7zH4ahKLJf4j777vUSPgEQAbfwjewRb_SlymKjZSF_L_poXy4tZGLeo12Z9e7"/>
+</div>
+<div class="w-64 h-full bg-white/10 rounded-xl border border-white/5 flex-shrink-0 flex items-center justify-center group overflow-hidden relative">
+<div class="absolute inset-0 bg-mc-orange/20 opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl">favorite</span>
+</div>
+<img alt="Gallery image 4" class="w-full h-full object-cover opacity-70 group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQweLPoLkFLYuaRmz9nRVCS9_9KvMjJAvZ7Ceq4Smq8vQqg9-JaxfGtwYkL-FmxIZ2D0SADi7FUZIaPPTLKb2fnmqXUMkUfl5xvfE3MiVWAW3s4ogAzVvKCL-nS8JKCAaPNYOi1SSbjgqvxPepYtCF0d4ZJN9JJuSNFQ2L4ecaV5wfZxakfO2Iechi_osCeJMHXPIKsRlU6MmfvFsFJLdWkF5-aoSu5NmgSzhM9yr8kfFR2KpBmv2r"/>
+</div>
+<div class="w-64 h-full bg-white/10 rounded-xl border border-white/5 flex-shrink-0 flex items-center justify-center group overflow-hidden relative">
+<div class="absolute inset-0 bg-mc-blue/20 opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl">favorite</span>
+</div>
+<img alt="Gallery image 5" class="w-full h-full object-cover opacity-70 group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbzJHT6eFk8nUzySR0V1GGfQSWl7iJ8o4vlr4qF4ABtNy9Z11-1puFEEK0NT-wKS-r4ZYG2ghOl-FUPdjZAuJGvAWbgaiXuL8zzjf-lAalQPiMHGiyNJcncd4i4_e17PQxPmnkfzh9m8NiLfeH-zZhZCJiEIWssu7qV9zRgyB7OFPaNe6FiU0nYx2TtQPdiA_2ce_uW-LAYl192ql4vNlpodsouForgHw39TfjbG-RThLVQS-pMvvB"/>
+</div>
+<div class="w-64 h-full bg-white/10 rounded-xl border border-white/5 flex-shrink-0 flex items-center justify-center group overflow-hidden relative">
+<div class="absolute inset-0 bg-mc-orange/20 opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl">favorite</span>
+</div>
+<img alt="Gallery image 6" class="w-full h-full object-cover opacity-70 group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrsDw0uTguaGc1cT6TTxn3HQlioSCtQPNK1GjqcjiP7mIM2HF-xgfqir1WwzB3u9HPslncoU_UE-gF9RIppqMITfme1XhYZF8QUPlSWfuD-dr4x41xRxcqxhddXLBWW-XXNmpVqZeb11bdUqXNzLz7zqOWWCAxZX8Xp5po_uMtvlrriD7FaNDDuWg59e1cVa63L_qyqsrCrZYOiu_e-kib-DiNlteCLAzqGK9CQSaZEtr1JXA43s-C"/>
+</div>
+<!-- Duplicate for infinite scroll effect -->
+<div class="w-64 h-full bg-white/10 rounded-xl border border-white/5 flex-shrink-0 flex items-center justify-center group overflow-hidden relative">
+<div class="absolute inset-0 bg-mc-blue/20 opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl">favorite</span>
+</div>
+<img alt="Gallery image 1" class="w-full h-full object-cover opacity-70 group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOKBdetoCCM8rtwxmPMUVo0e2Nd5E7KxQK5vFsgZgn5_BN_ZFxzdO_zWXCBYBLVv51g3qNYqcvrLcB8Lk8Hp1NSr_4kQZDLeestODylv_dMgO5C-V1FbqaJ-KkEB7PS-8ACt-ODrpVN8zFoEAWPi9NFv-PLexjVSeN8pRFTvG2TXTVDjGuWVUOHdkeyQK1k-4Fbyc2z2yM2bF26GO_BBusjYxJW7Yp9nJByq74kKLHy8O0ElIZDU_P"/>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary dark:bg-primary-container text-on-primary dark:text-on-primary-container font-body-md text-body-md border-t border-outline-variant/10 w-full z-10 relative mt-auto">
+    <div class="px-margin-mobile md:px-margin-desktop py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+        <!-- Brand & About -->
+        <div class="flex flex-col gap-4">
+            <div class="font-headline-md text-headline-md text-headline-sm font-bold text-on-primary tracking-tight">FixNex</div>
+            <p class="text-on-primary-fixed-variant dark:text-on-primary-container/80 text-sm leading-relaxed max-w-xs">
+                Your one-stop destination for premium mobile phones, smart accessories, and expert repair services. Quality you can trust.
+            </p>
+            <div class="flex gap-4 mt-2 text-on-primary-fixed-variant dark:text-on-primary-container/80">
+                <a href="#" class="hover:text-secondary-fixed transition-colors"><span class="material-symbols-outlined text-[20px]">facebook</span></a>
+                <a href="#" class="hover:text-secondary-fixed transition-colors"><span class="material-symbols-outlined text-[20px]">language</span></a>
+                <a href="#" class="hover:text-secondary-fixed transition-colors"><span class="material-symbols-outlined text-[20px]">camera_alt</span></a>
+                <a href="#" class="hover:text-secondary-fixed transition-colors"><span class="material-symbols-outlined text-[20px]">play_arrow</span></a>
+            </div>
+        </div>
+        
+        <!-- Quick Links -->
+        <div class="flex flex-col gap-4">
+            <h4 class="font-label-lg font-semibold text-on-primary mb-2">Quick Links</h4>
+            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/80 hover:text-secondary-fixed transition-colors text-sm w-fit" href="index.html">Home</a>
+            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/80 hover:text-secondary-fixed transition-colors text-sm w-fit" href="product.html">Products</a>
+            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/80 hover:text-secondary-fixed transition-colors text-sm w-fit" href="services.html">Services</a>
+            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/80 hover:text-secondary-fixed transition-colors text-sm w-fit" href="blog.html">Blog</a>
+            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/80 hover:text-secondary-fixed transition-colors text-sm w-fit" href="contact.html">Contact Us</a>
+        </div>
+        
+        <!-- Customer Service -->
+        <div class="flex flex-col gap-4">
+            <h4 class="font-label-lg font-semibold text-on-primary mb-2">Customer Service</h4>
+            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/80 hover:text-secondary-fixed transition-colors text-sm w-fit" href="#">FAQ</a>
+            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/80 hover:text-secondary-fixed transition-colors text-sm w-fit" href="#">Shipping Information</a>
+            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/80 hover:text-secondary-fixed transition-colors text-sm w-fit" href="#">Returns & Exchanges</a>
+            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/80 hover:text-secondary-fixed transition-colors text-sm w-fit" href="#">Track Order</a>
+            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/80 hover:text-secondary-fixed transition-colors text-sm w-fit" href="#">Warranty</a>
+        </div>
+        
+        <!-- Newsletter -->
+        <div class="flex flex-col gap-4">
+            <h4 class="font-label-lg font-semibold text-on-primary mb-2">Stay Updated</h4>
+            <p class="text-on-primary-fixed-variant dark:text-on-primary-container/80 text-sm mb-2">
+                Subscribe to our newsletter for the latest products, deals, and tech news.
+            </p>
+            <form class="flex flex-col sm:flex-row gap-2 mt-auto" onsubmit="event.preventDefault()">
+                <input type="email" placeholder="Email Address" class="bg-surface-container/10 border border-outline-variant/30 text-on-primary text-sm rounded-md px-4 py-2 w-full focus:outline-none focus:border-secondary-fixed transition-colors placeholder:text-on-primary-fixed-variant/50">
+                <button type="submit" class="bg-secondary text-on-secondary hover:bg-secondary-fixed-dim transition-colors px-4 py-2 rounded-md text-sm font-label-md text-label-md whitespace-nowrap">
+                    Subscribe
+                </button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Bottom Bar -->
+    <div class="border-t border-outline-variant/10 px-margin-mobile md:px-margin-desktop py-6 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-on-primary-fixed-variant dark:text-on-primary-container/60 text-xs">
+            &copy; 2026 FixNex. All rights reserved.
+        </p>
+        <div class="flex gap-6">
+            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/60 hover:text-secondary-fixed transition-colors text-xs" href="#">Privacy Policy</a>
+            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/60 hover:text-secondary-fixed transition-colors text-xs" href="#">Terms of Service</a>
+            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/60 hover:text-secondary-fixed transition-colors text-xs" href="#">Cookie Policy</a>
+        </div>
+    </div>
+</footer>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const reveals = document.querySelectorAll(".reveal");
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add("active");
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        reveals.forEach(reveal => {
+            observer.observe(reveal);
+        });
+    });
+</script>
+
+<script>
+    (function() {
+        // Shared Theme Manager
+        const themeToggle = document.getElementById('theme-toggle') || document.getElementById('themeToggle');
+        const html = document.documentElement;
+        
+        // Init theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            html.classList.add('dark');
+            html.classList.remove('light');
+        } else if (savedTheme === 'light') {
+            html.classList.add('light');
+            html.classList.remove('dark');
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            html.classList.add('dark');
+        }
+
+        function updateIcon() {
+            if (!themeToggle) return;
+            const spans = themeToggle.querySelectorAll('span');
+            if (html.classList.contains('dark')) {
+                if (spans.length === 1) spans[0].textContent = 'light_mode';
+                else if (spans.length === 2) { spans[0].classList.add('hidden'); spans[1].classList.remove('hidden'); }
+            } else {
+                if (spans.length === 1) spans[0].textContent = 'dark_mode';
+                else if (spans.length === 2) { spans[0].classList.remove('hidden'); spans[1].classList.add('hidden'); }
+            }
+        }
+        
+        updateIcon();
+
+        if (themeToggle) {
+            // Remove existing listeners if this is re-executed (though shouldn't happen)
+            const newToggle = themeToggle.cloneNode(true);
+            if (themeToggle.parentNode) {
+                themeToggle.parentNode.replaceChild(newToggle, themeToggle);
+            }
+            newToggle.addEventListener('click', () => {
+                if (html.classList.contains('dark')) {
+                    html.classList.remove('dark');
+                    html.classList.add('light');
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    html.classList.remove('light');
+                    html.classList.add('dark');
+                    localStorage.setItem('theme', 'dark');
+                }
+                
+                // Keep the icon logic up to date
+                const spans = newToggle.querySelectorAll('span');
+                if (html.classList.contains('dark')) {
+                    if (spans.length === 1) spans[0].textContent = 'light_mode';
+                    else if (spans.length === 2) { spans[0].classList.add('hidden'); spans[1].classList.remove('hidden'); }
+                } else {
+                    if (spans.length === 1) spans[0].textContent = 'dark_mode';
+                    else if (spans.length === 2) { spans[0].classList.remove('hidden'); spans[1].classList.add('hidden'); }
+                }
+            });
+        }
+    })();
+</script>
+
+
+<script>
+    // Global Scroll Animation Observer (Updated)
+    document.addEventListener('DOMContentLoaded', () => {
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Standard visibility classes
+                    entry.target.classList.add('visible', 'is-visible', 'active');
+                    
+                    // Remove hidden states
+                    entry.target.classList.remove('opacity-0', 'hidden-anim');
+                    
+                    // Add animation class if it's a scroll-anim
+                    if (entry.target.classList.contains('scroll-anim')) {
+                        entry.target.classList.add('animate-fade-in-up');
+                    }
+                    
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Select all elements that require scroll animation
+        const animatedElements = document.querySelectorAll('.fade-in-up, .slide-up, .zoom-in, .animate-fade-in-up, .pop-icon, .scroll-anim, .reveal, .hidden-anim');
+        animatedElements.forEach(el => observer.observe(el));
+    });
+</script>
+
+</body></html>

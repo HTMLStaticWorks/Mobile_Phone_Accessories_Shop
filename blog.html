@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Blog - FixNex</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Poppins:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-shimmer {
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%);
+            background-size: 200% 100%;
+            animation: shimmer 2s infinite linear;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+    </style>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#c6c4dc",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#006fee",
+                        "inverse-on-surface": "#f4f0f1",
+                        "surface-container-low": "#f7f2f4",
+                        "surface-container-high": "#ebe7e9",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#1a1a2c",
+                        "tertiary-container": "#381200",
+                        "primary-fixed-dim": "#c6c4dc",
+                        "tertiary": "#0c0200",
+                        "surface-variant": "#e5e1e3",
+                        "on-secondary-fixed": "#001a42",
+                        "primary-container": "#1c1c2e",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "on-primary-container": "#85839a",
+                        "background": "#fcf8fa",
+                        "secondary-fixed": "#d8e2ff",
+                        "outline-variant": "#c8c5cd",
+                        "tertiary-fixed-dim": "#ffb693",
+                        "on-primary-fixed-variant": "#454559",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#fefcff",
+                        "primary": "#030312",
+                        "inverse-surface": "#313032",
+                        "surface-container": "#f1edef",
+                        "on-background": "#1c1b1d",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#e05d00",
+                        "secondary": "#0058be",
+                        "surface": "#fcf8fa",
+                        "surface-bright": "#fcf8fa",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed": "#351000",
+                        "tertiary-fixed": "#ffdbcc",
+                        "on-secondary-fixed-variant": "#004395",
+                        "secondary-fixed-dim": "#aec6ff",
+                        "on-surface-variant": "#47464c",
+                        "primary-fixed": "#e2e0f9",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#7a3000",
+                        "surface-dim": "#ddd9db",
+                        "on-surface": "#1c1b1d",
+                        "surface-container-highest": "#e5e1e3",
+                        "outline": "#78767d",
+                        "surface-tint": "#5d5c71"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "unit": "8px",
+                        "margin-desktop": "40px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter"],
+                        "headline-sm": ["Poppins"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Poppins"],
+                        "display-lg-mobile": ["Poppins"],
+                        "headline-md": ["Poppins"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-md": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230058be'/><text x='50' y='67' font-family='sans-serif' font-size='55' font-weight='bold' fill='white' text-anchor='middle'>FN</text></svg>">
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md text-body-md antialiased pt-16 dark:bg-primary dark:text-on-primary">
+<!-- TopNavBar -->
+</head>
+<body class="bg-background dark:bg-primary text-on-background dark:text-on-primary font-body-md text-body-md min-h-screen flex flex-col relative transition-colors duration-300">
+<!-- Global Circuit Pattern Overlay -->
+<div class="fixed inset-0 pointer-events-none bg-circuit z-0"></div>
+<!-- TopNavBar (Semantic Shell) -->
+<header class="bg-surface/80 dark:bg-primary/80 backdrop-blur-md font-label-md text-label-md border-b border-outline-variant/20 shadow-sm fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16">
+<!-- Brand Logo -->
+<div class="font-headline-sm text-headline-sm font-bold text-primary dark:text-on-primary-fixed">
+            FixNex
+        </div>
+<!-- Desktop Navigation Links -->
+<nav class="hidden md:flex gap-2 lg:gap-3 items-center">
+            <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all px-2 py-1 rounded dark:text-on-primary-container" href="index.html">Home</a>
+            <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all px-2 py-1 rounded dark:text-on-primary-container" href="home2.html">Home2</a>
+            <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all px-2 py-1 rounded dark:text-on-primary-container" href="services.html">Services</a>
+            <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all px-2 py-1 rounded dark:text-on-primary-container" href="product.html">Product</a>
+            <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all px-2 py-1 rounded dark:text-on-primary-container" href="gallery.html">Gallery</a>
+            <a class="font-label-md text-label-md text-secondary border-b-2 border-secondary pb-1 px-2 transition-all" href="blog.html">Blog</a>
+            <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all px-2 py-1 rounded dark:text-on-primary-container" href="contact.html">Contact</a>
+        </nav>
+<!-- Actions -->
+<div class="flex items-center space-x-unit md:space-x-4">
+<button aria-label="shopping_cart" class="text-secondary dark:text-secondary-fixed hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all p-2 rounded-full scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+<button aria-label="dark_mode" class="text-secondary dark:text-secondary-fixed hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all p-2 rounded-full scale-95 active:scale-90 transition-transform" id="themeToggle">>
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+<div class="hidden md:flex items-center space-x-2 ml-4">
+<button class="px-4 py-2 text-primary dark:text-on-primary font-label-md text-label-md border-2 border-primary dark:border-outline-variant hover:bg-surface-container-high dark:hover:bg-primary-container transition-colors rounded" onclick="window.location.href='login.html'">
+                    Login
+                </button>
+<button class="px-4 py-2 bg-secondary text-on-secondary font-label-md text-label-md hover:bg-secondary-fixed-dim transition-colors rounded" onclick="window.location.href='regitser.html'">
+                    Sign Up
+                </button>
+</div>
+<!-- Mobile Menu Toggle -->
+<button aria-label="menu" class="md:hidden text-primary dark:text-on-primary p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8 md:py-12">
+<!-- Header & Search -->
+<div class="mb-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+<div>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-2 dark:text-on-primary">Tech News &amp; Guides</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant dark:text-on-primary-container">Stay updated with the latest reviews, tips, and industry news.</p>
+</div>
+<div class="w-full md:w-auto flex-shrink-0 relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant dark:text-on-primary-container">search</span>
+<input class="w-full md:w-80 pl-12 pr-4 py-3 bg-surface-container rounded-full border border-outline-variant focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all text-on-surface shadow-sm dark:text-on-primary dark:bg-primary-container" placeholder="Search articles..." type="text"/>
+</div>
+</div>
+<!-- Category Filters -->
+<div class="flex overflow-x-auto pb-4 mb-8 gap-3 no-scrollbar border-b border-outline-variant/20">
+<button class="px-5 py-2 rounded-full border border-secondary bg-secondary text-on-secondary font-label-md text-label-md whitespace-nowrap transition-colors">All Posts</button>
+<button class="px-5 py-2 rounded-full border border-outline-variant text-on-surface hover:border-secondary hover:text-secondary font-label-md text-label-md whitespace-nowrap transition-colors dark:text-on-primary">Reviews</button>
+<button class="px-5 py-2 rounded-full border border-outline-variant text-on-surface hover:border-secondary hover:text-secondary font-label-md text-label-md whitespace-nowrap transition-colors dark:text-on-primary">Repair Tips</button>
+<button class="px-5 py-2 rounded-full border border-outline-variant text-on-surface hover:border-secondary hover:text-secondary font-label-md text-label-md whitespace-nowrap transition-colors dark:text-on-primary">Accessories</button>
+<button class="px-5 py-2 rounded-full border border-outline-variant text-on-surface hover:border-secondary hover:text-secondary font-label-md text-label-md whitespace-nowrap transition-colors dark:text-on-primary">News</button>
+<button class="px-5 py-2 rounded-full border border-outline-variant text-on-surface hover:border-secondary hover:text-secondary font-label-md text-label-md whitespace-nowrap transition-colors dark:text-on-primary">Deals</button>
+</div>
+<!-- Blog Grid (Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-12">
+<!-- Featured Article (Span 8) -->
+<article class="md:col-span-8 group cursor-pointer rounded-xl overflow-hidden relative bg-surface/80 backdrop-blur-[20px] border border-outline-variant/30 hover:border-secondary transition-colors duration-300 shadow-sm flex flex-col h-full min-h-[400px]">
+<div class="h-64 md:h-80 w-full overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A sleek, modern smartphone resting on a reflective glass table in a high-tech, minimalist environment. Soft, cool blue lighting highlights the metallic edges of the device, creating a futuristic and premium aesthetic. The background features subtle, blurred geometric shapes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJvlU1NlG5ykVTyyEsDEff2svT8ve4vI1PSWdhKTS7CgjbKY7aHdhF-vVzdWUl10bl-bozxN1HTUo_6Mur18jnO49xVsSdM1oNS0WZdFC4S4UnjEaqzSFKntxLxtFo44-EXPkaneH3qmntbeoMG59viDRIAM5h8XnAiQ6DegIQG2gMKgX0HMcTaI5f-IXnPoB4mNHHMnIadKErjm5iswgc_6VzNkI7-RfZYXVBC-L8izhVv1Xrsd86"/>
+<div class="absolute top-4 left-4 bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded font-label-md text-label-md text-xs shadow-md">New Release</div>
+</div>
+<div class="p-6 flex-grow flex flex-col justify-between z-10 bg-gradient-to-t from-surface via-surface to-transparent">
+<div>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md text-sm mb-3 dark:text-on-primary-container">
+<span>Reviews</span>
+<span>•</span>
+<span>Oct 24, 2026</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-primary mb-3 group-hover:text-secondary transition-colors line-clamp-2 dark:text-on-primary">The Ultimate Flagship Showdown: Performance Tested</h2>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 dark:text-on-primary-container">We put the latest high-end devices through rigorous benchmarking and real-world scenarios to see which phone truly earns the crown this year.</p>
+</div>
+<div class="mt-6 flex items-center justify-between">
+<span class="font-label-md text-label-md text-secondary flex items-center gap-1 group-hover:gap-2 transition-all">Read More <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
+</div>
+</div>
+</article>
+<!-- Secondary Article (Span 4) -->
+<article class="md:col-span-4 group cursor-pointer rounded-xl overflow-hidden relative bg-surface/80 backdrop-blur-[20px] border border-outline-variant/30 hover:border-secondary transition-colors duration-300 shadow-sm flex flex-col h-full min-h-[400px]">
+<div class="h-48 w-full overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A macro shot of a person using a precision screwdriver to repair a modern smartphone. The scene is brightly lit with white studio lighting, emphasizing the tiny screws and intricate internal components of the device against a clean white anti-static mat." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcHs77iVBBqWmKxyQkA9We2raBszWNcVUSKf2N82g6a4NOkvKwkTza7uxGWzQ3bOKg07g7-CuDY-tP5zh30NY1OqTzcgMww39CTyu8tZ-zi6meUPvIYMdomaFixpIE6H0GnHaBtuEmoNxWk24O9g03IibUwLfvX23wrM7FMdG9XH8bUrfxolfePWO8i-JgE3Xseps-K7wLDcI5tXGydCx5QJ20O_EIPFSiJ2pnrCWWMh-y_Db_sVy5"/>
+</div>
+<div class="p-6 flex-grow flex flex-col justify-between z-10">
+<div>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md text-sm mb-3 dark:text-on-primary-container">
+<span>Repair Tips</span>
+<span>•</span>
+<span>Oct 22, 2026</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3 group-hover:text-secondary transition-colors line-clamp-2 dark:text-on-primary">Screen Replacement Guide: Avoid Common Pitfalls</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3 dark:text-on-primary-container">A step-by-step guide to safely replacing a cracked display without damaging sensitive internal ribbons.</p>
+</div>
+</div>
+</article>
+<!-- Tertiary Articles (Span 4 each) -->
+<article class="md:col-span-4 group cursor-pointer rounded-xl overflow-hidden relative bg-surface/80 backdrop-blur-[20px] border border-outline-variant/30 hover:border-secondary transition-colors duration-300 shadow-sm flex flex-col">
+<div class="h-48 w-full overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A collection of premium wireless earbuds and a sleek power bank arranged neatly on a matte black desk. Soft, warm directional lighting casts subtle shadows, highlighting the matte finish and modern industrial design of the tech accessories." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACwe7Y5c9r4is6T1EWnstb-nFqkYFZt4uQxeA19neiid4Ebg4Fg_XoYWwhiYO9E3S9zLPU9kVZOyBSILO73BvggnNPSsoXgSEUkn4ZmJ8QzNvDFzO2HWzTRbBbeMgggPS6zfUNm105UZf6at_6rOub7Dw1IPWwGkrt9bqhM4vyyjZq1sgdN7SygneHnzvVUW3AqjXKYO844bJxdJSSc0Ax4ZQcxigDP0Ng4MYRDsYJTjUrLvnNS1_W"/>
+</div>
+<div class="p-5 flex-grow flex flex-col">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md text-sm mb-2 dark:text-on-primary-container">
+<span>Accessories</span>
+<span>•</span>
+<span>Oct 20, 2026</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2 group-hover:text-secondary transition-colors line-clamp-2 dark:text-on-primary">Top 5 Wireless Audio Companions</h3>
+</div>
+</article>
+<article class="md:col-span-4 group cursor-pointer rounded-xl overflow-hidden relative bg-surface/80 backdrop-blur-[20px] border border-outline-variant/30 hover:border-secondary transition-colors duration-300 shadow-sm flex flex-col">
+<div class="h-48 w-full overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A stylized graphic showing abstract digital networking nodes connecting in a bright, modern light-mode environment. Tiny glowing blue lines interconnect floating data packets over a clean, off-white background, representing high-speed connectivity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3fKjNqUh6KjP6mitWKO1p35rbkf1ERAPmznvAMXL1B6yCkZxz5qfFbnrtecsBEoHj62vrNt8j26He-G-rpVZ2y4_s9dcoGBRvxvkUrs0_ecgywfUtGXD3zRnYmWZEHRFzSVYrVP30HkaAqKZ741YF1Zq8GmafiAKqRbnAc3d2ccZtgU9cytZx2IgJqkyvzOFSiqW2KhoHNMJCSF6X8NF1A1h7ieQjWfGY55Mamp4k99VUxdwZ3-1-"/>
+</div>
+<div class="p-5 flex-grow flex flex-col">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md text-sm mb-2 dark:text-on-primary-container">
+<span>News</span>
+<span>•</span>
+<span>Oct 18, 2026</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2 group-hover:text-secondary transition-colors line-clamp-2 dark:text-on-primary">Next-Gen 6G Networks: What to Expect</h3>
+</div>
+</article>
+<article class="md:col-span-4 group cursor-pointer rounded-xl overflow-hidden relative bg-surface/80 backdrop-blur-[20px] border border-outline-variant/30 hover:border-secondary transition-colors duration-300 shadow-sm flex flex-col">
+<div class="h-48 w-full overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A vibrant, stylized composition featuring a bright orange tag with a percentage sign resting on top of a premium smartphone box. The background is a clean, modern white studio setup with sharp, high-key lighting to emphasize retail promotion." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6MEt8_XNi_sV2f0qAXHkHRNxiy7FX-H9bo_ITQfGTA4-NiD5k7H_0Cj5nptQX1XVb1-dz-BYBN9nAKNdUAYUAgg3MLlVjUbmhLoZ-NRqpLT8e9pi9AJVYdCcw5K9EJxuqR7mq7ccQUCj5OxizwOdtIULunP2Rz03lSrKxprrwP5hetznfrAatez2QFcrQp8znAHzGmjtFU7lHliDT43C2QQ6GkB8JNqiyv7GrSZMMeGl6arKjDEfD"/>
+</div>
+<div class="p-5 flex-grow flex flex-col">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md text-sm mb-2 dark:text-on-primary-container">
+<span>Deals</span>
+<span>•</span>
+<span>Oct 15, 2026</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2 group-hover:text-secondary transition-colors line-clamp-2 dark:text-on-primary">Weekend Flash Sale: Huge Savings on Cases</h3>
+</div>
+</article>
+</div>
+<!-- Pagination -->
+<div class="flex justify-center items-center gap-2 mb-16">
+<button class="w-10 h-10 rounded border border-outline-variant flex items-center justify-center text-on-surface hover:border-secondary hover:text-secondary transition-colors disabled:opacity-50 disabled:cursor-not-allowed dark:text-on-primary">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded border border-secondary bg-secondary text-on-secondary font-label-md text-label-md flex items-center justify-center">1</button>
+<button class="w-10 h-10 rounded border border-outline-variant text-on-surface hover:border-secondary hover:text-secondary font-label-md text-label-md flex items-center justify-center transition-colors dark:text-on-primary">2</button>
+<button class="w-10 h-10 rounded border border-outline-variant text-on-surface hover:border-secondary hover:text-secondary font-label-md text-label-md flex items-center justify-center transition-colors dark:text-on-primary">3</button>
+<span class="text-on-surface-variant px-2 dark:text-on-primary-container">...</span>
+<button class="w-10 h-10 rounded border border-outline-variant text-on-surface hover:border-secondary hover:text-secondary font-label-md text-label-md flex items-center justify-center transition-colors dark:text-on-primary">12</button>
+<button class="w-10 h-10 rounded border border-outline-variant flex items-center justify-center text-on-surface hover:border-secondary hover:text-secondary transition-colors dark:text-on-primary">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+<!-- 1. Trending Topics Grid -->
+<section class="mb-20 scroll-anim hidden-anim opacity-0">
+<h2 class="font-headline-md text-headline-md text-primary mb-6 dark:text-on-primary">Trending Topics</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="group cursor-pointer p-6 rounded-xl bg-surface-container hover:bg-surface-container-high border border-outline-variant/30 hover:border-secondary transition-all duration-300 hover:scale-105 hover:shadow-[0_0_15px_rgba(0,88,190,0.2)] flex flex-col items-center text-center dark:bg-primary-container">
+<span class="material-symbols-outlined text-4xl text-secondary mb-3">smart_toy</span>
+<h3 class="font-label-md text-label-md text-on-surface group-hover:text-secondary dark:text-on-primary">AI in Mobile</h3>
+</div>
+<div class="group cursor-pointer p-6 rounded-xl bg-surface-container hover:bg-surface-container-high border border-outline-variant/30 hover:border-secondary transition-all duration-300 hover:scale-105 hover:shadow-[0_0_15px_rgba(0,88,190,0.2)] flex flex-col items-center text-center dark:bg-primary-container">
+<span class="material-symbols-outlined text-4xl text-secondary mb-3">cell_tower</span>
+<h3 class="font-label-md text-label-md text-on-surface group-hover:text-secondary dark:text-on-primary">5G Evolution</h3>
+</div>
+<div class="group cursor-pointer p-6 rounded-xl bg-surface-container hover:bg-surface-container-high border border-outline-variant/30 hover:border-secondary transition-all duration-300 hover:scale-105 hover:shadow-[0_0_15px_rgba(0,88,190,0.2)] flex flex-col items-center text-center dark:bg-primary-container">
+<span class="material-symbols-outlined text-4xl text-secondary mb-3">eco</span>
+<h3 class="font-label-md text-label-md text-on-surface group-hover:text-secondary dark:text-on-primary">Sustainability</h3>
+</div>
+<div class="group cursor-pointer p-6 rounded-xl bg-surface-container hover:bg-surface-container-high border border-outline-variant/30 hover:border-secondary transition-all duration-300 hover:scale-105 hover:shadow-[0_0_15px_rgba(0,88,190,0.2)] flex flex-col items-center text-center dark:bg-primary-container">
+<span class="material-symbols-outlined text-4xl text-secondary mb-3">sports_esports</span>
+<h3 class="font-label-md text-label-md text-on-surface group-hover:text-secondary dark:text-on-primary">Mobile Gaming</h3>
+</div>
+</div>
+</section>
+<!-- 2. "Tech Talk" Video Showcase -->
+<section class="mb-20 scroll-anim hidden-anim opacity-0 rounded-2xl bg-primary p-8 text-on-primary">
+<div class="flex justify-between items-end mb-6">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-primary mb-2">Tech Talk Showcase</h2>
+<p class="font-body-md text-body-md text-on-primary-fixed-variant">Watch our latest in-depth reviews and guides.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="md:col-span-2 relative rounded-xl overflow-hidden bg-surface-tint/20 aspect-video group cursor-pointer">
+<div class="absolute inset-0 flex items-center justify-center z-10">
+<button class="w-16 h-16 rounded-full bg-secondary/90 text-on-secondary flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+<span class="material-symbols-outlined text-3xl ml-1">play_arrow</span>
+</button>
+</div>
+<img alt="Video thumbnail" class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCR08q79UovRM-OthbLr-akU8cVnhhZCvXoYj9c461fVtdP5ddgf_r0GzOj5X77YeAY8nMoDwT_wSh3oLPfLPnznkzdODX2Bmqif0fBJvAH9ebZy793ClEcYc_2j1J8RR3fbN-bPnhuAFtIcTe6E5w9kyG1rjE1Le-xlVgQ65AcMG8Wq7nYoyTIvZ5_mHjKIKCXw4S3fw_C2HesQcxpp7Ejx9A2eTJRj8ayyQnCZWgIkkgE74VZ5Cgl"/>
+<div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-primary to-transparent z-10">
+<h3 class="font-headline-sm text-headline-sm text-on-primary">Inside the Latest Foldable Tech</h3>
+</div>
+</div>
+<div class="md:col-span-1 flex flex-col gap-4 overflow-y-auto max-h-[400px] no-scrollbar">
+<div class="flex gap-3 group cursor-pointer">
+<div class="w-24 h-16 rounded-lg overflow-hidden relative flex-shrink-0 bg-surface-tint/20">
+<div class="absolute inset-0 flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-on-primary text-xl drop-shadow-md">play_circle</span>
+</div>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-primary group-hover:text-secondary-fixed transition-colors line-clamp-2">Camera Test: Night Mode Compared</h4>
+<span class="text-xs text-on-primary-fixed-variant">5:23</span>
+</div>
+</div>
+<div class="flex gap-3 group cursor-pointer">
+<div class="w-24 h-16 rounded-lg overflow-hidden relative flex-shrink-0 bg-surface-tint/20">
+<div class="absolute inset-0 flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-on-primary text-xl drop-shadow-md">play_circle</span>
+</div>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-primary group-hover:text-secondary-fixed transition-colors line-clamp-2">How to Maximize Battery Life</h4>
+<span class="text-xs text-on-primary-fixed-variant">8:45</span>
+</div>
+</div>
+<div class="flex gap-3 group cursor-pointer">
+<div class="w-24 h-16 rounded-lg overflow-hidden relative flex-shrink-0 bg-surface-tint/20">
+<div class="absolute inset-0 flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-on-primary text-xl drop-shadow-md">play_circle</span>
+</div>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-primary group-hover:text-secondary-fixed transition-colors line-clamp-2">Top 10 Accessories for 2026</h4>
+<span class="text-xs text-on-primary-fixed-variant">12:10</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Interactive Spec Comparison Widget -->
+<section class="mb-20 scroll-anim hidden-anim opacity-0">
+<h2 class="font-headline-md text-headline-md text-primary mb-6 text-center dark:text-on-primary">Spec Showdown</h2>
+<div class="bg-surface-container rounded-2xl p-6 md:p-8 border border-outline-variant/20 shadow-sm max-w-4xl mx-auto dark:bg-primary-container">
+<div class="flex justify-between items-center mb-8 border-b border-outline-variant/20 pb-4">
+<h3 class="font-headline-sm text-headline-sm text-on-surface w-1/3 text-center dark:text-on-primary">Flagship A</h3>
+<span class="text-on-surface-variant w-1/3 text-center font-label-md text-label-md dark:text-on-primary-container">VS</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface w-1/3 text-center dark:text-on-primary">Flagship B</h3>
+</div>
+<div class="space-y-6">
+<!-- Metric 1 -->
+<div>
+<div class="flex justify-between text-sm font-label-md text-label-md text-on-surface mb-2 dark:text-on-primary">
+<span>Battery Life</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-1/2 bg-surface-variant rounded-full h-3 flex justify-end">
+<div class="bg-secondary rounded-full h-3" style="width: 85%;"></div>
+</div>
+<div class="w-1/2 bg-surface-variant rounded-full h-3">
+<div class="bg-secondary-container rounded-full h-3" style="width: 70%;"></div>
+</div>
+</div>
+</div>
+<!-- Metric 2 -->
+<div>
+<div class="flex justify-between text-sm font-label-md text-label-md text-on-surface mb-2 dark:text-on-primary">
+<span>Camera Performance</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-1/2 bg-surface-variant rounded-full h-3 flex justify-end">
+<div class="bg-secondary rounded-full h-3" style="width: 92%;"></div>
+</div>
+<div class="w-1/2 bg-surface-variant rounded-full h-3">
+<div class="bg-secondary-container rounded-full h-3" style="width: 95%;"></div>
+</div>
+</div>
+</div>
+<!-- Metric 3 -->
+<div>
+<div class="flex justify-between text-sm font-label-md text-label-md text-on-surface mb-2 dark:text-on-primary">
+<span>Processing Speed</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-1/2 bg-surface-variant rounded-full h-3 flex justify-end">
+<div class="bg-secondary rounded-full h-3" style="width: 88%;"></div>
+</div>
+<div class="w-1/2 bg-surface-variant rounded-full h-3">
+<div class="bg-secondary-container rounded-full h-3" style="width: 82%;"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Community & Author Spotlight -->
+<section class="mb-12 scroll-anim hidden-anim opacity-0">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Editor's Picks & Authors -->
+<div class="bg-surface-container-lowest dark:bg-primary/50 rounded-2xl p-6 border border-outline-variant/30 shadow-sm">
+<h2 class="font-headline-sm text-headline-sm text-primary mb-6 dark:text-on-primary">Editor's Spotlight</h2>
+<div class="space-y-4">
+<div class="flex items-center gap-4 p-4 rounded-xl hover:bg-surface-container transition-colors">
+<div class="w-12 h-12 rounded-full bg-surface-tint/20 flex-shrink-0"></div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface dark:text-on-primary">Alex Rodriguez</h4>
+<p class="text-sm text-on-surface-variant dark:text-on-primary-container">Senior Hardware Reviewer</p>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 rounded-xl hover:bg-surface-container transition-colors">
+<div class="w-12 h-12 rounded-full bg-surface-tint/20 flex-shrink-0"></div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface dark:text-on-primary">Sarah Chen</h4>
+<p class="text-sm text-on-surface-variant dark:text-on-primary-container">Mobile Software Expert</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Newsletter Signup -->
+<div class="relative rounded-2xl p-8 border border-secondary/30 overflow-hidden flex flex-col justify-center bg-secondary text-on-secondary">
+<!-- Shimmer effect overlay -->
+<div class="absolute inset-0 animate-shimmer pointer-events-none"></div>
+<div class="relative z-10">
+<h2 class="font-headline-sm text-headline-sm mb-2">Join the Inner Circle</h2>
+<p class="font-body-md text-body-md mb-6 opacity-90">Get exclusive tech insights, early access to reviews, and special deals delivered weekly.</p>
+<form class="flex flex-col sm:flex-row gap-3">
+<input class="flex-grow px-4 py-3 rounded-lg bg-surface text-on-surface border-none focus:ring-2 focus:ring-secondary-container outline-none dark:text-on-primary" placeholder="Your email address" required="" type="email"/>
+<button class="px-6 py-3 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-colors whitespace-nowrap" type="submit">
+                        Subscribe
+                    </button>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary dark:bg-primary-container text-on-primary dark:text-on-primary-container font-body-md text-body-md border-t border-outline-variant/10 w-full z-10 relative mt-auto">
+    <div class="px-margin-mobile md:px-margin-desktop py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+        <!-- Brand & About -->
+        <div class="flex flex-col gap-4">
+            <div class="font-headline-md text-headline-md text-headline-sm font-bold text-on-primary tracking-tight">FixNex</div>
+            <p class="text-on-primary-fixed-variant dark:text-on-primary-container/80 text-sm leading-relaxed max-w-xs">
+                Your one-stop destination for premium mobile phones, smart accessories, and expert repair services. Quality you can trust.
+            </p>
+            <div class="flex gap-4 mt-2 text-on-primary-fixed-variant dark:text-on-primary-container/80">
+                <a href="#" class="hover:text-secondary-fixed transition-colors"><span class="material-symbols-outlined text-[20px]">facebook</span></a>
+                <a href="#" class="hover:text-secondary-fixed transition-colors"><span class="material-symbols-outlined text-[20px]">language</span></a>
+                <a href="#" class="hover:text-secondary-fixed transition-colors"><span class="material-symbols-outlined text-[20px]">camera_alt</span></a>
+                <a href="#" class="hover:text-secondary-fixed transition-colors"><span class="material-symbols-outlined text-[20px]">play_arrow</span></a>
+            </div>
+        </div>
+        
+        <!-- Quick Links -->
+        <div class="flex flex-col gap-4">
+            <h4 class="font-label-lg font-semibold text-on-primary mb-2">Quick Links</h4>
+            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/80 hover:text-secondary-fixed transition-colors text-sm w-fit" href="index.html">Home</a>
+            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/80 hover:text-secondary-fixed transition-colors text-sm w-fit" href="product.html">Products</a>
+            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/80 hover:text-secondary-fixed transition-colors text-sm w-fit" href="services.html">Services</a>
+            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/80 hover:text-secondary-fixed transition-colors text-sm w-fit" href="blog.html">Blog</a>
+            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/80 hover:text-secondary-fixed transition-colors text-sm w-fit" href="contact.html">Contact Us</a>
+        </div>
+        
+        <!-- Customer Service -->
+        <div class="flex flex-col gap-4">
+            <h4 class="font-label-lg font-semibold text-on-primary mb-2">Customer Service</h4>
+            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/80 hover:text-secondary-fixed transition-colors text-sm w-fit" href="#">FAQ</a>
+            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/80 hover:text-secondary-fixed transition-colors text-sm w-fit" href="#">Shipping Information</a>
+            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/80 hover:text-secondary-fixed transition-colors text-sm w-fit" href="#">Returns & Exchanges</a>
+            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/80 hover:text-secondary-fixed transition-colors text-sm w-fit" href="#">Track Order</a>
+            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/80 hover:text-secondary-fixed transition-colors text-sm w-fit" href="#">Warranty</a>
+        </div>
+        
+        <!-- Newsletter -->
+        <div class="flex flex-col gap-4">
+            <h4 class="font-label-lg font-semibold text-on-primary mb-2">Stay Updated</h4>
+            <p class="text-on-primary-fixed-variant dark:text-on-primary-container/80 text-sm mb-2">
+                Subscribe to our newsletter for the latest products, deals, and tech news.
+            </p>
+            <form class="flex flex-col sm:flex-row gap-2 mt-auto" onsubmit="event.preventDefault()">
+                <input type="email" placeholder="Email Address" class="bg-surface-container/10 border border-outline-variant/30 text-on-primary text-sm rounded-md px-4 py-2 w-full focus:outline-none focus:border-secondary-fixed transition-colors placeholder:text-on-primary-fixed-variant/50">
+                <button type="submit" class="bg-secondary text-on-secondary hover:bg-secondary-fixed-dim transition-colors px-4 py-2 rounded-md text-sm font-label-md text-label-md whitespace-nowrap">
+                    Subscribe
+                </button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Bottom Bar -->
+    <div class="border-t border-outline-variant/10 px-margin-mobile md:px-margin-desktop py-6 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-on-primary-fixed-variant dark:text-on-primary-container/60 text-xs">
+            &copy; 2026 FixNex. All rights reserved.
+        </p>
+        <div class="flex gap-6">
+            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/60 hover:text-secondary-fixed transition-colors text-xs" href="#">Privacy Policy</a>
+            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/60 hover:text-secondary-fixed transition-colors text-xs" href="#">Terms of Service</a>
+            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/60 hover:text-secondary-fixed transition-colors text-xs" href="#">Cookie Policy</a>
+        </div>
+    </div>
+</footer>
+
+
+<script>
+    (function() {
+        // Shared Theme Manager
+        const themeToggle = document.getElementById('theme-toggle') || document.getElementById('themeToggle');
+        const html = document.documentElement;
+        
+        // Init theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            html.classList.add('dark');
+            html.classList.remove('light');
+        } else if (savedTheme === 'light') {
+            html.classList.add('light');
+            html.classList.remove('dark');
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            html.classList.add('dark');
+        }
+
+        function updateIcon() {
+            if (!themeToggle) return;
+            const spans = themeToggle.querySelectorAll('span');
+            if (html.classList.contains('dark')) {
+                if (spans.length === 1) spans[0].textContent = 'light_mode';
+                else if (spans.length === 2) { spans[0].classList.add('hidden'); spans[1].classList.remove('hidden'); }
+            } else {
+                if (spans.length === 1) spans[0].textContent = 'dark_mode';
+                else if (spans.length === 2) { spans[0].classList.remove('hidden'); spans[1].classList.add('hidden'); }
+            }
+        }
+        
+        updateIcon();
+
+        if (themeToggle) {
+            // Remove existing listeners if this is re-executed (though shouldn't happen)
+            const newToggle = themeToggle.cloneNode(true);
+            if (themeToggle.parentNode) {
+                themeToggle.parentNode.replaceChild(newToggle, themeToggle);
+            }
+            newToggle.addEventListener('click', () => {
+                if (html.classList.contains('dark')) {
+                    html.classList.remove('dark');
+                    html.classList.add('light');
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    html.classList.remove('light');
+                    html.classList.add('dark');
+                    localStorage.setItem('theme', 'dark');
+                }
+                
+                // Keep the icon logic up to date
+                const spans = newToggle.querySelectorAll('span');
+                if (html.classList.contains('dark')) {
+                    if (spans.length === 1) spans[0].textContent = 'light_mode';
+                    else if (spans.length === 2) { spans[0].classList.add('hidden'); spans[1].classList.remove('hidden'); }
+                } else {
+                    if (spans.length === 1) spans[0].textContent = 'dark_mode';
+                    else if (spans.length === 2) { spans[0].classList.remove('hidden'); spans[1].classList.add('hidden'); }
+                }
+            });
+        }
+    })();
+</script>
+
+
+<script>
+    // Global Scroll Animation Observer (Updated)
+    document.addEventListener('DOMContentLoaded', () => {
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Standard visibility classes
+                    entry.target.classList.add('visible', 'is-visible', 'active');
+                    
+                    // Remove hidden states
+                    entry.target.classList.remove('opacity-0', 'hidden-anim');
+                    
+                    // Add animation class if it's a scroll-anim
+                    if (entry.target.classList.contains('scroll-anim')) {
+                        entry.target.classList.add('animate-fade-in-up');
+                    }
+                    
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Select all elements that require scroll animation
+        const animatedElements = document.querySelectorAll('.fade-in-up, .slide-up, .zoom-in, .animate-fade-in-up, .pop-icon, .scroll-anim, .reveal, .hidden-anim');
+        animatedElements.forEach(el => observer.observe(el));
+    });
+</script>
+
+</body></html>

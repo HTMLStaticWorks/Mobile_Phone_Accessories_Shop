@@ -1,1 +1,667 @@
-test
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FixNex</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Poppins:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#c6c4dc",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#006fee",
+                        "inverse-on-surface": "#f4f0f1",
+                        "surface-container-low": "#f7f2f4",
+                        "surface-container-high": "#ebe7e9",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#1a1a2c",
+                        "tertiary-container": "#381200",
+                        "primary-fixed-dim": "#c6c4dc",
+                        "tertiary": "#0c0200",
+                        "surface-variant": "#e5e1e3",
+                        "on-secondary-fixed": "#001a42",
+                        "primary-container": "#1c1c2e",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "on-primary-container": "#85839a",
+                        "background": "#fcf8fa",
+                        "secondary-fixed": "#d8e2ff",
+                        "outline-variant": "#c8c5cd",
+                        "tertiary-fixed-dim": "#ffb693",
+                        "on-primary-fixed-variant": "#454559",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#fefcff",
+                        "primary": "#030312",
+                        "inverse-surface": "#313032",
+                        "surface-container": "#f1edef",
+                        "on-background": "#1c1b1d",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#e05d00",
+                        "secondary": "#0058be",
+                        "surface": "#fcf8fa",
+                        "surface-bright": "#fcf8fa",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed": "#351000",
+                        "tertiary-fixed": "#ffdbcc",
+                        "on-secondary-fixed-variant": "#004395",
+                        "secondary-fixed-dim": "#aec6ff",
+                        "on-surface-variant": "#47464c",
+                        "primary-fixed": "#e2e0f9",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#7a3000",
+                        "surface-dim": "#ddd9db",
+                        "on-surface": "#1c1b1d",
+                        "surface-container-highest": "#e5e1e3",
+                        "outline": "#78767d",
+                        "surface-tint": "#5d5c71"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "unit": "8px",
+                        "margin-desktop": "40px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter"],
+                        "headline-sm": ["Poppins"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Poppins"],
+                        "display-lg-mobile": ["Poppins"],
+                        "headline-md": ["Poppins"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-md": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Glassmorphism Classes */
+        .glass-panel {
+            background: rgba(252, 248, 250, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .dark .glass-panel {
+            background: rgba(28, 28, 46, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .glass-dropdown {
+            background: rgba(252, 248, 250, 0.9);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+            box-shadow: 0px 20px 40px rgba(0,0,0,0.1);
+        }
+        .dark .glass-dropdown {
+            background: rgba(28, 28, 46, 0.9);
+            box-shadow: 0px 20px 40px rgba(0,0,0,0.5);
+        }
+
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 0 0 rgba(0, 88, 190, 0.4); }
+            70% { box-shadow: 0 0 0 20px rgba(0, 88, 190, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 88, 190, 0); }
+        }
+        .animate-pulse-glow {
+            animation: pulse-glow 2s infinite;
+        }
+        
+        /* Circuit Pattern Overlay */
+        .bg-circuit {
+            background-image: radial-gradient(circle at center, transparent 0, transparent 2px, currentColor 2px, currentColor 3px);
+            background-size: 20px 20px;
+            opacity: 0.03;
+        }
+        .dark .bg-circuit {
+            opacity: 0.05;
+        }
+
+        /* Hide scrollbar for horizontal scroll */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Progress Bar Animation */
+        @keyframes progress {
+            0% { width: 0%; }
+            100% { width: var(--target-width, 100%); }
+        }
+        .animate-progress {
+            animation: progress 2s ease-out forwards;
+        }
+
+        /* Glowing Border Animation */
+        @keyframes border-glow {
+            0% { box-shadow: 0 0 10px #e05d00, inset 0 0 10px #e05d00; }
+            50% { box-shadow: 0 0 20px #e05d00, inset 0 0 20px #e05d00; }
+            100% { box-shadow: 0 0 10px #e05d00, inset 0 0 10px #e05d00; }
+        }
+        .animate-border-glow {
+            animation: border-glow 3s infinite;
+        }
+
+        /* Tech Grid Pulse */
+        .bg-tech-grid {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(0, 111, 238, 0.1) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 111, 238, 0.1) 1px, transparent 1px);
+        }
+        @keyframes grid-pulse {
+            0% { background-position: 0 0; }
+            100% { background-position: 40px 40px; }
+        }
+        .animate-grid-pulse {
+            animation: grid-pulse 4s linear infinite;
+        }
+        
+        /* Signal Orange Gradient */
+        .bg-gradient-signal {
+            background: linear-gradient(135deg, #e05d00 0%, #381200 100%);
+            background-size: 200% 200%;
+            animation: gradient-shift 5s ease infinite;
+        }
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230058be'/><text x='50' y='67' font-family='sans-serif' font-size='55' font-weight='bold' fill='white' text-anchor='middle'>FN</text></svg>">
+</head>
+<body class="bg-background dark:bg-primary text-on-background dark:text-on-primary font-body-md text-body-md min-h-screen flex flex-col relative transition-colors duration-300">
+<!-- Global Circuit Pattern Overlay -->
+<div class="fixed inset-0 pointer-events-none bg-circuit z-0"></div>
+<!-- TopNavBar (Semantic Shell) -->
+<header class="bg-surface/80 dark:bg-primary/80 backdrop-blur-md font-label-md text-label-md border-b border-outline-variant/20 shadow-sm fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16">
+<!-- Brand Logo -->
+<div class="font-headline-sm text-headline-sm font-bold text-primary dark:text-on-primary-fixed">
+            FixNex
+        </div>
+<!-- Desktop Navigation Links -->
+<nav class="hidden md:flex gap-2 lg:gap-3 items-center">
+            <a class="font-label-md text-label-md text-secondary border-b-2 border-secondary pb-1 px-2 transition-all" href="index.html">Home</a>
+            <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all px-2 py-1 rounded dark:text-on-primary-container" href="home2.html">Home2</a>
+            <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all px-2 py-1 rounded dark:text-on-primary-container" href="services.html">Services</a>
+            <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all px-2 py-1 rounded dark:text-on-primary-container" href="product.html">Product</a>
+            <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all px-2 py-1 rounded dark:text-on-primary-container" href="gallery.html">Gallery</a>
+            <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all px-2 py-1 rounded dark:text-on-primary-container" href="blog.html">Blog</a>
+            <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all px-2 py-1 rounded dark:text-on-primary-container" href="contact.html">Contact</a>
+        </nav>
+<!-- Actions -->
+<div class="flex items-center space-x-unit md:space-x-4">
+<button aria-label="shopping_cart" class="text-secondary dark:text-secondary-fixed hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all p-2 rounded-full scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+<button aria-label="dark_mode" class="text-secondary dark:text-secondary-fixed hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all p-2 rounded-full scale-95 active:scale-90 transition-transform" id="themeToggle">>
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+<div class="hidden md:flex items-center space-x-2 ml-4">
+<button class="px-4 py-2 text-primary dark:text-on-primary font-label-md text-label-md border-2 border-primary dark:border-outline-variant hover:bg-surface-container-high dark:hover:bg-primary-container transition-colors rounded" onclick="window.location.href='login.html'">
+                    Login
+                </button>
+<button class="px-4 py-2 bg-secondary text-on-secondary font-label-md text-label-md hover:bg-secondary-fixed-dim transition-colors rounded" onclick="window.location.href='regitser.html'">
+                    Sign Up
+                </button>
+</div>
+<!-- Mobile Menu Toggle -->
+<button aria-label="menu" class="md:hidden text-primary dark:text-on-primary p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-16 relative z-10 w-full max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop space-y-24 pb-24">
+<!-- Hero Section -->
+<section class="relative min-h-[819px] flex items-center justify-center py-20 overflow-hidden rounded-xl mt-8">
+<!-- Background Image -->
+<div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 dark:opacity-20 z-0 rounded-xl" data-alt="A macro, ultra-high resolution photograph of sleek, modern smartphone camera lenses and textured glass backs intersecting abstractly. The lighting is high-key and studio quality, casting subtle blue highlights against deep midnight graphite shadows. The mood is highly technical, premium, and sophisticated, perfectly fitting a high-end electronics brand." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAej5WEMGurc9eosGY0QBqvVvuf0KyxIHlevAJMGWxfRqqdJD8X3snjCXnAy4atQ0vjAHsF89HnThOCCUpJ3MJ2ypnSeIPMVYWkMJETuVC20OtkQzvIf70CXgNRAVUpF1F_oYOhcm8GYlkKwSTvBKiytE7K1mTDadAINCn05TyKpzSQtLt7GHiT-502bMD5CDZVYxHEBXI8PKbN3dBkUgh2llBt5rxyDG8cCVZL8JuzyT9RofJHGGdg')"></div>
+<!-- Content -->
+<div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+<div class="space-y-6">
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg text-primary dark:text-on-primary">
+                        Your Next Phone. <br/><span class="text-secondary">Your Perfect Accessory.</span> <br/>Right Here.
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant dark:text-outline-variant max-w-lg">
+                        Experience the bleeding edge of mobile technology. We provide high-performance devices, premium accessories, and expert repair services for the modern enthusiast.
+                    </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="px-8 py-3 bg-secondary text-on-secondary font-label-md text-label-md rounded shadow-sm hover:bg-secondary-fixed-dim transition-colors">
+                            Shop Now
+                        </button>
+<button class="px-8 py-3 border-2 border-primary dark:border-outline-variant text-primary dark:text-on-primary font-label-md text-label-md rounded hover:bg-surface-container-high dark:hover:bg-primary-container transition-colors">
+                            Book a Repair
+                        </button>
+</div>
+</div>
+<!-- Mockup Display -->
+<div class="relative flex justify-center items-center mt-12 md:mt-0 animate-float">
+<div class="relative w-64 h-[500px] glass-panel rounded-3xl overflow-hidden shadow-lg border-[4px] border-surface-variant dark:border-outline-variant">
+<img class="w-full h-full object-cover rounded-[1.25rem]" data-alt="A sleek, modern smartphone floating slightly angled in a studio environment. The screen displays a vibrant abstract wallpaper in electric blue and signal orange. The phone body is a deep midnight graphite color. High-end, precise lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1k7kUB0Ir9mxmZ_DIM4pm57TG66QKghSX6r8QDBSasrOLO9ItlXh5B_yExbJHW3XmD4YDuKGEB6-L700RqZolOGRfAb6CZngR66CAEMzV1MrJGRpmjE4ENw4azLcX1ar2QMvW6ASNeeCiIU5zIo28uvnFTQMn8LC69L-Z7jA1lI9MnCCrE7Yz47U8CNz6OsuxizsjTWJhdTcPA3eRt1t-fFh9V232aBGiELGLzpW2Y1rw7tTX0sIm"/>
+</div>
+<!-- Glow effect -->
+<div class="absolute inset-0 bg-secondary/20 rounded-full blur-3xl -z-10 animate-pulse-glow"></div>
+</div>
+</div>
+</section>
+<!-- Brands Section -->
+<section class="py-10 border-t border-outline-variant/10">
+<h2 class="text-center font-headline-md text-headline-md text-primary dark:text-on-primary mb-8">Featured Brands</h2>
+<div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70">
+<span class="font-headline-sm text-headline-sm font-bold tracking-widest text-on-surface-variant dark:text-on-primary-container">APPLE</span>
+<span class="font-headline-sm text-headline-sm font-bold tracking-widest text-on-surface-variant dark:text-on-primary-container">SAMSUNG</span>
+<span class="font-headline-sm text-headline-sm font-bold tracking-widest text-on-surface-variant dark:text-on-primary-container">XIAOMI</span>
+<span class="font-headline-sm text-headline-sm font-bold tracking-widest text-on-surface-variant dark:text-on-primary-container">ONEPLUS</span>
+<span class="font-headline-sm text-headline-sm font-bold tracking-widest text-on-surface-variant dark:text-on-primary-container">REALME</span>
+<span class="font-headline-sm text-headline-sm font-bold tracking-widest text-on-surface-variant dark:text-on-primary-container">OPPO</span>
+</div>
+</section>
+<!-- 1. Elite Series Showcase -->
+<section class="py-10 -mx-margin-mobile md:-mx-margin-desktop px-margin-mobile md:px-margin-desktop">
+<div class="mb-10 flex justify-between items-end">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary dark:text-on-primary">Elite Series Showcase</h2>
+<p class="text-on-surface-variant dark:text-outline-variant font-body-md text-body-md mt-2">Discover the latest flagship devices.</p>
+</div>
+<div class="flex gap-2">
+<button class="p-2 border border-outline-variant rounded-full hover:bg-surface-variant transition-colors dark:hover:bg-primary-container text-primary dark:text-on-primary"><span class="material-symbols-outlined">chevron_left</span></button>
+<button class="p-2 border border-outline-variant rounded-full hover:bg-surface-variant transition-colors dark:hover:bg-primary-container text-primary dark:text-on-primary"><span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+</div>
+<div class="flex overflow-x-auto gap-8 hide-scrollbar snap-x snap-mandatory py-8">
+<!-- Item 1 -->
+<div class="min-w-[300px] md:min-w-[400px] snap-center relative group">
+<div class="absolute inset-0 bg-secondary/20 rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
+<div class="glass-panel p-6 rounded-2xl h-full flex flex-col items-center hover:-translate-y-2 transition-transform duration-300 cursor-pointer">
+<img alt="Phone 1" class="h-64 object-cover mb-6 rounded-lg shadow-md" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCMjwt7YSaUUBY82Ins6ouXjdUk-LlfK13kH4BQvRBBpo4XMgqvRp3pASsYE0P9xtFcSSehtb81qm8gEq_lUtdMVCrIVSbjyeiizG0hcP1uRHWZYWG6Wup6SCkJcbV_mYXip1_7dphrFZP8xgP_9xtLw7HtYbq1j1NTFzdUaOC_IuZF8OmmtpPsqgMLQrwSmTbkpqGmHptvgGVwOe8bxfFYXlNBshXWyL53pXDfBdSAaCAlRoji7-P"/>
+<h3 class="font-headline-sm text-headline-sm text-primary dark:text-on-primary w-full text-center">Titanium Pro X</h3>
+<p class="text-secondary dark:text-secondary-fixed font-bold mt-2">$1,199</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="min-w-[300px] md:min-w-[400px] snap-center relative group">
+<div class="absolute inset-0 bg-tertiary-container/30 rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
+<div class="glass-panel p-6 rounded-2xl h-full flex flex-col items-center hover:-translate-y-2 transition-transform duration-300 cursor-pointer">
+<img alt="Phone 2" class="h-64 object-cover mb-6 rounded-lg shadow-md" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArTs9E2Gi85PDt_vAHrQsyYP0uvjPFYYyMCSXvGg0DWPdNxuWGaDBbjMvDuRhq19CXlSBIlaior2piyrhCxqllbAhNK8mMfGhw9tNWZwXHWNEGnhe9Ea93Zk-jQZgocNlea2Cx_hmwStmaaWggCEjRlrZ_q3RlzfxgLhPVwva2lb9OFq4SqYbkwuVQpCrtj7tQCL2auCZaWr02kOjptFRw0vPaffZlSBQkOdYWUn0_Z78uWrnqJgXw"/>
+<h3 class="font-headline-sm text-headline-sm text-primary dark:text-on-primary w-full text-center">Galaxy Fold Elite</h3>
+<p class="text-secondary dark:text-secondary-fixed font-bold mt-2">$1,799</p>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="min-w-[300px] md:min-w-[400px] snap-center relative group">
+<div class="absolute inset-0 bg-secondary/20 rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
+<div class="glass-panel p-6 rounded-2xl h-full flex flex-col items-center hover:-translate-y-2 transition-transform duration-300 cursor-pointer">
+<img alt="Phone 3" class="h-64 object-cover mb-6 rounded-lg shadow-md" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsoxG9OARiszixyQmKGOq38SwPWcZ5UHiKJMOiVAhX95woA5I4t16jP0GEThl29MtVKz6vgmTw1YlptFIEmwLgYwunyBIIjxcmiu_uKCHfg7xLOtOedIjd7iM1e2UQt3grPbeHzstD6WJE5cI03ZBNAXEsNydcddAE_UeFU0m4EHQrHQ4HcLjL37zphu32ErXxY0BxsPQClPlVg-EzEBAWVHiE3VDnl7QqkjrbA9Id076azENkWmhW"/>
+<h3 class="font-headline-sm text-headline-sm text-primary dark:text-on-primary w-full text-center">Zenith Ultra 5G</h3>
+<p class="text-secondary dark:text-secondary-fixed font-bold mt-2">$899</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. Live Repair Tracker -->
+<section class="py-10">
+<div class="text-center mb-12">
+<h2 class="font-headline-md text-headline-md text-primary dark:text-on-primary">Live Repair Tracker</h2>
+<p class="text-on-surface-variant dark:text-outline-variant font-body-md text-body-md mt-2 max-w-2xl mx-auto">Real-time updates on our expert fixes. Transparency and speed guaranteed.</p>
+</div>
+<div class="glass-panel rounded-3xl p-8 max-w-4xl mx-auto shadow-xl">
+<div class="flex items-center justify-between mb-8 pb-4 border-b border-outline-variant/20">
+<h3 class="font-headline-sm text-headline-sm text-primary dark:text-on-primary">Recent Fixes</h3>
+<div class="flex items-center gap-2 text-secondary">
+<span class="relative flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-secondary"></span>
+</span>
+<span class="font-label-md text-label-md text-sm">Live Updates</span>
+</div>
+</div>
+<div class="space-y-8">
+<!-- Repair Item 1 -->
+<div>
+<div class="flex justify-between items-center mb-2">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-tertiary-container bg-tertiary-fixed p-2 rounded-lg">smartphone</span>
+<span class="font-bold text-primary dark:text-on-primary">Screen Replacement - Pro Max</span>
+</div>
+<span class="flex items-center gap-1 text-sm bg-surface-container-high dark:bg-primary-container px-3 py-1 rounded-full text-primary dark:text-on-primary"><span class="material-symbols-outlined text-sm text-secondary">verified</span> Verified Fix</span>
+</div>
+<div class="w-full bg-surface-variant dark:bg-inverse-surface rounded-full h-2.5 overflow-hidden">
+<div class="bg-secondary h-2.5 rounded-full animate-progress" style="--target-width: 85%"></div>
+</div>
+<div class="flex justify-between text-xs mt-1 text-on-surface-variant dark:text-outline-variant">
+<span>Diagnostics</span>
+<span>Repairing</span>
+<span>Quality Check</span>
+</div>
+</div>
+<!-- Repair Item 2 -->
+<div>
+<div class="flex justify-between items-center mb-2">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-tertiary-container bg-tertiary-fixed p-2 rounded-lg">battery_charging_full</span>
+<span class="font-bold text-primary dark:text-on-primary">Battery Upgrade - Zen Phone</span>
+</div>
+<span class="flex items-center gap-1 text-sm bg-surface-container-high dark:bg-primary-container px-3 py-1 rounded-full text-primary dark:text-on-primary"><span class="material-symbols-outlined text-sm text-secondary">verified</span> Verified Fix</span>
+</div>
+<div class="w-full bg-surface-variant dark:bg-inverse-surface rounded-full h-2.5 overflow-hidden">
+<div class="bg-secondary h-2.5 rounded-full animate-progress" style="--target-width: 100%"></div>
+</div>
+<div class="flex justify-between text-xs mt-1 text-on-surface-variant dark:text-outline-variant">
+<span>Received</span>
+<span>Replacing</span>
+<span>Ready for Pickup</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. The Tech Ecosystem -->
+<section class="py-10">
+<h2 class="font-headline-md text-headline-md text-primary dark:text-on-primary mb-10 text-center">The Tech Ecosystem</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto auto-rows-[250px]">
+<!-- Bento Box 1 -->
+<div class="md:col-span-2 glass-panel rounded-3xl p-6 relative overflow-hidden group cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 opacity-60 dark:opacity-40" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDziD7IgmHynf08mfpSu4uh00zo7jMDtrFl5bpMR5bhw8B_-aTVPT_B42Zq_N-1xo095IDgMvzx_XdbB9Mp4QSEzMHWdwWhkEpWwovrvgulRECxARcUJKKLJGvJH51v1xoyAhxSnvqSK3TvPxeN4iMCFoP2dV0YzH5vIyAf7BLXvYPaL5_co3Ex0jN9-dFXBMeZUJ7cWV4w9m5tJkeaTBcaS-KRvpx_qnGSk_7TAfQm_3j3A2bqPerN')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+<div class="relative z-10 h-full flex flex-col justify-end">
+<h3 class="font-headline-sm text-headline-sm text-on-primary mb-2">Premium Audio</h3>
+<p class="text-outline-variant font-body-md text-body-md">Seamless connection. High-fidelity sound.</p>
+</div>
+</div>
+<!-- Bento Box 2 -->
+<div class="glass-panel rounded-3xl p-6 relative overflow-hidden group cursor-pointer bg-surface-container-high dark:bg-primary-container flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-6xl text-secondary mb-4 group-hover:scale-125 transition-transform duration-500">cable</span>
+<h3 class="font-bold text-primary dark:text-on-primary text-xl">Fast Charging</h3>
+<p class="text-sm text-on-surface-variant dark:text-outline-variant mt-2">Power up in minutes.</p>
+</div>
+<!-- Bento Box 3 -->
+<div class="glass-panel rounded-3xl p-6 relative overflow-hidden group cursor-pointer bg-tertiary-fixed dark:bg-tertiary-container flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-6xl text-on-tertiary-container dark:text-tertiary-fixed mb-4 group-hover:-translate-y-2 transition-transform duration-500">cases</span>
+<h3 class="font-bold text-on-tertiary-container dark:text-tertiary-fixed text-xl">Armored Cases</h3>
+<p class="text-sm text-on-tertiary-container/80 dark:text-tertiary-fixed/80 mt-2">Military-grade protection.</p>
+</div>
+<!-- Bento Box 4 -->
+<div class="md:col-span-2 glass-panel rounded-3xl relative overflow-hidden group cursor-pointer flex flex-col md:flex-row items-stretch shadow-[0_4px_30px_rgba(0,111,238,0.1)] border border-secondary/20">
+<div class="p-8 md:w-1/2 relative z-10 flex flex-col justify-center h-full bg-surface/80 dark:bg-primary/80 backdrop-blur-md">
+<h3 class="font-headline-sm text-headline-sm text-primary dark:text-on-primary mb-2">Smart Wearables</h3>
+<p class="text-on-surface-variant dark:text-outline-variant font-body-md text-body-md mb-6">Track, connect, and move. Syncs effortlessly with your flagship device.</p>
+<button class="px-6 py-2 bg-secondary text-on-secondary w-max rounded font-label-md text-label-md hover:bg-secondary-fixed-dim transition-colors shadow-[0_0_15px_rgba(0,111,238,0.4)]">Explore</button>
+</div>
+<div class="w-full md:w-1/2 h-64 md:h-auto relative overflow-hidden">
+<div class="absolute inset-0 bg-secondary/10 mix-blend-overlay z-10"></div>
+<img alt="Smart Wearables" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAC1WDNj3IyY3pGPO4CsCI0T56B9au3floz7kzc3XwpeLwndQ7nK1UCAJNbq5i4zVi1D8gY2jTEi3bv4kOM3-8xPrnGoJGAb82cb4j3rTtS7gTV-Xhaziz4C8wJHiOjoLLC93sSyMAGJ8tHsjlIbYnAus3OUWqOt-yREbfSNKkW5JnifNzLMAiHPrsScQMWPgGkzv7raldFgFhBpYd2orlruPaXkVQoXvbxQnYpP2C2pgGnbOMJyJsg"/>
+<div class="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-surface/80 dark:from-primary/80 to-transparent z-10 hidden md:block"></div>
+<div class="absolute inset-x-0 top-0 h-12 bg-gradient-to-b from-surface/80 dark:from-primary/80 to-transparent z-10 md:hidden"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Exclusive Membership Banner -->
+<section class="py-10">
+<div class="relative rounded-[2rem] overflow-hidden p-1 shadow-2xl">
+<div class="absolute inset-0 bg-gradient-signal opacity-80"></div>
+<div class="absolute inset-0 border-4 border-transparent rounded-[2rem] animate-border-glow"></div>
+<div class="relative bg-surface dark:bg-primary-container m-1 rounded-[1.75rem] p-12 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8 z-10">
+<div class="max-w-xl">
+<h2 class="font-display-lg-mobile text-display-lg-mobile md:font-headline-md text-primary dark:text-on-primary mb-4 flex items-center gap-3">
+<span class="material-symbols-outlined text-4xl text-on-tertiary-container">workspace_premium</span>
+                                Join The Tech Club
+                            </h2>
+<p class="text-lg text-on-surface-variant dark:text-outline-variant mb-6">Get early access to exclusive drops, priority repair services, and member-only discounts on the latest ecosystem accessories.</p>
+<ul class="space-y-2 mb-8">
+<li class="flex items-center gap-2 text-primary dark:text-on-primary"><span class="material-symbols-outlined text-secondary">check_circle</span> Free express shipping</li>
+<li class="flex items-center gap-2 text-primary dark:text-on-primary"><span class="material-symbols-outlined text-secondary">check_circle</span> 20% off all screen repairs</li>
+</ul>
+</div>
+<div class="flex-shrink-0 text-center bg-surface-container-low dark:bg-primary p-8 rounded-2xl shadow-inner border border-outline-variant/20 w-full md:w-auto">
+<p class="font-bold text-on-surface-variant dark:text-outline-variant mb-2 uppercase tracking-widest text-sm">Premium Tier</p>
+<p class="text-5xl font-bold text-primary dark:text-on-primary mb-6">$9.99<span class="text-lg text-on-surface-variant dark:text-outline-variant font-normal">/mo</span></p>
+<button class="w-full px-8 py-4 bg-on-tertiary-container text-on-tertiary font-label-md text-label-md text-lg rounded-xl shadow-lg hover:bg-tertiary-container transition-all hover:scale-105">Activate Membership</button>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. Next-Gen Drops Countdown -->
+<section class="py-10 relative overflow-hidden rounded-3xl border border-secondary/20 my-10">
+<div class="absolute inset-0 bg-tech-grid animate-grid-pulse opacity-50 dark:opacity-30 z-0"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent to-surface dark:to-primary z-0"></div>
+<div class="relative z-10 flex flex-col items-center justify-center py-16 px-4 text-center">
+<div class="inline-block px-4 py-1 bg-secondary/10 border border-secondary/30 rounded-full text-secondary font-label-md text-label-md mb-6 animate-pulse">
+                        CONFIDENTIAL // INCOMING TRANSMISSION
+                    </div>
+<h2 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg text-primary dark:text-on-primary mb-4">Next-Gen Launch Event</h2>
+<p class="text-lg text-on-surface-variant dark:text-outline-variant mb-10 max-w-md mx-auto">Prepare for the unveiling of our most advanced device yet. The future is almost here.</p>
+<div class="flex flex-wrap justify-center gap-4 md:gap-8">
+<!-- Days -->
+<div class="glass-panel w-24 h-24 flex flex-col items-center justify-center rounded-2xl border-2 border-secondary/50 shadow-[0_0_15px_rgba(0,111,238,0.3)]">
+<span class="text-3xl font-bold text-primary dark:text-on-primary font-headline-md text-headline-md">14</span>
+<span class="text-xs uppercase tracking-widest text-on-surface-variant dark:text-outline-variant mt-1">Days</span>
+</div>
+<!-- Hours -->
+<div class="glass-panel w-24 h-24 flex flex-col items-center justify-center rounded-2xl border-2 border-secondary/50 shadow-[0_0_15px_rgba(0,111,238,0.3)]">
+<span class="text-3xl font-bold text-primary dark:text-on-primary font-headline-md text-headline-md">08</span>
+<span class="text-xs uppercase tracking-widest text-on-surface-variant dark:text-outline-variant mt-1">Hours</span>
+</div>
+<!-- Minutes -->
+<div class="glass-panel w-24 h-24 flex flex-col items-center justify-center rounded-2xl border-2 border-secondary/50 shadow-[0_0_15px_rgba(0,111,238,0.3)]">
+<span class="text-3xl font-bold text-primary dark:text-on-primary font-headline-md text-headline-md">45</span>
+<span class="text-xs uppercase tracking-widest text-on-surface-variant dark:text-outline-variant mt-1">Mins</span>
+</div>
+<!-- Seconds -->
+<div class="glass-panel w-24 h-24 flex flex-col items-center justify-center rounded-2xl border-2 border-secondary/50 shadow-[0_0_15px_rgba(0,111,238,0.3)]">
+<span class="text-3xl font-bold text-secondary font-headline-md text-headline-md animate-pulse">22</span>
+<span class="text-xs uppercase tracking-widest text-on-surface-variant dark:text-outline-variant mt-1">Secs</span>
+</div>
+</div>
+<button class="mt-12 px-8 py-3 border-2 border-secondary text-secondary font-label-md text-label-md rounded hover:bg-secondary hover:text-on-secondary transition-colors shadow-[0_0_20px_rgba(0,111,238,0.2)]">Notify Me</button>
+</div>
+</section>
+</main>
+<!-- Footer (Semantic Shell) -->
+<footer class="bg-primary dark:bg-primary-container text-on-primary dark:text-on-primary-container font-body-md text-body-md border-t border-outline-variant/10 w-full z-10 relative mt-auto">
+    <div class="px-margin-mobile md:px-margin-desktop py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+        <!-- Brand & About -->
+        <div class="flex flex-col gap-4">
+            <div class="font-headline-md text-headline-md text-headline-sm font-bold text-on-primary tracking-tight">FixNex</div>
+            <p class="text-on-primary-fixed-variant dark:text-on-primary-container/80 text-sm leading-relaxed max-w-xs">
+                Your one-stop destination for premium mobile phones, smart accessories, and expert repair services. Quality you can trust.
+            </p>
+            <div class="flex gap-4 mt-2 text-on-primary-fixed-variant dark:text-on-primary-container/80">
+                <a href="#" class="hover:text-secondary-fixed transition-colors"><span class="material-symbols-outlined text-[20px]">facebook</span></a>
+                <a href="#" class="hover:text-secondary-fixed transition-colors"><span class="material-symbols-outlined text-[20px]">language</span></a>
+                <a href="#" class="hover:text-secondary-fixed transition-colors"><span class="material-symbols-outlined text-[20px]">camera_alt</span></a>
+                <a href="#" class="hover:text-secondary-fixed transition-colors"><span class="material-symbols-outlined text-[20px]">play_arrow</span></a>
+            </div>
+        </div>
+        
+        <!-- Quick Links -->
+        <div class="flex flex-col gap-4">
+            <h4 class="font-label-lg font-semibold text-on-primary mb-2">Quick Links</h4>
+            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/80 hover:text-secondary-fixed transition-colors text-sm w-fit" href="index.html">Home</a>
+            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/80 hover:text-secondary-fixed transition-colors text-sm w-fit" href="product.html">Products</a>
+            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/80 hover:text-secondary-fixed transition-colors text-sm w-fit" href="services.html">Services</a>
+            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/80 hover:text-secondary-fixed transition-colors text-sm w-fit" href="blog.html">Blog</a>
+            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/80 hover:text-secondary-fixed transition-colors text-sm w-fit" href="contact.html">Contact Us</a>
+        </div>
+        
+        <!-- Customer Service -->
+        <div class="flex flex-col gap-4">
+            <h4 class="font-label-lg font-semibold text-on-primary mb-2">Customer Service</h4>
+            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/80 hover:text-secondary-fixed transition-colors text-sm w-fit" href="#">FAQ</a>
+            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/80 hover:text-secondary-fixed transition-colors text-sm w-fit" href="#">Shipping Information</a>
+            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/80 hover:text-secondary-fixed transition-colors text-sm w-fit" href="#">Returns & Exchanges</a>
+            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/80 hover:text-secondary-fixed transition-colors text-sm w-fit" href="#">Track Order</a>
+            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/80 hover:text-secondary-fixed transition-colors text-sm w-fit" href="#">Warranty</a>
+        </div>
+        
+        <!-- Newsletter -->
+        <div class="flex flex-col gap-4">
+            <h4 class="font-label-lg font-semibold text-on-primary mb-2">Stay Updated</h4>
+            <p class="text-on-primary-fixed-variant dark:text-on-primary-container/80 text-sm mb-2">
+                Subscribe to our newsletter for the latest products, deals, and tech news.
+            </p>
+            <form class="flex flex-col sm:flex-row gap-2 mt-auto" onsubmit="event.preventDefault()">
+                <input type="email" placeholder="Email Address" class="bg-surface-container/10 border border-outline-variant/30 text-on-primary text-sm rounded-md px-4 py-2 w-full focus:outline-none focus:border-secondary-fixed transition-colors placeholder:text-on-primary-fixed-variant/50">
+                <button type="submit" class="bg-secondary text-on-secondary hover:bg-secondary-fixed-dim transition-colors px-4 py-2 rounded-md text-sm font-label-md text-label-md whitespace-nowrap">
+                    Subscribe
+                </button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Bottom Bar -->
+    <div class="border-t border-outline-variant/10 px-margin-mobile md:px-margin-desktop py-6 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-on-primary-fixed-variant dark:text-on-primary-container/60 text-xs">
+            &copy; 2026 FixNex. All rights reserved.
+        </p>
+        <div class="flex gap-6">
+            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/60 hover:text-secondary-fixed transition-colors text-xs" href="#">Privacy Policy</a>
+            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/60 hover:text-secondary-fixed transition-colors text-xs" href="#">Terms of Service</a>
+            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/60 hover:text-secondary-fixed transition-colors text-xs" href="#">Cookie Policy</a>
+        </div>
+    </div>
+</footer>
+
+
+<script>
+    (function() {
+        // Shared Theme Manager
+        const themeToggle = document.getElementById('theme-toggle') || document.getElementById('themeToggle');
+        const html = document.documentElement;
+        
+        // Init theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            html.classList.add('dark');
+            html.classList.remove('light');
+        } else if (savedTheme === 'light') {
+            html.classList.add('light');
+            html.classList.remove('dark');
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            html.classList.add('dark');
+        }
+
+        function updateIcon() {
+            if (!themeToggle) return;
+            const spans = themeToggle.querySelectorAll('span');
+            if (html.classList.contains('dark')) {
+                if (spans.length === 1) spans[0].textContent = 'light_mode';
+                else if (spans.length === 2) { spans[0].classList.add('hidden'); spans[1].classList.remove('hidden'); }
+            } else {
+                if (spans.length === 1) spans[0].textContent = 'dark_mode';
+                else if (spans.length === 2) { spans[0].classList.remove('hidden'); spans[1].classList.add('hidden'); }
+            }
+        }
+        
+        updateIcon();
+
+        if (themeToggle) {
+            // Remove existing listeners if this is re-executed (though shouldn't happen)
+            const newToggle = themeToggle.cloneNode(true);
+            if (themeToggle.parentNode) {
+                themeToggle.parentNode.replaceChild(newToggle, themeToggle);
+            }
+            newToggle.addEventListener('click', () => {
+                if (html.classList.contains('dark')) {
+                    html.classList.remove('dark');
+                    html.classList.add('light');
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    html.classList.remove('light');
+                    html.classList.add('dark');
+                    localStorage.setItem('theme', 'dark');
+                }
+                
+                // Keep the icon logic up to date
+                const spans = newToggle.querySelectorAll('span');
+                if (html.classList.contains('dark')) {
+                    if (spans.length === 1) spans[0].textContent = 'light_mode';
+                    else if (spans.length === 2) { spans[0].classList.add('hidden'); spans[1].classList.remove('hidden'); }
+                } else {
+                    if (spans.length === 1) spans[0].textContent = 'dark_mode';
+                    else if (spans.length === 2) { spans[0].classList.remove('hidden'); spans[1].classList.add('hidden'); }
+                }
+            });
+        }
+    })();
+</script>
+
+
+<script>
+    // Global Scroll Animation Observer (Updated)
+    document.addEventListener('DOMContentLoaded', () => {
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Standard visibility classes
+                    entry.target.classList.add('visible', 'is-visible', 'active');
+                    
+                    // Remove hidden states
+                    entry.target.classList.remove('opacity-0', 'hidden-anim');
+                    
+                    // Add animation class if it's a scroll-anim
+                    if (entry.target.classList.contains('scroll-anim')) {
+                        entry.target.classList.add('animate-fade-in-up');
+                    }
+                    
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Select all elements that require scroll animation
+        const animatedElements = document.querySelectorAll('.fade-in-up, .slide-up, .zoom-in, .animate-fade-in-up, .pop-icon, .scroll-anim, .reveal, .hidden-anim');
+        animatedElements.forEach(el => observer.observe(el));
+    });
+</script>
+
+</body></html>
