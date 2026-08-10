@@ -161,15 +161,15 @@
 <button aria-label="dark_mode" class="hidden xl:block text-secondary dark:text-secondary-fixed hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all p-2 rounded-full scale-95 active:scale-90 transition-transform" id="themeToggle">
 <span class="material-symbols-outlined">dark_mode</span>
 </button>
-<button aria-label="rtl_toggle" class="hidden xl:block text-secondary dark:text-secondary-fixed hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all p-2 rounded-full scale-95 active:scale-90 transition-transform font-bold" onclick="document.documentElement.dir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl'">
+<button aria-label="rtl_toggle" class="hidden xl:block text-secondary dark:text-secondary-fixed hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all p-2 rounded-full scale-95 active:scale-90 transition-transform font-bold" onclick="const newDir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl'; document.documentElement.dir = newDir; localStorage.setItem('dir', newDir);">
 RTL
 </button>
 
-<div class="hidden xl:flex items-center space-x-2 ml-4">
-<button class="px-4 py-2 text-primary dark:text-on-primary font-label-md text-label-md border-2 border-primary dark:border-outline-variant hover:bg-surface-container-high dark:hover:bg-primary-container transition-colors rounded" onclick="window.location.href='login.html'">
+<div class="hidden xl:flex items-center gap-2 ms-4">
+<button class="px-4 py-2 text-primary dark:text-on-primary font-label-md text-label-md border-2 border-primary dark:border-outline-variant hover:bg-surface-container-high dark:hover:bg-primary-container transition-colors rounded w-24 text-center" onclick="window.location.href='login.html'">
                     Login
                 </button>
-<button class="px-4 py-2 bg-secondary text-on-secondary font-label-md text-label-md hover:bg-secondary-fixed-dim transition-colors rounded" onclick="window.location.href='regitser.html'">
+<button class="px-4 py-2 bg-secondary text-on-secondary font-label-md text-label-md hover:bg-secondary-fixed-dim transition-colors rounded w-24 text-center" onclick="window.location.href='regitser.html'">
                     Sign Up
                 </button>
 </div>
@@ -196,7 +196,7 @@ RTL
             <button aria-label="dark_mode" class="text-secondary dark:text-secondary-fixed transition-all p-2 rounded-full" onclick="document.getElementById('themeToggle').click()">
                 <span class="material-symbols-outlined text-3xl theme-icon-mobile">dark_mode</span>
             </button>
-            <button aria-label="rtl_toggle" class="text-secondary dark:text-secondary-fixed transition-all p-2 rounded-full font-bold text-xl" onclick="document.documentElement.dir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl'">
+            <button aria-label="rtl_toggle" class="text-secondary dark:text-secondary-fixed transition-all p-2 rounded-full font-bold text-xl" onclick="const newDir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl'; document.documentElement.dir = newDir; localStorage.setItem('dir', newDir);">
                 RTL
             </button>
 
@@ -233,12 +233,12 @@ RTL
 <!-- Blog Grid (Bento Style) -->
 <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-12">
 <!-- Featured Article (Span 8) -->
-<article class="md:col-span-8 group cursor-pointer rounded-xl overflow-hidden relative bg-surface/80 backdrop-blur-[20px] border border-outline-variant/30 hover:border-secondary transition-colors duration-300 shadow-sm flex flex-col h-full min-h-[400px]">
+<article class="md:col-span-8 group cursor-pointer rounded-xl overflow-hidden relative bg-surface/80 dark:bg-primary-container/80 backdrop-blur-[20px] border border-outline-variant/30 hover:border-secondary transition-colors duration-300 shadow-sm flex flex-col h-full min-h-[400px]">
 <div class="h-64 md:h-80 w-full overflow-hidden relative">
 <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A sleek, modern smartphone resting on a reflective glass table in a high-tech, minimalist environment. Soft, cool blue lighting highlights the metallic edges of the device, creating a futuristic and premium aesthetic. The background features subtle, blurred geometric shapes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJvlU1NlG5ykVTyyEsDEff2svT8ve4vI1PSWdhKTS7CgjbKY7aHdhF-vVzdWUl10bl-bozxN1HTUo_6Mur18jnO49xVsSdM1oNS0WZdFC4S4UnjEaqzSFKntxLxtFo44-EXPkaneH3qmntbeoMG59viDRIAM5h8XnAiQ6DegIQG2gMKgX0HMcTaI5f-IXnPoB4mNHHMnIadKErjm5iswgc_6VzNkI7-RfZYXVBC-L8izhVv1Xrsd86"/>
 <div class="absolute top-4 left-4 bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded font-label-md text-label-md text-xs shadow-md">New Release</div>
 </div>
-<div class="p-6 flex-grow flex flex-col justify-between z-10 bg-gradient-to-t from-surface via-surface to-transparent">
+<div class="p-6 flex-grow flex flex-col justify-between z-10 bg-gradient-to-t from-surface via-surface to-transparent dark:from-primary-container dark:via-primary-container/80 dark:to-transparent">
 <div>
 <div class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md text-sm mb-3 dark:text-on-primary-container">
 <span>Reviews</span>
@@ -254,7 +254,7 @@ RTL
 </div>
 </article>
 <!-- Secondary Article (Span 4) -->
-<article class="md:col-span-4 group cursor-pointer rounded-xl overflow-hidden relative bg-surface/80 backdrop-blur-[20px] border border-outline-variant/30 hover:border-secondary transition-colors duration-300 shadow-sm flex flex-col h-full min-h-[400px]">
+<article class="md:col-span-4 group cursor-pointer rounded-xl overflow-hidden relative bg-surface/80 dark:bg-primary-container/80 backdrop-blur-[20px] border border-outline-variant/30 hover:border-secondary transition-colors duration-300 shadow-sm flex flex-col h-full min-h-[400px]">
 <div class="h-48 w-full overflow-hidden relative">
 <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A macro shot of a person using a precision screwdriver to repair a modern smartphone. The scene is brightly lit with white studio lighting, emphasizing the tiny screws and intricate internal components of the device against a clean white anti-static mat." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcHs77iVBBqWmKxyQkA9We2raBszWNcVUSKf2N82g6a4NOkvKwkTza7uxGWzQ3bOKg07g7-CuDY-tP5zh30NY1OqTzcgMww39CTyu8tZ-zi6meUPvIYMdomaFixpIE6H0GnHaBtuEmoNxWk24O9g03IibUwLfvX23wrM7FMdG9XH8bUrfxolfePWO8i-JgE3Xseps-K7wLDcI5tXGydCx5QJ20O_EIPFSiJ2pnrCWWMh-y_Db_sVy5"/>
 </div>
@@ -271,7 +271,7 @@ RTL
 </div>
 </article>
 <!-- Tertiary Articles (Span 4 each) -->
-<article class="md:col-span-4 group cursor-pointer rounded-xl overflow-hidden relative bg-surface/80 backdrop-blur-[20px] border border-outline-variant/30 hover:border-secondary transition-colors duration-300 shadow-sm flex flex-col">
+<article class="md:col-span-4 group cursor-pointer rounded-xl overflow-hidden relative bg-surface/80 dark:bg-primary-container/80 backdrop-blur-[20px] border border-outline-variant/30 hover:border-secondary transition-colors duration-300 shadow-sm flex flex-col">
 <div class="h-48 w-full overflow-hidden relative">
 <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A collection of premium wireless earbuds and a sleek power bank arranged neatly on a matte black desk. Soft, warm directional lighting casts subtle shadows, highlighting the matte finish and modern industrial design of the tech accessories." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACwe7Y5c9r4is6T1EWnstb-nFqkYFZt4uQxeA19neiid4Ebg4Fg_XoYWwhiYO9E3S9zLPU9kVZOyBSILO73BvggnNPSsoXgSEUkn4ZmJ8QzNvDFzO2HWzTRbBbeMgggPS6zfUNm105UZf6at_6rOub7Dw1IPWwGkrt9bqhM4vyyjZq1sgdN7SygneHnzvVUW3AqjXKYO844bJxdJSSc0Ax4ZQcxigDP0Ng4MYRDsYJTjUrLvnNS1_W"/>
 </div>
@@ -285,7 +285,7 @@ RTL
 <span class="mt-auto pt-4 font-label-md text-label-md text-secondary flex items-center">Read More <span class="material-symbols-outlined text-sm ml-1 transition-transform group-hover:translate-x-1">arrow_forward</span></span>
 </div>
 </article>
-<article class="md:col-span-4 group cursor-pointer rounded-xl overflow-hidden relative bg-surface/80 backdrop-blur-[20px] border border-outline-variant/30 hover:border-secondary transition-colors duration-300 shadow-sm flex flex-col">
+<article class="md:col-span-4 group cursor-pointer rounded-xl overflow-hidden relative bg-surface/80 dark:bg-primary-container/80 backdrop-blur-[20px] border border-outline-variant/30 hover:border-secondary transition-colors duration-300 shadow-sm flex flex-col">
 <div class="h-48 w-full overflow-hidden relative">
 <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A stylized graphic showing abstract digital networking nodes connecting in a bright, modern light-mode environment. Tiny glowing blue lines interconnect floating data packets over a clean, off-white background, representing high-speed connectivity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3fKjNqUh6KjP6mitWKO1p35rbkf1ERAPmznvAMXL1B6yCkZxz5qfFbnrtecsBEoHj62vrNt8j26He-G-rpVZ2y4_s9dcoGBRvxvkUrs0_ecgywfUtGXD3zRnYmWZEHRFzSVYrVP30HkaAqKZ741YF1Zq8GmafiAKqRbnAc3d2ccZtgU9cytZx2IgJqkyvzOFSiqW2KhoHNMJCSF6X8NF1A1h7ieQjWfGY55Mamp4k99VUxdwZ3-1-"/>
 </div>
@@ -299,7 +299,7 @@ RTL
 <span class="mt-auto pt-4 font-label-md text-label-md text-secondary flex items-center">Read More <span class="material-symbols-outlined text-sm ml-1 transition-transform group-hover:translate-x-1">arrow_forward</span></span>
 </div>
 </article>
-<article class="md:col-span-4 group cursor-pointer rounded-xl overflow-hidden relative bg-surface/80 backdrop-blur-[20px] border border-outline-variant/30 hover:border-secondary transition-colors duration-300 shadow-sm flex flex-col">
+<article class="md:col-span-4 group cursor-pointer rounded-xl overflow-hidden relative bg-surface/80 dark:bg-primary-container/80 backdrop-blur-[20px] border border-outline-variant/30 hover:border-secondary transition-colors duration-300 shadow-sm flex flex-col">
 <div class="h-48 w-full overflow-hidden relative">
 <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A vibrant, stylized composition featuring a bright orange tag with a percentage sign resting on top of a premium smartphone box. The background is a clean, modern white studio setup with sharp, high-key lighting to emphasize retail promotion." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6MEt8_XNi_sV2f0qAXHkHRNxiy7FX-H9bo_ITQfGTA4-NiD5k7H_0Cj5nptQX1XVb1-dz-BYBN9nAKNdUAYUAgg3MLlVjUbmhLoZ-NRqpLT8e9pi9AJVYdCcw5K9EJxuqR7mq7ccQUCj5OxizwOdtIULunP2Rz03lSrKxprrwP5hetznfrAatez2QFcrQp8znAHzGmjtFU7lHliDT43C2QQ6GkB8JNqiyv7GrSZMMeGl6arKjDEfD"/>
 </div>
@@ -583,6 +583,13 @@ RTL
         const themeToggle = document.getElementById('theme-toggle') || document.getElementById('themeToggle');
         const html = document.documentElement;
         
+        
+        // Init dir
+        const savedDir = localStorage.getItem('dir');
+        if (savedDir) {
+            document.documentElement.dir = savedDir;
+        }
+
         // Init theme
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'dark') {
