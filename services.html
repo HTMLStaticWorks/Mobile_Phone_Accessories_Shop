@@ -485,47 +485,53 @@ RTL
 </div>
 </div>
 <!-- 1. Repair Progress Tracker -->
-<div class="fade-in-up mb-16 p-8 glass-panel rounded-xl border border-outline-variant/30 visible">
+<div class="fade-in-up mb-16 p-4 md:p-8 glass-panel rounded-xl border border-outline-variant/30 visible">
 <h3 class="font-headline-sm text-headline-sm text-primary mb-2 md:mb-8 text-center dark:text-on-primary">Track Your Repair</h3>
 <p class="md:hidden text-center font-label-lg text-electric-blue font-bold mb-8">Status: In-Progress</p>
-<div class="relative max-w-4xl mx-auto px-2 md:px-0">
+
+<div class="relative max-w-4xl mx-auto">
 <!-- Progress Bar Background -->
-<div class="absolute top-[24px] left-0 w-full h-1 bg-surface-variant z-0 rounded-full"></div>
+<div class="absolute top-[20px] md:top-[24px] left-0 w-full h-1 bg-surface-variant z-0 rounded-full"></div>
 <!-- Progress Bar Fill -->
-<div class="absolute top-[24px] left-0 h-1 bg-electric-blue z-0 rounded-full progress-bar-fill" style="width: 50%;"></div>
+<div class="absolute top-[20px] md:top-[24px] left-0 h-1 bg-electric-blue z-0 rounded-full progress-bar-fill" style="width: 50%;"></div>
+
 <div class="flex justify-between relative z-10">
 <!-- Stage 1 -->
 <div class="flex flex-col items-center gap-3">
-<div class="w-12 h-12 rounded-full bg-electric-blue text-white flex items-center justify-center shadow-md">
-<span class="material-symbols-outlined">inventory_2</span>
+<div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-electric-blue text-white flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-[20px] md:text-[24px]">inventory_2</span>
 </div>
 <span class="hidden md:block font-label-md text-label-md text-sm text-primary dark:text-on-primary text-center">Received</span>
 </div>
+
 <!-- Stage 2 -->
 <div class="flex flex-col items-center gap-3">
-<div class="w-12 h-12 rounded-full bg-electric-blue text-white flex items-center justify-center shadow-md">
-<span class="material-symbols-outlined">search</span>
+<div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-electric-blue text-white flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-[20px] md:text-[24px]">search</span>
 </div>
 <span class="hidden md:block font-label-md text-label-md text-sm text-primary dark:text-on-primary text-center">Diagnostic</span>
 </div>
+
 <!-- Stage 3 (Active) -->
 <div class="flex flex-col items-center gap-3">
-<div class="w-12 h-12 rounded-full bg-electric-blue text-white flex items-center justify-center shadow-md pulse-active">
-<span class="material-symbols-outlined">build</span>
+<div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-electric-blue text-white flex items-center justify-center shadow-md pulse-active">
+<span class="material-symbols-outlined text-[20px] md:text-[24px]">build</span>
 </div>
 <span class="hidden md:block font-label-md text-label-md text-sm text-electric-blue font-bold text-center">In-Progress</span>
 </div>
+
 <!-- Stage 4 -->
 <div class="flex flex-col items-center gap-3">
-<div class="w-12 h-12 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center border-2 border-surface-variant dark:text-on-primary-container">
-<span class="material-symbols-outlined">fact_check</span>
+<div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center border-2 border-surface-variant dark:text-on-primary-container">
+<span class="material-symbols-outlined text-[20px] md:text-[24px]">fact_check</span>
 </div>
 <span class="hidden md:block font-label-md text-label-md text-sm text-on-surface-variant dark:text-on-primary-container text-center">Quality Check</span>
 </div>
+
 <!-- Stage 5 -->
 <div class="flex flex-col items-center gap-3">
-<div class="w-12 h-12 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center border-2 border-surface-variant dark:text-on-primary-container">
-<span class="material-symbols-outlined">task_alt</span>
+<div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center border-2 border-surface-variant dark:text-on-primary-container">
+<span class="material-symbols-outlined text-[20px] md:text-[24px]">task_alt</span>
 </div>
 <span class="hidden md:block font-label-md text-label-md text-sm text-on-surface-variant dark:text-on-primary-container text-center">Ready</span>
 </div>
