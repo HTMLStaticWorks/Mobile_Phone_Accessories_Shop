@@ -133,20 +133,18 @@
     </script>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230058be'/><text x='50' y='67' font-family='sans-serif' font-size='55' font-weight='bold' fill='white' text-anchor='middle'>FN</text></svg>">
 </head>
-<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md text-body-md antialiased pt-16 dark:bg-primary dark:text-on-primary">
+<body class="bg-background dark:bg-primary text-on-background dark:text-on-primary font-body-md text-body-md min-h-screen flex flex-col relative transition-colors duration-300 pt-16">
 <!-- TopNavBar -->
-</head>
-<body class="bg-background dark:bg-primary text-on-background dark:text-on-primary font-body-md text-body-md min-h-screen flex flex-col relative transition-colors duration-300">
 <!-- Global Circuit Pattern Overlay -->
 <div class="fixed inset-0 pointer-events-none bg-circuit z-0"></div>
 <!-- TopNavBar (Semantic Shell) -->
 <header class="bg-surface/80 dark:bg-primary/80 backdrop-blur-md font-label-md text-label-md border-b border-outline-variant/20 shadow-sm fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16">
 <!-- Brand Logo -->
-<div class="font-headline-sm text-headline-sm font-bold text-primary dark:text-on-primary-fixed">
+<a href="index.html" class="font-headline-sm text-headline-sm font-bold text-primary dark:text-white hover:opacity-80 transition-opacity flex items-center">
             FixNex
-        </div>
+        </a>
 <!-- Desktop Navigation Links -->
-<nav class="hidden md:flex gap-2 lg:gap-3 items-center">
+<nav class="hidden lg:flex gap-2 lg:gap-3 items-center">
             <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all px-2 py-1 rounded dark:text-on-primary-container" href="index.html">Home</a>
             <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all px-2 py-1 rounded dark:text-on-primary-container" href="home2.html">Home2</a>
             <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all px-2 py-1 rounded dark:text-on-primary-container" href="services.html">Services</a>
@@ -157,13 +155,13 @@
         </nav>
 <!-- Actions -->
 <div class="flex items-center space-x-unit md:space-x-4">
-<button aria-label="shopping_cart" class="text-secondary dark:text-secondary-fixed hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all p-2 rounded-full scale-95 active:scale-90 transition-transform">
+<button aria-label="shopping_cart" class="hidden lg:block text-secondary dark:text-secondary-fixed hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all p-2 rounded-full scale-95 active:scale-90 transition-transform">
 <span class="material-symbols-outlined">shopping_cart</span>
 </button>
-<button aria-label="dark_mode" class="text-secondary dark:text-secondary-fixed hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all p-2 rounded-full scale-95 active:scale-90 transition-transform" id="themeToggle">>
+<button aria-label="dark_mode" class="hidden lg:block text-secondary dark:text-secondary-fixed hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all p-2 rounded-full scale-95 active:scale-90 transition-transform" id="themeToggle">
 <span class="material-symbols-outlined">dark_mode</span>
 </button>
-<div class="hidden md:flex items-center space-x-2 ml-4">
+<div class="hidden lg:flex items-center space-x-2 ml-4">
 <button class="px-4 py-2 text-primary dark:text-on-primary font-label-md text-label-md border-2 border-primary dark:border-outline-variant hover:bg-surface-container-high dark:hover:bg-primary-container transition-colors rounded" onclick="window.location.href='login.html'">
                     Login
                 </button>
@@ -172,11 +170,36 @@
                 </button>
 </div>
 <!-- Mobile Menu Toggle -->
-<button aria-label="menu" class="md:hidden text-primary dark:text-on-primary p-2">
+<button aria-label="menu" id="mobile-menu-btn" class="lg:hidden text-primary dark:text-on-primary p-2 z-50 relative">
 <span class="material-symbols-outlined">menu</span>
 </button>
 </div>
 </header>
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu" class="fixed inset-0 bg-surface/95 dark:bg-primary/95 backdrop-blur-lg z-40 hidden flex-col pt-24 px-margin-mobile overflow-y-auto pb-10">
+    <div class="flex flex-col gap-4">
+        <a class="font-headline-sm text-headline-sm text-on-surface dark:text-on-primary border-b border-outline-variant/20 pb-4 hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="index.html">Home</a>
+        <a class="font-headline-sm text-headline-sm text-on-surface dark:text-on-primary border-b border-outline-variant/20 pb-4 hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="home2.html">Home2</a>
+        <a class="font-headline-sm text-headline-sm text-on-surface dark:text-on-primary border-b border-outline-variant/20 pb-4 hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="services.html">Services</a>
+        <a class="font-headline-sm text-headline-sm text-on-surface dark:text-on-primary border-b border-outline-variant/20 pb-4 hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="product.html">Products</a>
+        <a class="font-headline-sm text-headline-sm text-on-surface dark:text-on-primary border-b border-outline-variant/20 pb-4 hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="gallery.html">Gallery</a>
+        <a class="font-headline-sm text-headline-sm text-on-surface dark:text-on-primary border-b border-outline-variant/20 pb-4 hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="blog.html">Blog</a>
+        <a class="font-headline-sm text-headline-sm text-on-surface dark:text-on-primary border-b border-outline-variant/20 pb-4 hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="contact.html">Contact</a>
+        <div class="flex items-center justify-center gap-8 py-4 border-b border-outline-variant/20 mb-2">
+            <button aria-label="shopping_cart" class="text-secondary dark:text-secondary-fixed transition-all p-2 rounded-full">
+                <span class="material-symbols-outlined text-3xl">shopping_cart</span>
+            </button>
+            <button aria-label="dark_mode" class="text-secondary dark:text-secondary-fixed transition-all p-2 rounded-full" onclick="document.getElementById('themeToggle').click()">
+                <span class="material-symbols-outlined text-3xl theme-icon-mobile">dark_mode</span>
+            </button>
+        </div>
+        <div class="flex flex-col gap-3 mt-4">
+            <button class="px-4 py-3 text-primary dark:text-on-primary font-label-md text-label-md border-2 border-primary dark:border-outline-variant hover:bg-surface-container-high dark:hover:bg-primary-container transition-colors rounded w-full" onclick="window.location.href='login.html'">Login</button>
+            <button class="px-4 py-3 bg-secondary text-on-secondary font-label-md text-label-md hover:bg-secondary-fixed-dim transition-colors rounded w-full" onclick="window.location.href='regitser.html'">Sign Up</button>
+        </div>
+    </div>
+</div>
+
 <!-- Main Content -->
 <main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8 md:py-12">
 <!-- Header & Search -->
@@ -245,12 +268,13 @@
 <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A collection of premium wireless earbuds and a sleek power bank arranged neatly on a matte black desk. Soft, warm directional lighting casts subtle shadows, highlighting the matte finish and modern industrial design of the tech accessories." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACwe7Y5c9r4is6T1EWnstb-nFqkYFZt4uQxeA19neiid4Ebg4Fg_XoYWwhiYO9E3S9zLPU9kVZOyBSILO73BvggnNPSsoXgSEUkn4ZmJ8QzNvDFzO2HWzTRbBbeMgggPS6zfUNm105UZf6at_6rOub7Dw1IPWwGkrt9bqhM4vyyjZq1sgdN7SygneHnzvVUW3AqjXKYO844bJxdJSSc0Ax4ZQcxigDP0Ng4MYRDsYJTjUrLvnNS1_W"/>
 </div>
 <div class="p-5 flex-grow flex flex-col">
-<div class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md text-sm mb-2 dark:text-on-primary-container">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md text-sm mb-2 dark:text-on-primary-container whitespace-nowrap overflow-hidden text-ellipsis">
 <span>Accessories</span>
 <span>•</span>
 <span>Oct 20, 2026</span>
 </div>
-<h3 class="font-headline-sm text-headline-sm text-primary mb-2 group-hover:text-secondary transition-colors line-clamp-2 dark:text-on-primary">Top 5 Wireless Audio Companions</h3>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2 group-hover:text-secondary transition-colors truncate dark:text-on-primary">Top 5 Wireless Audio Companions</h3>
+<span class="mt-auto pt-4 font-label-md text-label-md text-secondary flex items-center">Read More <span class="material-symbols-outlined text-sm ml-1 transition-transform group-hover:translate-x-1">arrow_forward</span></span>
 </div>
 </article>
 <article class="md:col-span-4 group cursor-pointer rounded-xl overflow-hidden relative bg-surface/80 backdrop-blur-[20px] border border-outline-variant/30 hover:border-secondary transition-colors duration-300 shadow-sm flex flex-col">
@@ -258,12 +282,13 @@
 <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A stylized graphic showing abstract digital networking nodes connecting in a bright, modern light-mode environment. Tiny glowing blue lines interconnect floating data packets over a clean, off-white background, representing high-speed connectivity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3fKjNqUh6KjP6mitWKO1p35rbkf1ERAPmznvAMXL1B6yCkZxz5qfFbnrtecsBEoHj62vrNt8j26He-G-rpVZ2y4_s9dcoGBRvxvkUrs0_ecgywfUtGXD3zRnYmWZEHRFzSVYrVP30HkaAqKZ741YF1Zq8GmafiAKqRbnAc3d2ccZtgU9cytZx2IgJqkyvzOFSiqW2KhoHNMJCSF6X8NF1A1h7ieQjWfGY55Mamp4k99VUxdwZ3-1-"/>
 </div>
 <div class="p-5 flex-grow flex flex-col">
-<div class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md text-sm mb-2 dark:text-on-primary-container">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md text-sm mb-2 dark:text-on-primary-container whitespace-nowrap overflow-hidden text-ellipsis">
 <span>News</span>
 <span>•</span>
 <span>Oct 18, 2026</span>
 </div>
-<h3 class="font-headline-sm text-headline-sm text-primary mb-2 group-hover:text-secondary transition-colors line-clamp-2 dark:text-on-primary">Next-Gen 6G Networks: What to Expect</h3>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2 group-hover:text-secondary transition-colors truncate dark:text-on-primary">Next-Gen 6G Networks: What to Expect</h3>
+<span class="mt-auto pt-4 font-label-md text-label-md text-secondary flex items-center">Read More <span class="material-symbols-outlined text-sm ml-1 transition-transform group-hover:translate-x-1">arrow_forward</span></span>
 </div>
 </article>
 <article class="md:col-span-4 group cursor-pointer rounded-xl overflow-hidden relative bg-surface/80 backdrop-blur-[20px] border border-outline-variant/30 hover:border-secondary transition-colors duration-300 shadow-sm flex flex-col">
@@ -271,12 +296,13 @@
 <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A vibrant, stylized composition featuring a bright orange tag with a percentage sign resting on top of a premium smartphone box. The background is a clean, modern white studio setup with sharp, high-key lighting to emphasize retail promotion." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6MEt8_XNi_sV2f0qAXHkHRNxiy7FX-H9bo_ITQfGTA4-NiD5k7H_0Cj5nptQX1XVb1-dz-BYBN9nAKNdUAYUAgg3MLlVjUbmhLoZ-NRqpLT8e9pi9AJVYdCcw5K9EJxuqR7mq7ccQUCj5OxizwOdtIULunP2Rz03lSrKxprrwP5hetznfrAatez2QFcrQp8znAHzGmjtFU7lHliDT43C2QQ6GkB8JNqiyv7GrSZMMeGl6arKjDEfD"/>
 </div>
 <div class="p-5 flex-grow flex flex-col">
-<div class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md text-sm mb-2 dark:text-on-primary-container">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md text-sm mb-2 dark:text-on-primary-container whitespace-nowrap overflow-hidden text-ellipsis">
 <span>Deals</span>
 <span>•</span>
 <span>Oct 15, 2026</span>
 </div>
-<h3 class="font-headline-sm text-headline-sm text-primary mb-2 group-hover:text-secondary transition-colors line-clamp-2 dark:text-on-primary">Weekend Flash Sale: Huge Savings on Cases</h3>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2 group-hover:text-secondary transition-colors truncate dark:text-on-primary">Weekend Flash Sale: Huge Savings on Cases</h3>
+<span class="mt-auto pt-4 font-label-md text-label-md text-secondary flex items-center">Read More <span class="material-symbols-outlined text-sm ml-1 transition-transform group-hover:translate-x-1">arrow_forward</span></span>
 </div>
 </article>
 </div>
@@ -317,11 +343,11 @@
 </div>
 </section>
 <!-- 2. "Tech Talk" Video Showcase -->
-<section class="mb-20 scroll-anim hidden-anim opacity-0 rounded-2xl bg-primary p-8 text-on-primary">
+<section class="mb-20 scroll-anim hidden-anim opacity-0 rounded-2xl bg-surface-container dark:bg-primary-container p-8 text-on-surface dark:text-on-primary border border-outline-variant/30">
 <div class="flex justify-between items-end mb-6">
 <div>
-<h2 class="font-headline-md text-headline-md text-on-primary mb-2">Tech Talk Showcase</h2>
-<p class="font-body-md text-body-md text-on-primary-fixed-variant">Watch our latest in-depth reviews and guides.</p>
+<h2 class="font-headline-md text-headline-md text-primary dark:text-on-primary mb-2">Tech Talk Showcase</h2>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-on-primary/80">Watch our latest in-depth reviews and guides.</p>
 </div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -331,43 +357,43 @@
 <span class="material-symbols-outlined text-3xl ml-1">play_arrow</span>
 </button>
 </div>
-<img alt="Video thumbnail" class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCR08q79UovRM-OthbLr-akU8cVnhhZCvXoYj9c461fVtdP5ddgf_r0GzOj5X77YeAY8nMoDwT_wSh3oLPfLPnznkzdODX2Bmqif0fBJvAH9ebZy793ClEcYc_2j1J8RR3fbN-bPnhuAFtIcTe6E5w9kyG1rjE1Le-xlVgQ65AcMG8Wq7nYoyTIvZ5_mHjKIKCXw4S3fw_C2HesQcxpp7Ejx9A2eTJRj8ayyQnCZWgIkkgE74VZ5Cgl"/>
-<div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-primary to-transparent z-10">
-<h3 class="font-headline-sm text-headline-sm text-on-primary">Inside the Latest Foldable Tech</h3>
+<img alt="Video thumbnail" class="w-full h-full object-cover opacity-80 transition-opacity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCR08q79UovRM-OthbLr-akU8cVnhhZCvXoYj9c461fVtdP5ddgf_r0GzOj5X77YeAY8nMoDwT_wSh3oLPfLPnznkzdODX2Bmqif0fBJvAH9ebZy793ClEcYc_2j1J8RR3fbN-bPnhuAFtIcTe6E5w9kyG1rjE1Le-xlVgQ65AcMG8Wq7nYoyTIvZ5_mHjKIKCXw4S3fw_C2HesQcxpp7Ejx9A2eTJRj8ayyQnCZWgIkkgE74VZ5Cgl"/>
+<div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent z-10">
+<h3 class="font-headline-sm text-headline-sm text-primary dark:text-white">Inside the Latest Foldable Tech</h3>
 </div>
 </div>
 <div class="md:col-span-1 flex flex-col gap-4 overflow-y-auto max-h-[400px] no-scrollbar">
 <div class="flex gap-3 group cursor-pointer">
 <div class="w-24 h-16 rounded-lg overflow-hidden relative flex-shrink-0 bg-surface-tint/20">
 <div class="absolute inset-0 flex items-center justify-center z-10">
-<span class="material-symbols-outlined text-on-primary text-xl drop-shadow-md">play_circle</span>
+<span class="material-symbols-outlined text-on-surface dark:text-on-primary text-xl drop-shadow-md">play_circle</span>
 </div>
 </div>
 <div>
-<h4 class="font-label-md text-label-md text-on-primary group-hover:text-secondary-fixed transition-colors line-clamp-2">Camera Test: Night Mode Compared</h4>
-<span class="text-xs text-on-primary-fixed-variant">5:23</span>
+<h4 class="font-label-md text-label-md text-on-surface dark:text-on-primary group-hover:text-secondary dark:group-hover:text-secondary-fixed transition-colors line-clamp-2">Camera Test: Night Mode Compared</h4>
+<span class="text-xs text-on-surface-variant dark:text-on-primary-container">5:23</span>
 </div>
 </div>
 <div class="flex gap-3 group cursor-pointer">
 <div class="w-24 h-16 rounded-lg overflow-hidden relative flex-shrink-0 bg-surface-tint/20">
 <div class="absolute inset-0 flex items-center justify-center z-10">
-<span class="material-symbols-outlined text-on-primary text-xl drop-shadow-md">play_circle</span>
+<span class="material-symbols-outlined text-on-surface dark:text-on-primary text-xl drop-shadow-md">play_circle</span>
 </div>
 </div>
 <div>
-<h4 class="font-label-md text-label-md text-on-primary group-hover:text-secondary-fixed transition-colors line-clamp-2">How to Maximize Battery Life</h4>
-<span class="text-xs text-on-primary-fixed-variant">8:45</span>
+<h4 class="font-label-md text-label-md text-on-surface dark:text-on-primary group-hover:text-secondary dark:group-hover:text-secondary-fixed transition-colors line-clamp-2">How to Maximize Battery Life</h4>
+<span class="text-xs text-on-surface-variant dark:text-on-primary-container">8:45</span>
 </div>
 </div>
 <div class="flex gap-3 group cursor-pointer">
 <div class="w-24 h-16 rounded-lg overflow-hidden relative flex-shrink-0 bg-surface-tint/20">
 <div class="absolute inset-0 flex items-center justify-center z-10">
-<span class="material-symbols-outlined text-on-primary text-xl drop-shadow-md">play_circle</span>
+<span class="material-symbols-outlined text-on-surface dark:text-on-primary text-xl drop-shadow-md">play_circle</span>
 </div>
 </div>
 <div>
-<h4 class="font-label-md text-label-md text-on-primary group-hover:text-secondary-fixed transition-colors line-clamp-2">Top 10 Accessories for 2026</h4>
-<span class="text-xs text-on-primary-fixed-variant">12:10</span>
+<h4 class="font-label-md text-label-md text-on-surface dark:text-on-primary group-hover:text-secondary dark:group-hover:text-secondary-fixed transition-colors line-clamp-2">Top 10 Accessories for 2026</h4>
+<span class="text-xs text-on-surface-variant dark:text-on-primary-container">12:10</span>
 </div>
 </div>
 </div>
@@ -436,14 +462,14 @@
 <h2 class="font-headline-sm text-headline-sm text-primary mb-6 dark:text-on-primary">Editor's Spotlight</h2>
 <div class="space-y-4">
 <div class="flex items-center gap-4 p-4 rounded-xl hover:bg-surface-container transition-colors">
-<div class="w-12 h-12 rounded-full bg-surface-tint/20 flex-shrink-0"></div>
+<img src="assets/alex_rodriguez.png" alt="Alex Rodriguez" class="w-12 h-12 rounded-full object-cover flex-shrink-0 shadow-sm border border-outline-variant/30">
 <div>
 <h4 class="font-label-md text-label-md text-on-surface dark:text-on-primary">Alex Rodriguez</h4>
 <p class="text-sm text-on-surface-variant dark:text-on-primary-container">Senior Hardware Reviewer</p>
 </div>
 </div>
 <div class="flex items-center gap-4 p-4 rounded-xl hover:bg-surface-container transition-colors">
-<div class="w-12 h-12 rounded-full bg-surface-tint/20 flex-shrink-0"></div>
+<img src="assets/sarah_chen.png" alt="Sarah Chen" class="w-12 h-12 rounded-full object-cover flex-shrink-0 shadow-sm border border-outline-variant/30">
 <div>
 <h4 class="font-label-md text-label-md text-on-surface dark:text-on-primary">Sarah Chen</h4>
 <p class="text-sm text-on-surface-variant dark:text-on-primary-container">Mobile Software Expert</p>
@@ -458,7 +484,7 @@
 <div class="relative z-10">
 <h2 class="font-headline-sm text-headline-sm mb-2">Join the Inner Circle</h2>
 <p class="font-body-md text-body-md mb-6 opacity-90">Get exclusive tech insights, early access to reviews, and special deals delivered weekly.</p>
-<form class="flex flex-col sm:flex-row gap-3">
+<form class="flex flex-col lg:flex-row gap-3">
 <input class="flex-grow px-4 py-3 rounded-lg bg-surface text-on-surface border-none focus:ring-2 focus:ring-secondary-container outline-none dark:text-on-primary" placeholder="Your email address" required="" type="email"/>
 <button class="px-6 py-3 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-colors whitespace-nowrap" type="submit">
                         Subscribe
@@ -470,50 +496,50 @@
 </section>
 </main>
 <!-- Footer -->
-<footer class="bg-primary dark:bg-primary-container text-on-primary dark:text-on-primary-container font-body-md text-body-md border-t border-outline-variant/10 w-full z-10 relative mt-auto">
+<footer class="bg-surface-container dark:bg-primary-container text-on-surface dark:text-on-primary-container font-body-md text-body-md border-t border-outline-variant/10 w-full z-10 relative mt-auto">
     <div class="px-margin-mobile md:px-margin-desktop py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
         <!-- Brand & About -->
         <div class="flex flex-col gap-4">
-            <div class="font-headline-md text-headline-md text-headline-sm font-bold text-on-primary tracking-tight">FixNex</div>
-            <p class="text-on-primary-fixed-variant dark:text-on-primary-container/80 text-sm leading-relaxed max-w-xs">
+            <div class="font-headline-md text-headline-md text-headline-sm font-bold text-primary dark:text-on-primary tracking-tight">FixNex</div>
+            <p class="text-on-surface-variant dark:text-on-primary-container/80 text-sm leading-relaxed max-w-xs">
                 Your one-stop destination for premium mobile phones, smart accessories, and expert repair services. Quality you can trust.
             </p>
-            <div class="flex gap-4 mt-2 text-on-primary-fixed-variant dark:text-on-primary-container/80">
-                <a href="#" class="hover:text-secondary-fixed transition-colors"><span class="material-symbols-outlined text-[20px]">facebook</span></a>
-                <a href="#" class="hover:text-secondary-fixed transition-colors"><span class="material-symbols-outlined text-[20px]">language</span></a>
-                <a href="#" class="hover:text-secondary-fixed transition-colors"><span class="material-symbols-outlined text-[20px]">camera_alt</span></a>
-                <a href="#" class="hover:text-secondary-fixed transition-colors"><span class="material-symbols-outlined text-[20px]">play_arrow</span></a>
+            <div class="flex gap-4 mt-2 text-on-surface-variant dark:text-on-primary-container/80">
+                <a href="#" class="hover:text-secondary dark:hover:text-secondary-fixed transition-colors"><span class="material-symbols-outlined text-[20px]">facebook</span></a>
+                <a href="#" class="hover:text-secondary dark:hover:text-secondary-fixed transition-colors"><span class="material-symbols-outlined text-[20px]">language</span></a>
+                <a href="#" class="hover:text-secondary dark:hover:text-secondary-fixed transition-colors"><span class="material-symbols-outlined text-[20px]">camera_alt</span></a>
+                <a href="#" class="hover:text-secondary dark:hover:text-secondary-fixed transition-colors"><span class="material-symbols-outlined text-[20px]">play_arrow</span></a>
             </div>
         </div>
         
         <!-- Quick Links -->
         <div class="flex flex-col gap-4">
-            <h4 class="font-label-lg font-semibold text-on-primary mb-2">Quick Links</h4>
-            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/80 hover:text-secondary-fixed transition-colors text-sm w-fit" href="index.html">Home</a>
-            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/80 hover:text-secondary-fixed transition-colors text-sm w-fit" href="product.html">Products</a>
-            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/80 hover:text-secondary-fixed transition-colors text-sm w-fit" href="services.html">Services</a>
-            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/80 hover:text-secondary-fixed transition-colors text-sm w-fit" href="blog.html">Blog</a>
-            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/80 hover:text-secondary-fixed transition-colors text-sm w-fit" href="contact.html">Contact Us</a>
+            <h4 class="font-label-lg font-semibold text-primary dark:text-on-primary mb-2">Quick Links</h4>
+            <a class="text-on-surface-variant dark:text-on-primary-container/80 hover:text-secondary dark:hover:text-secondary-fixed transition-colors text-sm w-fit" href="index.html">Home</a>
+            <a class="text-on-surface-variant dark:text-on-primary-container/80 hover:text-secondary dark:hover:text-secondary-fixed transition-colors text-sm w-fit" href="product.html">Products</a>
+            <a class="text-on-surface-variant dark:text-on-primary-container/80 hover:text-secondary dark:hover:text-secondary-fixed transition-colors text-sm w-fit" href="services.html">Services</a>
+            <a class="text-on-surface-variant dark:text-on-primary-container/80 hover:text-secondary dark:hover:text-secondary-fixed transition-colors text-sm w-fit" href="blog.html">Blog</a>
+            <a class="text-on-surface-variant dark:text-on-primary-container/80 hover:text-secondary dark:hover:text-secondary-fixed transition-colors text-sm w-fit" href="contact.html">Contact Us</a>
         </div>
         
         <!-- Customer Service -->
         <div class="flex flex-col gap-4">
-            <h4 class="font-label-lg font-semibold text-on-primary mb-2">Customer Service</h4>
-            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/80 hover:text-secondary-fixed transition-colors text-sm w-fit" href="#">FAQ</a>
-            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/80 hover:text-secondary-fixed transition-colors text-sm w-fit" href="#">Shipping Information</a>
-            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/80 hover:text-secondary-fixed transition-colors text-sm w-fit" href="#">Returns & Exchanges</a>
-            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/80 hover:text-secondary-fixed transition-colors text-sm w-fit" href="#">Track Order</a>
-            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/80 hover:text-secondary-fixed transition-colors text-sm w-fit" href="#">Warranty</a>
+            <h4 class="font-label-lg font-semibold text-primary dark:text-on-primary mb-2">Customer Service</h4>
+            <a class="text-on-surface-variant dark:text-on-primary-container/80 hover:text-secondary dark:hover:text-secondary-fixed transition-colors text-sm w-fit" href="#">FAQ</a>
+            <a class="text-on-surface-variant dark:text-on-primary-container/80 hover:text-secondary dark:hover:text-secondary-fixed transition-colors text-sm w-fit" href="#">Shipping Information</a>
+            <a class="text-on-surface-variant dark:text-on-primary-container/80 hover:text-secondary dark:hover:text-secondary-fixed transition-colors text-sm w-fit" href="#">Returns & Exchanges</a>
+            <a class="text-on-surface-variant dark:text-on-primary-container/80 hover:text-secondary dark:hover:text-secondary-fixed transition-colors text-sm w-fit" href="#">Track Order</a>
+            <a class="text-on-surface-variant dark:text-on-primary-container/80 hover:text-secondary dark:hover:text-secondary-fixed transition-colors text-sm w-fit" href="#">Warranty</a>
         </div>
         
         <!-- Newsletter -->
         <div class="flex flex-col gap-4">
-            <h4 class="font-label-lg font-semibold text-on-primary mb-2">Stay Updated</h4>
-            <p class="text-on-primary-fixed-variant dark:text-on-primary-container/80 text-sm mb-2">
+            <h4 class="font-label-lg font-semibold text-primary dark:text-on-primary mb-2">Stay Updated</h4>
+            <p class="text-on-surface-variant dark:text-on-primary-container/80 text-sm mb-2">
                 Subscribe to our newsletter for the latest products, deals, and tech news.
             </p>
             <form class="flex flex-col sm:flex-row gap-2 mt-auto" onsubmit="event.preventDefault()">
-                <input type="email" placeholder="Email Address" class="bg-surface-container/10 border border-outline-variant/30 text-on-primary text-sm rounded-md px-4 py-2 w-full focus:outline-none focus:border-secondary-fixed transition-colors placeholder:text-on-primary-fixed-variant/50">
+                <input type="email" placeholder="Email Address" class="bg-surface dark:bg-surface-container/10 border border-outline-variant/30 text-on-surface dark:text-on-primary text-sm rounded-md px-4 py-2 w-full focus:outline-none focus:border-secondary dark:focus:border-secondary-fixed transition-colors placeholder:text-on-surface-variant/50 dark:placeholder:text-on-primary-container/50">
                 <button type="submit" class="bg-secondary text-on-secondary hover:bg-secondary-fixed-dim transition-colors px-4 py-2 rounded-md text-sm font-label-md text-label-md whitespace-nowrap">
                     Subscribe
                 </button>
@@ -523,13 +549,13 @@
     
     <!-- Bottom Bar -->
     <div class="border-t border-outline-variant/10 px-margin-mobile md:px-margin-desktop py-6 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p class="text-on-primary-fixed-variant dark:text-on-primary-container/60 text-xs">
+        <p class="text-on-surface-variant dark:text-on-primary-container/60 text-xs">
             &copy; 2026 FixNex. All rights reserved.
         </p>
         <div class="flex gap-6">
-            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/60 hover:text-secondary-fixed transition-colors text-xs" href="#">Privacy Policy</a>
-            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/60 hover:text-secondary-fixed transition-colors text-xs" href="#">Terms of Service</a>
-            <a class="text-on-primary-fixed-variant dark:text-on-primary-container/60 hover:text-secondary-fixed transition-colors text-xs" href="#">Cookie Policy</a>
+            <a class="text-on-surface-variant dark:text-on-primary-container/60 hover:text-secondary dark:hover:text-secondary-fixed transition-colors text-xs" href="#">Privacy Policy</a>
+            <a class="text-on-surface-variant dark:text-on-primary-container/60 hover:text-secondary dark:hover:text-secondary-fixed transition-colors text-xs" href="#">Terms of Service</a>
+            <a class="text-on-surface-variant dark:text-on-primary-container/60 hover:text-secondary dark:hover:text-secondary-fixed transition-colors text-xs" href="#">Cookie Policy</a>
         </div>
     </div>
 </footer>
@@ -633,4 +659,36 @@
     });
 </script>
 
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                mobileMenu.classList.toggle('flex');
+                const icon = mobileMenuBtn.querySelector('.material-symbols-outlined');
+                if (icon) {
+                    icon.textContent = mobileMenu.classList.contains('hidden') ? 'menu' : 'close';
+                }
+            });
+        }
+    });
+</script>
+
+<script>
+    // Keep mobile theme icon in sync
+    document.addEventListener('click', (e) => {
+        if (e.target.closest('#themeToggle') || e.target.closest('.theme-icon-mobile')) {
+            setTimeout(() => {
+                const mobileIcon = document.querySelector('.theme-icon-mobile');
+                const htmlClasses = document.documentElement.classList;
+                if (mobileIcon) {
+                    mobileIcon.textContent = htmlClasses.contains('dark') ? 'light_mode' : 'dark_mode';
+                }
+            }, 50);
+        }
+    });
+</script>
 </body></html>
