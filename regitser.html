@@ -98,12 +98,6 @@
         }
     </script>
 <style>
-        .circuit-pattern {
-            background-image: radial-gradient(circle at 100% 150%, var(--tw-colors-outline-variant) 24%, transparent 24%), 
-                              radial-gradient(circle at 0% -50%, var(--tw-colors-outline-variant) 24%, transparent 24%);
-            background-size: 40px 40px;
-            opacity: 0.05;
-        }
         .fade-in-up {
             animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
             opacity: 0;
@@ -123,8 +117,6 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230058be'/><text x='50' y='67' font-family='sans-serif' font-size='55' font-weight='bold' fill='white' text-anchor='middle'>FN</text></svg>">
 </head>
 <body class="bg-background min-h-screen flex items-center justify-center relative overflow-x-hidden font-body-md text-body-md text-on-background dark:bg-primary dark:text-on-primary py-12">
-<!-- Ambient Background / Circuit Pattern -->
-<div class="absolute inset-0 circuit-pattern pointer-events-none z-0"></div>
 <!-- Abstract Tech Elements -->
 <div class="absolute -top-32 -left-32 w-96 h-96 bg-secondary/10 rounded-full blur-[100px] pointer-events-none"></div>
 <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-tertiary-container/10 rounded-full blur-[100px] pointer-events-none"></div>
@@ -140,7 +132,11 @@
 </header>
 <!-- Header Section -->
 <div class="text-center mb-8 fade-in-up delay-100">
-<h1 class="font-display-lg-mobile xl:font-display-lg text-display-lg-mobile xl:text-display-lg text-primary mb-2 dark:text-on-primary">Join Us</h1>
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-secondary/10 text-secondary border border-secondary/30 rounded-full font-label-md text-xs font-semibold uppercase tracking-wider backdrop-blur-md mb-4">
+    <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+    New Member Registration
+</div>
+<h1 class="font-display-lg-mobile xl:font-display-lg text-display-lg-mobile xl:text-display-lg text-primary mb-2 dark:text-on-primary">Join <span class="bg-gradient-to-r from-secondary via-secondary-container to-on-tertiary-container text-transparent bg-clip-text">Us</span></h1>
 <p class="font-body-md text-body-md text-on-surface-variant dark:text-on-primary-container">Create your premium account.</p>
 </div>
 <!-- Registration Form -->

@@ -96,11 +96,6 @@
         }
     </script>
 <style>
-        .circuit-bg {
-            background-color: #fcf8fa;
-            background-image: radial-gradient(#c8c5cd 1px, transparent 1px);
-            background-size: 24px 24px;
-        }
         .glass-card {
             background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(20px);
@@ -127,9 +122,7 @@
     </style>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230058be'/><text x='50' y='67' font-family='sans-serif' font-size='55' font-weight='bold' fill='white' text-anchor='middle'>FN</text></svg>">
 </head>
-<body class="bg-background text-on-background min-h-screen flex items-center justify-center circuit-bg overflow-x-hidden relative dark:bg-primary dark:text-on-primary py-12">
-<!-- Subtle overlay for tech texture -->
-<div class="absolute inset-0 pointer-events-none opacity-5 bg-[url('placeholder')] bg-repeat" data-alt="A seamless subtle circuit board texture pattern. Clean lines, geometric nodes, light silver lines on a transparent background, modern corporate tech aesthetic, high resolution."></div>
+<body class="bg-background text-on-background min-h-screen flex items-center justify-center overflow-x-hidden relative dark:bg-primary dark:text-on-primary py-12">
 <main class="w-full max-w-md px-margin-mobile relative z-10 fade-in">
 <!-- Glassmorphism Login Card -->
 <div class="glass-card rounded-xl p-8 relative overflow-hidden dark:bg-primary-container/80 dark:border-outline-variant/30">
@@ -143,10 +136,11 @@
 <!-- decorative gradient blob -->
 <div class="absolute -top-20 -right-20 w-40 h-40 bg-secondary/10 rounded-full blur-3xl pointer-events-none z-0"></div>
 <div class="text-center mb-8">
-<div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary mb-4 text-on-primary">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">login</span>
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-secondary/10 text-secondary border border-secondary/30 rounded-full font-label-md text-xs font-semibold uppercase tracking-wider backdrop-blur-md mb-4">
+    <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+    Member Portal
 </div>
-<h1 class="font-headline-md text-headline-md text-primary mb-2 dark:text-on-primary">Welcome Back</h1>
+<h1 class="font-headline-md text-headline-md text-primary mb-2 dark:text-on-primary">Welcome <span class="bg-gradient-to-r from-secondary via-secondary-container to-on-tertiary-container text-transparent bg-clip-text">Back</span></h1>
 <p class="font-body-md text-body-md text-on-surface-variant dark:text-on-primary-container">Sign in to access your account</p>
 </div>
 <form action="#" class="space-y-6" method="POST">
@@ -217,13 +211,6 @@
                     <a class="font-label-md text-label-md text-secondary hover:text-on-secondary-fixed-variant transition-colors" href="regitser.html">Create one now</a>
 </p>
 </div>
-</div>
-<!-- Back to shop link -->
-<div class="mt-6 text-center">
-<a class="inline-flex items-center text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md dark:text-on-primary-container" href="index.html">
-<span class="material-symbols-outlined text-[18px] mr-1">arrow_back</span>
-                 Return to Shop
-             </a>
 </div>
 </main>
 

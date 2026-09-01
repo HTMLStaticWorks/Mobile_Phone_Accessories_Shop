@@ -231,28 +231,27 @@
             <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all px-2 py-1 rounded dark:text-on-primary-container" href="blog.html">Blog</a>
             <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all px-2 py-1 rounded dark:text-on-primary-container" href="contact.html">Contact</a>
         </nav>
-<!-- Actions -->
-<div class="flex items-center space-x-unit md:space-x-4">
-<button aria-label="shopping_cart" class="hidden xl:block text-secondary dark:text-secondary-fixed hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all p-2 rounded-full scale-95 active:scale-90 transition-transform">
-<span class="material-symbols-outlined">shopping_cart</span>
+<!-- Actions Bar with Uniform Height (h-10 / 40px) & Baseline Alignment -->
+<div class="flex items-center gap-2">
+<button aria-label="shopping_cart" class="hidden xl:inline-flex items-center justify-center h-10 w-10 text-secondary dark:text-secondary-fixed hover:bg-surface-container-high/60 dark:hover:bg-primary-container/60 transition-all rounded-full" title="Cart">
+<span class="material-symbols-outlined text-[20px]">shopping_cart</span>
 </button>
-<button aria-label="dark_mode" class="hidden xl:block text-secondary dark:text-secondary-fixed hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all p-2 rounded-full scale-95 active:scale-90 transition-transform" id="themeToggle">
-<span class="material-symbols-outlined">dark_mode</span>
+<button aria-label="dark_mode" id="themeToggle" class="hidden xl:inline-flex items-center justify-center h-10 w-10 text-secondary dark:text-secondary-fixed hover:bg-surface-container-high/60 dark:hover:bg-primary-container/60 transition-all rounded-full" title="Toggle Theme">
+<span class="material-symbols-outlined text-[20px]">dark_mode</span>
 </button>
-<button aria-label="rtl_toggle" class="hidden xl:block text-secondary dark:text-secondary-fixed hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all p-2 rounded-full scale-95 active:scale-90 transition-transform font-bold" onclick="const newDir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl'; document.documentElement.dir = newDir; localStorage.setItem('dir', newDir);">
+<button aria-label="rtl_toggle" class="hidden xl:inline-flex items-center justify-center h-10 px-3 text-secondary dark:text-secondary-fixed hover:bg-surface-container-high/60 dark:hover:bg-primary-container/60 transition-all rounded-full font-bold text-xs tracking-wider" onclick="const newDir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl'; document.documentElement.dir = newDir; localStorage.setItem('dir', newDir);" title="Toggle RTL">
 RTL
 </button>
-
-<div class="hidden xl:flex items-center gap-2 ms-4">
-<button class="px-4 py-2 text-primary dark:text-on-primary font-label-md text-label-md border-2 border-primary dark:border-outline-variant hover:bg-surface-container-high dark:hover:bg-primary-container transition-colors rounded w-24 text-center" onclick="window.location.href='login.html'">
+<div class="hidden xl:inline-flex items-center gap-2 ms-2">
+<button class="h-10 px-5 inline-flex items-center justify-center text-primary dark:text-on-primary font-label-md text-sm font-semibold border-2 border-primary/30 dark:border-outline-variant hover:bg-surface-container-high dark:hover:bg-primary-container transition-all rounded-lg" onclick="window.location.href='login.html'">
                     Login
                 </button>
-<button class="px-4 py-2 bg-secondary text-on-secondary font-label-md text-label-md hover:bg-secondary-fixed-dim transition-colors rounded w-24 text-center" onclick="window.location.href='regitser.html'">
+<button class="h-10 px-5 inline-flex items-center justify-center bg-secondary text-on-secondary font-label-md text-sm font-semibold hover:bg-secondary-fixed-dim shadow-sm hover:shadow transition-all rounded-lg" onclick="window.location.href='regitser.html'">
                     Sign Up
                 </button>
 </div>
 <!-- Mobile Menu Toggle -->
-<button aria-label="menu" id="mobile-menu-btn" class="xl:hidden text-primary dark:text-on-primary p-2 z-50 relative">
+<button aria-label="menu" id="mobile-menu-btn" class="xl:hidden h-10 w-10 inline-flex items-center justify-center text-primary dark:text-on-primary rounded-full hover:bg-surface-container-high dark:hover:bg-primary-container z-50 relative">
 <span class="material-symbols-outlined">menu</span>
 </button>
 </div>
@@ -289,31 +288,39 @@ RTL
 <!-- Main Content Canvas -->
 <main class="flex-grow pt-16 relative z-10 w-full max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop space-y-24 pb-24">
 <!-- Hero Section -->
-<section class="relative min-h-[819px] flex items-center justify-center py-20 overflow-hidden rounded-xl mt-8">
-<!-- Background Image -->
-<div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 dark:opacity-20 z-0 rounded-xl" data-alt="A macro, ultra-high resolution photograph of sleek, modern smartphone camera lenses and textured glass backs intersecting abstractly. The lighting is high-key and studio quality, casting subtle blue highlights against deep midnight graphite shadows. The mood is highly technical, premium, and sophisticated, perfectly fitting a high-end electronics brand." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAej5WEMGurc9eosGY0QBqvVvuf0KyxIHlevAJMGWxfRqqdJD8X3snjCXnAy4atQ0vjAHsF89HnThOCCUpJ3MJ2ypnSeIPMVYWkMJETuVC20OtkQzvIf70CXgNRAVUpF1F_oYOhcm8GYlkKwSTvBKiytE7K1mTDadAINCn05TyKpzSQtLt7GHiT-502bMD5CDZVYxHEBXI8PKbN3dBkUgh2llBt5rxyDG8cCVZL8JuzyT9RofJHGGdg')"></div>
+<section class="relative min-h-[750px] flex items-center justify-center py-16 md:py-20 overflow-hidden rounded-2xl border border-outline-variant/20 dark:border-outline-variant/10 bg-gradient-to-br from-secondary/5 via-surface to-tertiary/5 dark:from-primary-container/80 dark:via-primary dark:to-primary-container/50 shadow-sm mt-6">
+<!-- Ambient Lighting Glows -->
+<div class="absolute top-1/4 left-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<div class="absolute bottom-1/4 right-10 w-96 h-96 bg-tertiary-container/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<!-- Background Image with Gradient Mask for High Contrast -->
+<div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 dark:opacity-10 z-0 rounded-2xl mix-blend-multiply dark:mix-blend-overlay" data-alt="A macro photograph of sleek mobile devices" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAej5WEMGurc9eosGY0QBqvVvuf0KyxIHlevAJMGWxfRqqdJD8X3snjCXnAy4atQ0vjAHsF89HnThOCCUpJ3MJ2ypnSeIPMVYWkMJETuVC20OtkQzvIf70CXgNRAVUpF1F_oYOhcm8GYlkKwSTvBKiytE7K1mTDadAINCn05TyKpzSQtLt7GHiT-502bMD5CDZVYxHEBXI8PKbN3dBkUgh2llBt5rxyDG8cCVZL8JuzyT9RofJHGGdg')"></div>
+<div class="absolute inset-y-0 left-0 w-full xl:w-2/3 bg-gradient-to-r from-surface via-surface/90 to-transparent dark:from-primary dark:via-primary/90 dark:to-transparent z-0 pointer-events-none"></div>
 <!-- Content -->
-<div class="relative z-10 grid grid-cols-1 xl:grid-cols-2 gap-gutter items-center w-full px-6 md:px-12 xl:px-20">
+<div class="relative z-10 grid grid-cols-1 xl:grid-cols-2 gap-gutter items-center w-full px-6 md:px-12 xl:px-16">
 <div class="space-y-6">
-<h1 class="font-display-lg-mobile text-display-lg-mobile xl:font-display-lg text-primary dark:text-on-primary">
-                        Your Next Phone. <br class="hidden md:block"/><span class="text-secondary">Your Perfect Accessory.</span> <br class="hidden md:block"/>Right Here.
-                    </h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant dark:text-outline-variant max-w-lg">
-                        Experience the bleeding edge of mobile technology. We provide high-performance devices, premium accessories, and expert repair services for the modern enthusiast.
-                    </p>
-<div class="flex flex-col sm:flex-row gap-4 pt-4">
-<button class="w-full sm:w-auto whitespace-nowrap px-8 py-3 bg-secondary text-on-secondary font-label-md text-label-md rounded shadow-sm hover:bg-secondary-fixed-dim transition-colors">
-                            Shop Now
-                        </button>
-<button class="w-full sm:w-auto whitespace-nowrap px-8 py-3 border-2 border-primary dark:border-outline-variant text-primary dark:text-on-primary font-label-md text-label-md rounded hover:bg-surface-container-high dark:hover:bg-primary-container transition-colors">
-                            Book a Repair
-                        </button>
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-secondary/10 text-secondary border border-secondary/30 rounded-full font-label-md text-xs font-semibold uppercase tracking-wider backdrop-blur-md">
+    <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+    Next-Gen Mobile Ecosystem
+</div>
+<h1 class="font-display-lg-mobile text-display-lg-mobile xl:font-display-lg text-primary dark:text-on-primary drop-shadow-sm">
+    Your Next Phone. <br class="hidden md:block"/><span class="bg-gradient-to-r from-secondary via-secondary-container to-on-tertiary-container text-transparent bg-clip-text">Your Perfect Accessory.</span> <br class="hidden md:block"/>Right Here.
+</h1>
+<p class="font-body-lg text-body-lg text-primary/90 dark:text-on-primary/90 font-medium leading-relaxed max-w-lg drop-shadow-sm">
+    Experience the bleeding edge of mobile technology. We provide high-performance devices, premium accessories, and expert repair services for the modern enthusiast.
+</p>
+<div class="flex flex-col sm:flex-row gap-4 pt-2">
+<button class="w-full sm:w-auto whitespace-nowrap px-8 py-3.5 bg-secondary text-on-secondary font-label-md text-label-md rounded-lg shadow-md hover:bg-secondary-fixed-dim hover:shadow-lg transition-all duration-300">
+    Shop Now
+</button>
+<button class="w-full sm:w-auto whitespace-nowrap px-8 py-3.5 border-2 border-primary/30 dark:border-outline-variant bg-surface/80 dark:bg-primary-container/80 backdrop-blur-md text-primary dark:text-on-primary font-label-md text-label-md rounded-lg hover:bg-primary hover:text-on-primary dark:hover:bg-on-primary dark:hover:text-primary transition-all duration-300 shadow-sm">
+    Book a Repair
+</button>
 </div>
 </div>
 <!-- Mockup Display -->
 <div class="relative flex justify-center items-center mt-12 xl:mt-0 animate-float">
-<div class="relative w-64 h-[500px] glass-panel rounded-3xl overflow-hidden shadow-lg border-[4px] border-surface-variant dark:border-outline-variant">
-<img class="w-full h-full object-cover rounded-[1.25rem]" data-alt="A sleek, modern smartphone floating slightly angled in a studio environment. The screen displays a vibrant abstract wallpaper in electric blue and signal orange. The phone body is a deep midnight graphite color. High-end, precise lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1k7kUB0Ir9mxmZ_DIM4pm57TG66QKghSX6r8QDBSasrOLO9ItlXh5B_yExbJHW3XmD4YDuKGEB6-L700RqZolOGRfAb6CZngR66CAEMzV1MrJGRpmjE4ENw4azLcX1ar2QMvW6ASNeeCiIU5zIo28uvnFTQMn8LC69L-Z7jA1lI9MnCCrE7Yz47U8CNz6OsuxizsjTWJhdTcPA3eRt1t-fFh9V232aBGiELGLzpW2Y1rw7tTX0sIm"/>
+<div class="relative w-64 h-[500px] glass-panel rounded-3xl overflow-hidden shadow-2xl border-[4px] border-surface-variant dark:border-outline-variant">
+<img class="w-full h-full object-cover rounded-[1.25rem]" data-alt="Floating smartphone mockup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1k7kUB0Ir9mxmZ_DIM4pm57TG66QKghSX6r8QDBSasrOLO9ItlXh5B_yExbJHW3XmD4YDuKGEB6-L700RqZolOGRfAb6CZngR66CAEMzV1MrJGRpmjE4ENw4azLcX1ar2QMvW6ASNeeCiIU5zIo28uvnFTQMn8LC69L-Z7jA1lI9MnCCrE7Yz47U8CNz6OsuxizsjTWJhdTcPA3eRt1t-fFh9V232aBGiELGLzpW2Y1rw7tTX0sIm"/>
 </div>
 <!-- Glow effect -->
 <div class="absolute inset-0 bg-secondary/20 rounded-full blur-3xl -z-10 animate-pulse-glow"></div>

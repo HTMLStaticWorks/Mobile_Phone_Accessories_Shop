@@ -213,28 +213,27 @@
             <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all px-2 py-1 rounded dark:text-on-primary-container" href="blog.html">Blog</a>
             <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all px-2 py-1 rounded dark:text-on-primary-container" href="contact.html">Contact</a>
         </nav>
-<!-- Actions -->
-<div class="flex items-center space-x-unit md:space-x-4">
-<button aria-label="shopping_cart" class="hidden xl:block text-secondary dark:text-secondary-fixed hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all p-2 rounded-full scale-95 active:scale-90 transition-transform">
-<span class="material-symbols-outlined">shopping_cart</span>
+<!-- Actions Bar with Uniform Height (h-10 / 40px) & Baseline Alignment -->
+<div class="flex items-center gap-2">
+<button aria-label="shopping_cart" class="hidden xl:inline-flex items-center justify-center h-10 w-10 text-secondary dark:text-secondary-fixed hover:bg-surface-container-high/60 dark:hover:bg-primary-container/60 transition-all rounded-full" title="Cart">
+<span class="material-symbols-outlined text-[20px]">shopping_cart</span>
 </button>
-<button aria-label="dark_mode" class="hidden xl:block text-secondary dark:text-secondary-fixed hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all p-2 rounded-full scale-95 active:scale-90 transition-transform" id="themeToggle">
-<span class="material-symbols-outlined">dark_mode</span>
+<button aria-label="dark_mode" id="themeToggle" class="hidden xl:inline-flex items-center justify-center h-10 w-10 text-secondary dark:text-secondary-fixed hover:bg-surface-container-high/60 dark:hover:bg-primary-container/60 transition-all rounded-full" title="Toggle Theme">
+<span class="material-symbols-outlined text-[20px]">dark_mode</span>
 </button>
-<button aria-label="rtl_toggle" class="hidden xl:block text-secondary dark:text-secondary-fixed hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all p-2 rounded-full scale-95 active:scale-90 transition-transform font-bold" onclick="const newDir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl'; document.documentElement.dir = newDir; localStorage.setItem('dir', newDir);">
+<button aria-label="rtl_toggle" class="hidden xl:inline-flex items-center justify-center h-10 px-3 text-secondary dark:text-secondary-fixed hover:bg-surface-container-high/60 dark:hover:bg-primary-container/60 transition-all rounded-full font-bold text-xs tracking-wider" onclick="const newDir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl'; document.documentElement.dir = newDir; localStorage.setItem('dir', newDir);" title="Toggle RTL">
 RTL
 </button>
-
-<div class="hidden xl:flex items-center gap-2 ms-4">
-<button class="px-4 py-2 text-primary dark:text-on-primary font-label-md text-label-md border-2 border-primary dark:border-outline-variant hover:bg-surface-container-high dark:bg-primary-container dark:hover:bg-primary-container transition-colors rounded" onclick="window.location.href='login.html'">
+<div class="hidden xl:inline-flex items-center gap-2 ms-2">
+<button class="h-10 px-5 inline-flex items-center justify-center text-primary dark:text-on-primary font-label-md text-sm font-semibold border-2 border-primary/30 dark:border-outline-variant hover:bg-surface-container-high dark:hover:bg-primary-container transition-all rounded-lg" onclick="window.location.href='login.html'">
                     Login
                 </button>
-<button class="px-4 py-2 bg-secondary text-on-secondary font-label-md text-label-md hover:bg-secondary-fixed-dim transition-colors rounded w-24 text-center" onclick="window.location.href='regitser.html'">
+<button class="h-10 px-5 inline-flex items-center justify-center bg-secondary text-on-secondary font-label-md text-sm font-semibold hover:bg-secondary-fixed-dim shadow-sm hover:shadow transition-all rounded-lg" onclick="window.location.href='regitser.html'">
                     Sign Up
                 </button>
 </div>
 <!-- Mobile Menu Toggle -->
-<button aria-label="menu" id="mobile-menu-btn" class="xl:hidden text-primary dark:text-on-primary p-2 z-50 relative">
+<button aria-label="menu" id="mobile-menu-btn" class="xl:hidden h-10 w-10 inline-flex items-center justify-center text-primary dark:text-on-primary rounded-full hover:bg-surface-container-high dark:hover:bg-primary-container z-50 relative">
 <span class="material-symbols-outlined">menu</span>
 </button>
 </div>
@@ -289,18 +288,26 @@ RTL
 </div>
 </div>
 <!-- Hero Section -->
-<header class="relative w-full py-24 px-margin-mobile md:px-margin-desktop bg-surface-container-low dark:bg-primary-container overflow-hidden slide-up">
-<div class="absolute inset-0 circuit-pattern"></div>
-<div class="max-w-container-max mx-auto relative z-10 text-center">
-<h1 class="font-display-lg-mobile xl:font-display-lg text-display-lg-mobile xl:text-display-lg text-primary mb-6 dark:text-on-primary">Explore Our Full Catalogue</h1>
+<header class="relative w-full py-16 md:py-20 px-margin-mobile md:px-margin-desktop bg-gradient-to-br from-secondary/5 via-surface to-tertiary/5 dark:from-primary-container/80 dark:via-primary dark:to-primary-container/50 border-b border-outline-variant/20 overflow-hidden slide-up">
+<div class="absolute inset-0 circuit-pattern pointer-events-none"></div>
+<div class="absolute top-1/2 left-1/4 w-80 h-80 bg-secondary/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<div class="absolute bottom-0 right-1/4 w-80 h-80 bg-tertiary-container/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<div class="max-w-container-max mx-auto relative z-10 text-center flex flex-col items-center">
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-secondary/10 text-secondary border border-secondary/30 rounded-full font-label-md text-xs font-semibold uppercase tracking-wider backdrop-blur-md mb-4">
+    <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+    Flagship Catalogue
+</div>
+<h1 class="font-display-lg-mobile xl:font-display-lg text-display-lg-mobile xl:text-display-lg text-primary mb-4 dark:text-on-primary">
+    Explore Our <span class="bg-gradient-to-r from-secondary via-secondary-container to-on-tertiary-container text-transparent bg-clip-text">Full Catalogue</span>
+</h1>
 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-8 dark:text-on-primary-container">Discover the latest smartphones, premium cases, high-speed chargers, and cutting-edge accessories tailored for top performance.</p>
 <!-- Filter Tabs -->
-<div class="flex flex-wrap justify-center gap-2 mt-8">
-<button class="px-6 py-2 bg-secondary text-on-secondary rounded-full font-label-md text-label-md shadow-sm">All Products</button>
-<button class="px-6 py-2 bg-surface dark:bg-primary-container/50 text-on-surface-variant border border-outline-variant rounded-full font-label-md text-label-md hover:border-secondary hover:text-secondary transition-colors dark:text-on-primary-container">iPhones</button>
-<button class="px-6 py-2 bg-surface dark:bg-primary-container/50 text-on-surface-variant border border-outline-variant rounded-full font-label-md text-label-md hover:border-secondary hover:text-secondary transition-colors dark:text-on-primary-container">Android</button>
-<button class="px-6 py-2 bg-surface dark:bg-primary-container/50 text-on-surface-variant border border-outline-variant rounded-full font-label-md text-label-md hover:border-secondary hover:text-secondary transition-colors dark:text-on-primary-container">Cases</button>
-<button class="px-6 py-2 bg-surface dark:bg-primary-container/50 text-on-surface-variant border border-outline-variant rounded-full font-label-md text-label-md hover:border-secondary hover:text-secondary transition-colors dark:text-on-primary-container">Chargers</button>
+<div class="flex flex-wrap justify-center gap-2 mt-2">
+<button class="px-6 py-2.5 bg-secondary text-on-secondary rounded-full font-label-md text-label-md shadow-md hover:bg-secondary-fixed-dim transition-all">All Products</button>
+<button class="px-6 py-2.5 bg-surface/80 dark:bg-primary-container/80 backdrop-blur-md text-on-surface-variant border border-outline-variant/40 rounded-full font-label-md text-label-md hover:border-secondary hover:text-secondary transition-all dark:text-on-primary-container">iPhones</button>
+<button class="px-6 py-2.5 bg-surface/80 dark:bg-primary-container/80 backdrop-blur-md text-on-surface-variant border border-outline-variant/40 rounded-full font-label-md text-label-md hover:border-secondary hover:text-secondary transition-all dark:text-on-primary-container">Android</button>
+<button class="px-6 py-2.5 bg-surface/80 dark:bg-primary-container/80 backdrop-blur-md text-on-surface-variant border border-outline-variant/40 rounded-full font-label-md text-label-md hover:border-secondary hover:text-secondary transition-all dark:text-on-primary-container">Cases</button>
+<button class="px-6 py-2.5 bg-surface/80 dark:bg-primary-container/80 backdrop-blur-md text-on-surface-variant border border-outline-variant/40 rounded-full font-label-md text-label-md hover:border-secondary hover:text-secondary transition-all dark:text-on-primary-container">Chargers</button>
 </div>
 </div>
 </header>
@@ -357,7 +364,7 @@ RTL
 </div>
 <div class="flex flex-wrap items-center justify-between gap-4 mt-auto">
 <span class="font-headline-sm text-headline-sm text-primary dark:text-on-primary">$1,199</span>
-<button class="px-6 py-2 bg-secondary text-on-secondary font-label-md text-label-md rounded-DEFAULT hover:bg-secondary/90 transition-colors whitespace-nowrap">Enquire Now</button>
+<button class="px-6 py-2 bg-secondary text-on-secondary font-label-md text-label-md rounded-lg hover:bg-secondary-fixed-dim transition-colors whitespace-nowrap">Enquire Now</button>
 </div>
 </div>
 </div>
@@ -375,7 +382,7 @@ RTL
 </div>
 <div class="flex items-center justify-between mt-4">
 <span class="font-headline-sm text-headline-sm text-primary text-lg dark:text-on-primary">$1,299</span>
-<button class="p-2 border-2 border-primary text-primary font-label-md text-label-md rounded-DEFAULT hover:bg-surface-container-high dark:bg-primary-container transition-colors dark:text-on-primary">
+<button class="p-2 border-2 border-primary text-primary font-label-md text-label-md rounded-lg hover:bg-surface-container-high dark:bg-primary-container transition-colors dark:text-on-primary">
 <span class="material-symbols-outlined">arrow_forward</span>
 </button>
 </div>
@@ -404,7 +411,7 @@ RTL
 <option value="s23" class="bg-surface dark:bg-primary-container text-on-surface dark:text-on-primary">Galaxy S23 Ultra</option>
 </select>
 </div>
-<button class="mt-6 px-8 py-3 bg-primary text-on-primary font-label-md text-label-md rounded-DEFAULT hover:bg-primary/90 transition-colors" onclick="document.getElementById('tradeValue').classList.add('show')">Get Estimate</button>
+<button class="mt-6 px-8 py-3.5 bg-secondary text-on-secondary font-label-md text-label-md rounded-lg shadow-md hover:bg-secondary-fixed-dim hover:shadow-lg transition-all duration-300" onclick="document.getElementById('tradeValue').classList.add('show')">Get Estimate</button>
 <div class="trade-in-value bg-secondary/10 border border-secondary/30 rounded-lg p-6 max-w-xl mx-auto mt-0" id="tradeValue">
 <p class="font-body-md text-body-md text-on-surface-variant mb-1 dark:text-on-primary-container">Estimated Value</p>
 <p class="font-headline-md text-headline-md text-secondary">Up to $650</p>
@@ -575,7 +582,7 @@ RTL
 <p class="font-body-md text-body-md text-on-surface-variant mb-6 relative z-10 dark:text-on-primary-container">2 years of accidental damage coverage, 24/7 priority support, and battery replacement.</p>
 <div class="flex items-center justify-between gap-2 sm:gap-4 mt-auto relative z-10">
 <span class="font-headline-sm text-headline-sm text-primary dark:text-on-primary whitespace-nowrap">$149 <span class="text-sm font-body-md text-body-md text-on-surface-variant dark:text-on-primary-container">/ 2 yrs</span></span>
-<button class="px-4 py-2 border border-secondary text-secondary font-label-md text-label-md rounded-DEFAULT hover:bg-secondary/10 transition-colors whitespace-nowrap">Add to Order</button>
+<button class="px-4 py-2 border border-secondary text-secondary font-label-md text-label-md rounded-lg hover:bg-secondary/10 transition-colors whitespace-nowrap">Add to Order</button>
 </div>
 </div>
 <!-- Service Card 2 -->
@@ -586,7 +593,7 @@ RTL
 <p class="font-body-md text-body-md text-on-surface-variant mb-6 relative z-10 dark:text-on-primary-container">Personalized data transfer, secure device wiping, and app configuration by an expert.</p>
 <div class="flex items-center justify-between gap-2 sm:gap-4 mt-auto relative z-10">
 <span class="font-headline-sm text-headline-sm text-primary dark:text-on-primary whitespace-nowrap">$49 <span class="text-sm font-body-md text-body-md text-on-surface-variant dark:text-on-primary-container">/ one-time</span></span>
-<button class="px-4 py-2 border border-on-tertiary-container text-on-tertiary-container font-label-md text-label-md rounded-DEFAULT hover:bg-tertiary-container/10 transition-colors whitespace-nowrap">Add to Order</button>
+<button class="px-4 py-2 border border-on-tertiary-container text-on-tertiary-container font-label-md text-label-md rounded-lg hover:bg-tertiary-container/10 transition-colors whitespace-nowrap">Add to Order</button>
 </div>
 </div>
 </div>
@@ -646,7 +653,7 @@ RTL
 <span class="font-label-md text-label-md text-xs text-on-surface dark:text-on-primary">Charger</span>
 </div>
 </div>
-<button class="px-8 py-3 bg-primary text-on-primary font-label-md text-label-md rounded-DEFAULT hover:bg-primary/90 transition-colors shadow-sm">View Combo Deals</button>
+<button class="px-8 py-3.5 bg-secondary text-on-secondary font-label-md text-label-md rounded-lg shadow-md hover:bg-secondary-fixed-dim transition-all">View Combo Deals</button>
 </div>
 <div class="w-full md:w-1/2 relative h-64 md:h-80">
 <img class="absolute inset-0 w-full h-full object-contain" data-alt="A stylized, levitating arrangement of a modern smartphone, a clear protective case, a tempered glass screen protector, and a compact wall charger. They are arranged dynamically in mid-air against a soft grey background. Studio lighting casts crisp shadows beneath the floating items, creating a modern, high-end commercial feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXL9-gYRwWEoAenP4PUBzlJhzDNmObHXbxPVw-Bkh0DjJPDlT43S6q9qWSnDTBwZWCoYNJSEYvHVn281aL8Ya32dF_qntoGhVy5M-9HpxeeTUE88AlosEtOz8pmtsaHh4UKbQWMdBRsWsJb4yGFJv3_yjx8J9L0Xqsx3NPvW32sGGoKMauNTgjzN0vpXDhzA0149MAPRnyz1j42MxeJuZyu8c6oS3Pn7JkKexxu-9Fd-3n6hY9hnhE"/>

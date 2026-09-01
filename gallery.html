@@ -189,28 +189,27 @@
             <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all px-2 py-1 rounded dark:text-on-primary-container" href="blog.html">Blog</a>
             <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all px-2 py-1 rounded dark:text-on-primary-container" href="contact.html">Contact</a>
         </nav>
-<!-- Actions -->
-<div class="flex items-center space-x-unit md:space-x-4">
-<button aria-label="shopping_cart" class="hidden xl:block text-secondary dark:text-secondary-fixed hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all p-2 rounded-full scale-95 active:scale-90 transition-transform">
-<span class="material-symbols-outlined">shopping_cart</span>
+<!-- Actions Bar with Uniform Height (h-10 / 40px) & Baseline Alignment -->
+<div class="flex items-center gap-2">
+<button aria-label="shopping_cart" class="hidden xl:inline-flex items-center justify-center h-10 w-10 text-secondary dark:text-secondary-fixed hover:bg-surface-container-high/60 dark:hover:bg-primary-container/60 transition-all rounded-full" title="Cart">
+<span class="material-symbols-outlined text-[20px]">shopping_cart</span>
 </button>
-<button aria-label="dark_mode" class="hidden xl:block text-secondary dark:text-secondary-fixed hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all p-2 rounded-full scale-95 active:scale-90 transition-transform" id="themeToggle">
-<span class="material-symbols-outlined">dark_mode</span>
+<button aria-label="dark_mode" id="themeToggle" class="hidden xl:inline-flex items-center justify-center h-10 w-10 text-secondary dark:text-secondary-fixed hover:bg-surface-container-high/60 dark:hover:bg-primary-container/60 transition-all rounded-full" title="Toggle Theme">
+<span class="material-symbols-outlined text-[20px]">dark_mode</span>
 </button>
-<button aria-label="rtl_toggle" class="hidden xl:block text-secondary dark:text-secondary-fixed hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all p-2 rounded-full scale-95 active:scale-90 transition-transform font-bold" onclick="const newDir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl'; document.documentElement.dir = newDir; localStorage.setItem('dir', newDir);">
+<button aria-label="rtl_toggle" class="hidden xl:inline-flex items-center justify-center h-10 px-3 text-secondary dark:text-secondary-fixed hover:bg-surface-container-high/60 dark:hover:bg-primary-container/60 transition-all rounded-full font-bold text-xs tracking-wider" onclick="const newDir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl'; document.documentElement.dir = newDir; localStorage.setItem('dir', newDir);" title="Toggle RTL">
 RTL
 </button>
-
-<div class="hidden xl:flex items-center gap-2 ms-4">
-<button class="px-4 py-2 text-primary dark:text-on-primary font-label-md text-label-md border-2 border-primary dark:border-outline-variant hover:bg-surface-container-high dark:hover:bg-primary-container transition-colors rounded w-24 text-center" onclick="window.location.href='login.html'">
+<div class="hidden xl:inline-flex items-center gap-2 ms-2">
+<button class="h-10 px-5 inline-flex items-center justify-center text-primary dark:text-on-primary font-label-md text-sm font-semibold border-2 border-primary/30 dark:border-outline-variant hover:bg-surface-container-high dark:hover:bg-primary-container transition-all rounded-lg" onclick="window.location.href='login.html'">
                     Login
                 </button>
-<button class="px-4 py-2 bg-secondary text-on-secondary font-label-md text-label-md hover:bg-secondary-fixed-dim transition-colors rounded w-24 text-center" onclick="window.location.href='regitser.html'">
+<button class="h-10 px-5 inline-flex items-center justify-center bg-secondary text-on-secondary font-label-md text-sm font-semibold hover:bg-secondary-fixed-dim shadow-sm hover:shadow transition-all rounded-lg" onclick="window.location.href='regitser.html'">
                     Sign Up
                 </button>
 </div>
 <!-- Mobile Menu Toggle -->
-<button aria-label="menu" id="mobile-menu-btn" class="xl:hidden text-primary dark:text-on-primary p-2 z-50 relative">
+<button aria-label="menu" id="mobile-menu-btn" class="xl:hidden h-10 w-10 inline-flex items-center justify-center text-primary dark:text-on-primary rounded-full hover:bg-surface-container-high dark:hover:bg-primary-container z-50 relative">
 <span class="material-symbols-outlined">menu</span>
 </button>
 </div>
@@ -246,25 +245,31 @@ RTL
 
 <main class="flex-grow pt-24 pb-16 w-full overflow-hidden">
 <!-- 1. 3D Vision Hero -->
-<section class="relative min-h-[70vh] flex items-center justify-center px-margin-mobile md:px-margin-desktop mb-24 overflow-hidden">
-<div class="absolute inset-0 bg-gradient-to-b from-surface-container-high/20 to-transparent dark:from-primary-container/20 -z-10"></div>
-<div class="max-w-container-max mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<section class="relative min-h-[700px] flex items-center justify-center px-margin-mobile md:px-margin-desktop py-16 md:py-20 mb-16 overflow-hidden rounded-2xl border border-outline-variant/20 dark:border-outline-variant/10 bg-gradient-to-br from-secondary/5 via-surface to-tertiary/5 dark:from-primary-container/80 dark:via-primary dark:to-primary-container/50 shadow-sm mt-6">
+<div class="absolute inset-0 bg-circuit pointer-events-none opacity-40"></div>
+<div class="max-w-container-max mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
 <div class="fade-in-up">
-<span class="inline-block py-1 px-3 rounded-full bg-secondary-container/10 text-secondary font-label-md text-label-md mb-6 border border-secondary/20">The Future of Mobile</span>
-<h1 class="font-display-lg-mobile xl:font-display-lg text-display-lg-mobile xl:text-display-lg text-primary dark:text-on-primary mb-6 leading-tight">Visionary Tech,<br class="hidden md:block"/><span class="text-secondary">Unleashed.</span></h1>
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-secondary/10 text-secondary border border-secondary/30 rounded-full font-label-md text-xs font-semibold uppercase tracking-wider backdrop-blur-md mb-6">
+    <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+    The Future of Mobile
+</div>
+<h1 class="font-display-lg-mobile xl:font-display-lg text-display-lg-mobile xl:text-display-lg text-primary dark:text-on-primary mb-6 leading-tight">
+    Visionary Tech, <br class="hidden md:block"/><span class="bg-gradient-to-r from-secondary via-secondary-container to-on-tertiary-container text-transparent bg-clip-text">Unleashed.</span>
+</h1>
 <p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-lg dark:text-on-primary-container">Immerse yourself in our curated selection of next-generation devices and premium accessories. Design meets unparalleled performance.</p>
-<div class="flex gap-4">
-<button class="px-6 py-3 bg-primary dark:bg-on-primary text-on-primary dark:text-primary rounded-lg font-label-md text-label-md hover:bg-inverse-surface dark:hover:bg-inverse-on-surface transition-colors">Explore Collection</button>
+<div class="flex flex-col sm:flex-row gap-4 pt-2">
+<button class="w-full sm:w-auto px-8 py-3.5 bg-secondary text-on-secondary font-label-md text-label-md rounded-lg shadow-md hover:bg-secondary-fixed-dim transition-all">Explore Collection</button>
+<button class="w-full sm:w-auto px-8 py-3.5 border-2 border-primary/20 dark:border-outline-variant text-primary dark:text-on-primary font-label-md text-label-md rounded-lg hover:bg-surface-container-high dark:hover:bg-primary-container transition-all">View Gallery</button>
 </div>
 </div>
-<div class="relative h-[400px] md:h-[600px] fade-in-up stagger-1">
-<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-secondary/10 dark:bg-secondary/20 rounded-full blur-[100px] -z-10"></div>
+<div class="relative h-[400px] md:h-[550px] fade-in-up stagger-1">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-secondary/15 dark:bg-secondary/25 rounded-full blur-[100px] -z-10"></div>
 <img alt="Floating flagship smartphone showcasing sleek design" class="w-full h-full object-contain animate-float drop-shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvHuJBAUlNugBEYXYTdJMXyy3n-YHiPER6XHUDi3kA_B8ZphIanrUDUsqiECPUxqwbjZUtbA9_xgp8nNkF2WmlhsZY-vZjGbQCcGLgwOCdur0DmXAK6qmrbD51r9vJWul8PKoDvpmimrzvfN_hi82yYKNOlPz7oGli07luD-t5H5nrjs7W6rgIA-bD1zrNj7CaayUGXW9UqSu5s4gN95CFDt_jcB23AhoK4gKR7EgTHkwzYRdz7O1M"/>
-<div class="absolute top-4 right-4 md:top-1/4 md:right-10 p-3 md:p-4 glass-panel rounded-xl animate-float-delayed shadow-xl z-20">
+<div class="absolute top-4 right-4 md:top-1/4 md:right-10 p-3 md:p-4 glass-panel rounded-xl animate-float-delayed shadow-xl z-20 border border-outline-variant/30">
 <span class="material-symbols-outlined text-secondary text-2xl md:text-3xl block mb-1 md:mb-2" data-icon="memory">memory</span>
 <p class="font-label-md text-label-md text-on-surface dark:text-on-primary">A17 Pro Chip</p>
 </div>
-<div class="absolute bottom-4 left-4 md:bottom-1/4 md:left-10 p-3 md:p-4 glass-panel rounded-xl animate-float shadow-xl delay-1000 z-20">
+<div class="absolute bottom-4 left-4 md:bottom-1/4 md:left-10 p-3 md:p-4 glass-panel rounded-xl animate-float shadow-xl delay-1000 z-20 border border-outline-variant/30">
 <span class="material-symbols-outlined text-secondary text-2xl md:text-3xl block mb-1 md:mb-2" data-icon="photo_camera">photo_camera</span>
 <p class="font-label-md text-label-md text-on-surface dark:text-on-primary">48MP Vision</p>
 </div>
