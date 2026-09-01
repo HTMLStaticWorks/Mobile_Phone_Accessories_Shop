@@ -319,71 +319,80 @@ RTL
 <main class="pt-24 pb-16 min-h-screen">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
 <!-- Bespoke Repair Lab Hero Section -->
-<section class="relative w-full py-16 md:py-24 px-margin-mobile md:px-margin-desktop bg-gradient-to-br from-secondary/5 via-surface to-tertiary/5 dark:from-primary-container/90 dark:via-primary dark:to-primary-container/60 border border-outline-variant/20 rounded-3xl mb-16 overflow-hidden shadow-xl mt-6">
-<div class="absolute inset-0 bg-circuit pointer-events-none opacity-30"></div>
-<div class="absolute top-1/4 left-10 w-96 h-96 bg-secondary/15 rounded-full blur-3xl pointer-events-none -z-10"></div>
-<div class="absolute bottom-10 right-10 w-96 h-96 bg-tertiary-container/15 rounded-full blur-3xl pointer-events-none -z-10"></div>
-<div class="max-w-container-max mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-<!-- Left Column: Main Headline & Actions -->
+<section class="relative w-full py-16 md:py-20 px-6 md:px-12 bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 text-white rounded-3xl mb-16 overflow-hidden shadow-2xl mt-6 border border-sky-500/30">
+<!-- Cybernetic Circuit Overlay -->
+<div class="absolute inset-0 bg-circuit pointer-events-none opacity-20"></div>
+<div class="absolute -top-32 -right-32 w-[500px] h-[500px] bg-sky-500/15 rounded-full blur-[140px] pointer-events-none"></div>
+
+<div class="max-w-container-max mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+<!-- Left Column: Workshop Headline & Device Selectors -->
 <div class="lg:col-span-7 space-y-6 text-left">
-<div class="inline-flex items-center gap-2 px-4 py-1.5 bg-secondary/10 text-secondary border border-secondary/30 rounded-full font-label-md text-xs font-semibold uppercase tracking-wider backdrop-blur-md">
-    <span class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span>
-    Certified Repair Lab & Diagnostics
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-sky-500/15 border border-sky-400/30 rounded-full font-label-md text-xs font-semibold uppercase tracking-wider text-sky-300 backdrop-blur-md">
+    <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
+    Certified Level-3 Micro-Repair Lab
 </div>
-<h1 class="font-display-lg-mobile text-display-lg-mobile xl:font-display-lg text-primary dark:text-on-primary leading-tight font-bold">
-    Precision Device Repair. <br/>
-    <span class="bg-gradient-to-r from-secondary via-secondary-container to-on-tertiary-container text-transparent bg-clip-text">Restored in Hours.</span>
+<h1 class="font-display-lg-mobile text-display-lg-mobile xl:font-display-lg text-white leading-tight font-extrabold tracking-tight">
+    Engineering-Grade <br/>
+    <span class="bg-gradient-to-r from-sky-400 via-blue-300 to-cyan-300 text-transparent bg-clip-text">Device Restoration.</span>
 </h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant dark:text-on-primary-container max-w-xl leading-relaxed">
-    Expert micro-soldering, screen replacement, and battery swaps with genuine OEM parts. Backed by our 90-day comprehensive warranty and same-day turnaround guarantee.
+<p class="font-body-lg text-body-lg text-slate-300 max-w-xl leading-relaxed">
+    Precision micro-soldering, OEM display replacements, and battery swaps completed in hours by certified master technicians.
 </p>
-<!-- Service Highlights Grid -->
-<div class="grid grid-cols-3 gap-3 py-2 max-w-lg">
-<div class="p-3 glass-panel rounded-xl border border-outline-variant/30 text-center">
-    <span class="block font-headline-sm text-lg font-bold text-secondary dark:text-secondary-fixed">Same-Day</span>
-    <span class="text-xs text-on-surface-variant dark:text-on-primary-container/80">Turnaround</span>
+
+<!-- Interactive Quick Device Selector Pills -->
+<div class="space-y-2 pt-1">
+    <span class="block text-xs font-label-md text-slate-400 font-semibold uppercase tracking-wider">Select Device Family:</span>
+    <div class="flex flex-wrap gap-2 text-xs">
+        <a href="#services-grid" class="px-3.5 py-2 bg-slate-900/90 border border-sky-400/40 rounded-xl text-sky-300 font-semibold hover:bg-sky-500/20 transition-all shadow-md inline-flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-sm">phone_iphone</span> iPhone &amp; iPad
+        </a>
+        <a href="#services-grid" class="px-3.5 py-2 bg-slate-900/90 border border-slate-700 rounded-xl text-slate-300 font-semibold hover:border-sky-400 hover:text-sky-300 transition-all inline-flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-sm">android</span> Samsung &amp; Android
+        </a>
+        <a href="#services-grid" class="px-3.5 py-2 bg-slate-900/90 border border-slate-700 rounded-xl text-slate-300 font-semibold hover:border-sky-400 hover:text-sky-300 transition-all inline-flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-sm">laptop_mac</span> MacBooks &amp; Laptops
+        </a>
+    </div>
 </div>
-<div class="p-3 glass-panel rounded-xl border border-outline-variant/30 text-center">
-    <span class="block font-headline-sm text-lg font-bold text-secondary dark:text-secondary-fixed">90-Day</span>
-    <span class="text-xs text-on-surface-variant dark:text-on-primary-container/80">Full Warranty</span>
-</div>
-<div class="p-3 glass-panel rounded-xl border border-outline-variant/30 text-center">
-    <span class="block font-headline-sm text-lg font-bold text-secondary dark:text-secondary-fixed">10,000+</span>
-    <span class="text-xs text-on-surface-variant dark:text-on-primary-container/80">Fixes Done</span>
+
+<div class="flex flex-col sm:flex-row gap-4 pt-3">
+<button class="px-8 py-3.5 bg-gradient-to-r from-sky-500 to-blue-600 text-white font-label-md text-label-md font-semibold rounded-xl shadow-lg hover:shadow-sky-500/25 hover:scale-[1.02] transition-all duration-300">Book Repair Session</button>
+<button class="px-8 py-3.5 border border-sky-400/40 bg-slate-900/60 backdrop-blur-md text-sky-300 font-label-md text-label-md font-semibold rounded-xl hover:bg-sky-500/20 hover:border-sky-400 transition-all duration-300 shadow-sm">Instant Price Estimator</button>
 </div>
 </div>
-<div class="flex flex-col sm:flex-row gap-4 pt-2">
-<button class="px-8 py-3.5 bg-secondary text-on-secondary font-label-md text-label-md rounded-lg shadow-md hover:bg-secondary-fixed-dim hover:shadow-lg transition-all duration-300">Book a Repair</button>
-<button class="px-8 py-3.5 border-2 border-primary/30 dark:border-outline-variant bg-surface/80 dark:bg-primary-container/80 backdrop-blur-md text-primary dark:text-on-primary font-label-md text-label-md rounded-lg hover:bg-primary hover:text-on-primary dark:hover:bg-on-primary dark:hover:text-primary transition-all duration-300 shadow-sm">Instant Quote</button>
-</div>
-</div>
-<!-- Right Column: Interactive Diagnostic Card Preview -->
+
+<!-- Right Column: Interactive Diagnostic HUD Card -->
 <div class="lg:col-span-5 relative flex justify-center">
-<div class="w-full glass-card p-6 md:p-8 rounded-3xl border border-outline-variant/30 shadow-2xl relative overflow-hidden dark:bg-primary-container/90">
-<div class="flex items-center justify-between border-b border-outline-variant/20 pb-4 mb-6">
-    <div class="flex items-center gap-3">
-        <span class="w-3 h-3 rounded-full bg-green-500 animate-ping"></span>
-        <span class="font-label-md text-xs font-semibold uppercase tracking-wider text-green-600 dark:text-green-400">Live Lab Active</span>
+<div class="w-full bg-slate-900/85 backdrop-blur-2xl p-6 md:p-7 rounded-3xl border border-sky-500/30 shadow-2xl relative overflow-hidden space-y-5">
+<div class="flex items-center justify-between border-b border-slate-800 pb-3.5">
+    <div class="flex items-center gap-2.5">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+        <span class="font-label-md text-xs font-bold uppercase tracking-wider text-emerald-400">Diagnostic HUD Active</span>
     </div>
-    <span class="text-xs font-label-md text-on-surface-variant dark:text-on-primary-container/70">Wait: ~15 mins</span>
+    <span class="text-xs font-label-md text-slate-400">90-Day Warranty</span>
 </div>
-<!-- Scanner Graphic -->
-<div class="relative py-6 flex flex-col items-center justify-center text-center space-y-4">
-    <div class="w-24 h-24 rounded-full bg-secondary/10 border-2 border-secondary/40 flex items-center justify-center animate-pulse relative">
-        <span class="material-symbols-outlined text-secondary text-4xl">build_circle</span>
-        <div class="absolute inset-0 rounded-full border border-secondary/20 animate-ping"></div>
+
+<!-- Live Diagnostics Status Gauges -->
+<div class="grid grid-cols-2 gap-3">
+    <div class="p-3.5 bg-slate-950/80 rounded-2xl border border-slate-800 text-center space-y-0.5">
+        <span class="block text-xs text-slate-400 font-label-md">Avg Turnaround</span>
+        <span class="block font-headline-sm text-lg font-bold text-sky-400">1-2 Hours</span>
+        <span class="block text-[10px] text-emerald-400 font-semibold">⚡ Same-Day Express</span>
     </div>
+    <div class="p-3.5 bg-slate-950/80 rounded-2xl border border-slate-800 text-center space-y-0.5">
+        <span class="block text-xs text-slate-400 font-label-md">Success Rate</span>
+        <span class="block font-headline-sm text-lg font-bold text-cyan-300">99.4%</span>
+        <span class="block text-[10px] text-slate-400 font-semibold">10,000+ Fixed</span>
+    </div>
+</div>
+
+<!-- OEM Quality Guarantee Badge -->
+<div class="p-3.5 bg-sky-500/10 border border-sky-400/30 rounded-2xl flex items-center gap-3">
+    <span class="material-symbols-outlined text-sky-400 text-2xl shrink-0">verified</span>
     <div>
-        <h4 class="font-headline-sm text-lg font-bold text-primary dark:text-on-primary">Instant Diagnostics</h4>
-        <p class="text-xs text-on-surface-variant dark:text-on-primary-container/80">Select your model for free hardware checkup</p>
+        <span class="block text-xs font-bold text-white">Genuine OEM Component Parts</span>
+        <span class="block text-[11px] text-slate-300">Factory-calibrated display &amp; battery cells</span>
     </div>
-</div>
-<!-- Supported Device Badges -->
-<div class="flex flex-wrap justify-center gap-2 pt-2">
-    <span class="px-3 py-1 bg-surface dark:bg-primary/80 border border-outline-variant/40 rounded-full text-xs font-label-md text-on-surface dark:text-on-primary">iPhone 15 Series</span>
-    <span class="px-3 py-1 bg-surface dark:bg-primary/80 border border-outline-variant/40 rounded-full text-xs font-label-md text-on-surface dark:text-on-primary">Galaxy S24 Ultra</span>
-    <span class="px-3 py-1 bg-surface dark:bg-primary/80 border border-outline-variant/40 rounded-full text-xs font-label-md text-on-surface dark:text-on-primary">Google Pixel 8</span>
-    <span class="px-3 py-1 bg-surface dark:bg-primary/80 border border-outline-variant/40 rounded-full text-xs font-label-md text-on-surface dark:text-on-primary">MacBooks & iPads</span>
 </div>
 </div>
 </div>

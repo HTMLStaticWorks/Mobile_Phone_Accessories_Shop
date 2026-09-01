@@ -210,62 +210,68 @@ RTL
 <!-- Main Content -->
 <main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8 md:py-12">
 <!-- Bespoke Tech Pulse Magazine Hero Section -->
-<header class="relative w-full py-16 md:py-20 px-margin-mobile md:px-margin-desktop bg-gradient-to-br from-secondary/5 via-surface to-tertiary/5 dark:from-primary-container/90 dark:via-primary dark:to-primary-container/60 border border-outline-variant/20 rounded-3xl mb-12 overflow-hidden shadow-xl mt-4">
-<div class="absolute inset-0 bg-circuit pointer-events-none opacity-30"></div>
-<div class="absolute top-1/4 left-10 w-96 h-96 bg-secondary/15 rounded-full blur-3xl pointer-events-none -z-10"></div>
-<div class="absolute bottom-10 right-10 w-96 h-96 bg-tertiary-container/15 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<header class="relative w-full py-16 md:py-20 px-6 md:px-12 bg-gradient-to-r from-slate-950 via-indigo-950 to-slate-950 text-white rounded-3xl mb-12 overflow-hidden shadow-2xl mt-4 border border-indigo-500/30">
+<!-- Ambient Neon Glows & Circuit Lines -->
+<div class="absolute inset-0 bg-circuit pointer-events-none opacity-20"></div>
+<div class="absolute -top-24 -left-24 w-96 h-96 bg-blue-600/20 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="absolute -bottom-24 -right-24 w-96 h-96 bg-cyan-500/20 rounded-full blur-[120px] pointer-events-none"></div>
+
 <div class="max-w-container-max mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-<!-- Left Column: Search & Intro -->
+<!-- Left Column: Magazine Header & Search -->
 <div class="lg:col-span-7 space-y-6 text-left">
-<div class="inline-flex items-center gap-2 px-4 py-1.5 bg-secondary/10 text-secondary border border-secondary/30 rounded-full font-label-md text-xs font-semibold uppercase tracking-wider backdrop-blur-md">
-    <span class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span>
-    Tech Pulse &amp; Intelligence
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-indigo-500/20 border border-indigo-400/40 rounded-full font-label-md text-xs font-semibold uppercase tracking-wider text-cyan-300 backdrop-blur-md">
+    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+    Tech Pulse Editorial &amp; Intelligence Hub
 </div>
-<h1 class="font-display-lg-mobile text-display-lg-mobile xl:font-display-lg text-primary dark:text-on-primary leading-tight font-bold">
-    Stay Ahead of the <br/>
-    <span class="bg-gradient-to-r from-secondary via-secondary-container to-on-tertiary-container text-transparent bg-clip-text">Tech Curve.</span>
+<h1 class="font-display-lg-mobile text-display-lg-mobile xl:font-display-lg text-white leading-tight font-extrabold tracking-tight">
+    The Frontier of <br/>
+    <span class="bg-gradient-to-r from-cyan-400 via-sky-300 to-indigo-300 text-transparent bg-clip-text">Mobile Intelligence.</span>
 </h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant dark:text-on-primary-container max-w-xl leading-relaxed">
-    In-depth device teardowns, expert repair guides, hardware reviews, and breaking news from the mobile tech ecosystem.
+<p class="font-body-lg text-body-lg text-slate-300 max-w-xl leading-relaxed">
+    Deep hardware teardowns, expert micro-soldering guides, performance benchmarks, and breaking mobile ecosystem news.
 </p>
 
 <!-- Curated Search Bar -->
 <div class="relative w-full max-w-lg">
-    <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-secondary text-xl">search</span>
-    <input class="w-full pl-12 pr-4 py-3.5 bg-surface/90 dark:bg-primary/80 backdrop-blur-md rounded-2xl border border-outline-variant/40 focus:border-secondary focus:ring-2 focus:ring-secondary/30 outline-none transition-all text-on-surface shadow-md dark:text-on-primary placeholder:text-on-surface-variant/60 dark:placeholder:text-on-primary-container/60" placeholder="Search 500+ articles, teardowns, and repair guides..." type="text"/>
+    <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-cyan-400 text-xl">search</span>
+    <input class="w-full pl-12 pr-28 py-3.5 bg-slate-900/90 backdrop-blur-xl rounded-2xl border border-indigo-500/40 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/30 outline-none transition-all text-white placeholder:text-slate-400 shadow-xl" placeholder="Search 500+ teardowns &amp; articles..." type="text"/>
+    <button class="absolute right-2 top-1/2 -translate-y-1/2 px-4 py-2 bg-gradient-to-r from-secondary to-secondary-container text-white font-label-md text-xs font-semibold rounded-xl hover:opacity-90 transition-opacity">Search</button>
 </div>
 
 <!-- Trending Topics -->
 <div class="flex flex-wrap items-center gap-2 pt-1 text-xs">
-    <span class="font-label-md font-semibold text-on-surface-variant dark:text-on-primary-container/80">Trending:</span>
-    <span class="px-3 py-1 bg-surface dark:bg-primary/60 border border-outline-variant/30 rounded-full text-secondary font-label-md cursor-pointer hover:border-secondary transition-colors">#iOS18</span>
-    <span class="px-3 py-1 bg-surface dark:bg-primary/60 border border-outline-variant/30 rounded-full text-on-surface dark:text-on-primary font-label-md cursor-pointer hover:border-secondary transition-colors">#RepairGuides</span>
-    <span class="px-3 py-1 bg-surface dark:bg-primary/60 border border-outline-variant/30 rounded-full text-on-surface dark:text-on-primary font-label-md cursor-pointer hover:border-secondary transition-colors">#BatteryHealth</span>
-    <span class="px-3 py-1 bg-surface dark:bg-primary/60 border border-outline-variant/30 rounded-full text-on-surface dark:text-on-primary font-label-md cursor-pointer hover:border-secondary transition-colors">#Foldables</span>
+    <span class="font-label-md font-semibold text-slate-400">Trending:</span>
+    <span class="px-3 py-1 bg-slate-800/80 border border-slate-700/60 rounded-full text-cyan-300 font-label-md cursor-pointer hover:border-cyan-400 transition-colors">#iOS18</span>
+    <span class="px-3 py-1 bg-slate-800/80 border border-slate-700/60 rounded-full text-slate-300 font-label-md cursor-pointer hover:border-cyan-400 transition-colors">#HardwareTeardown</span>
+    <span class="px-3 py-1 bg-slate-800/80 border border-slate-700/60 rounded-full text-slate-300 font-label-md cursor-pointer hover:border-cyan-400 transition-colors">#BatteryHealth</span>
+    <span class="px-3 py-1 bg-slate-800/80 border border-slate-700/60 rounded-full text-slate-300 font-label-md cursor-pointer hover:border-cyan-400 transition-colors">#FoldableTech</span>
 </div>
 </div>
 
-<!-- Right Column: Featured Spotlight Story Card -->
+<!-- Right Column: Editorial Featured Card -->
 <div class="lg:col-span-5 relative flex justify-center">
-<div class="w-full glass-card p-6 rounded-3xl border border-outline-variant/30 shadow-2xl relative overflow-hidden dark:bg-primary-container/90 group hover:border-secondary/50 transition-all">
+<div class="w-full bg-slate-900/80 backdrop-blur-2xl p-6 md:p-7 rounded-3xl border border-indigo-500/30 shadow-2xl relative overflow-hidden group hover:border-cyan-400/60 transition-all">
 <div class="flex items-center justify-between mb-4">
-    <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-tertiary-container/20 text-on-tertiary-container border border-tertiary-container/30 rounded-full text-xs font-semibold uppercase tracking-wider">
+    <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-rose-500/20 text-rose-300 border border-rose-500/40 rounded-full text-xs font-semibold uppercase tracking-wider">
         🔥 Featured Story
     </span>
-    <span class="text-xs text-on-surface-variant dark:text-on-primary-container/70 font-label-md">5 min read</span>
+    <span class="text-xs text-slate-400 font-label-md">5 min read</span>
 </div>
-<h3 class="font-headline-sm text-lg font-bold text-primary dark:text-on-primary mb-2 group-hover:text-secondary transition-colors">
+<h3 class="font-headline-sm text-lg font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors leading-snug">
     Foldable Phone Teardowns: What Breaks First &amp; How to Protect It
 </h3>
-<p class="text-xs text-on-surface-variant dark:text-on-primary-container/80 mb-4 line-clamp-2">
+<p class="text-xs text-slate-300 mb-5 line-clamp-2 leading-relaxed">
     Our senior lab technicians disassemble the latest flagship flex displays to reveal hidden hinge vulnerabilities and longevity fixes.
 </p>
-<div class="flex items-center justify-between pt-2 border-t border-outline-variant/20">
-    <div class="flex items-center gap-2">
-        <div class="w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center font-bold text-secondary text-xs">AC</div>
-        <span class="text-xs font-label-md text-on-surface dark:text-on-primary">Alex Chen</span>
+<div class="flex items-center justify-between pt-3 border-t border-slate-800">
+    <div class="flex items-center gap-2.5">
+        <div class="w-8 h-8 rounded-full bg-cyan-400/20 border border-cyan-400/40 flex items-center justify-center font-bold text-cyan-300 text-xs">AC</div>
+        <div>
+            <span class="block text-xs font-label-md text-white font-semibold">Alex Chen</span>
+            <span class="block text-[10px] text-slate-400">Chief Hardware Editor</span>
+        </div>
     </div>
-    <span class="text-xs text-secondary font-semibold group-hover:underline inline-flex items-center">Read Story →</span>
+    <span class="text-xs text-cyan-400 font-semibold group-hover:underline inline-flex items-center gap-1">Read Story <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
 </div>
 </div>
 </div>
